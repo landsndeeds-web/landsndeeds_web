@@ -32,11 +32,11 @@ const testimonials = [
 
 const CustomerTestimonialsSection = () => {
   return (
-    <section id="testimonials" className="py-20 bg-white relative">
+    <section id="testimonials" className="py-12 md:py-14 bg-slate-50/70 relative">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-2">
           <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block">
             Client Success Stories
           </span>
@@ -53,7 +53,7 @@ const CustomerTestimonialsSection = () => {
           {testimonials.map((t) => (
             <div
               key={t.id}
-              className="p-8 rounded-3xl bg-gray-50/80 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between relative group"
+              className="p-8 rounded-3xl bg-white border-2 border-gray-200/80 hover:border-[#D6B97B] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between relative group"
             >
               <div className="space-y-4">
                 {/* 5-Star Rating Row */}
@@ -64,7 +64,7 @@ const CustomerTestimonialsSection = () => {
                 </div>
 
                 {/* Quote (Wireframe exact string match) */}
-                <h3 className="text-lg font-serif font-bold text-[#1A335E] italic leading-snug">
+                <h3 className="text-lg font-serif font-bold text-[#1A335E] italic leading-snug group-hover:text-[#D6B97B] transition-colors">
                   "{t.quote}"
                 </h3>
 
@@ -74,12 +74,12 @@ const CustomerTestimonialsSection = () => {
               </div>
 
               {/* Author Footer */}
-              <div className="pt-6 mt-6 border-t border-gray-200/60 flex items-center justify-between">
+              <div className="pt-6 mt-6 border-t border-gray-100 flex items-center justify-between">
                 <div>
                   <h4 className="font-serif font-bold text-sm text-[#1A335E]">{t.author}</h4>
                   <p className="text-[11px] text-gray-500 font-medium">{t.location} • {t.role}</p>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full bg-emerald-100/80 text-emerald-700 flex items-center justify-center border border-emerald-200">
                   <CheckCircle size={16} />
                 </div>
               </div>

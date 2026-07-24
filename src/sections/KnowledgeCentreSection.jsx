@@ -57,11 +57,11 @@ const KnowledgeCentreSection = () => {
   const [selectedTopic, setSelectedTopic] = useState(null);
 
   return (
-    <section id="knowledge-centre" className="py-20 bg-gray-50/70 relative">
+    <section id="knowledge-centre" className="py-12 md:py-14 bg-gray-50/70 relative">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-2">
           <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block">
             Tamil Nadu Real Estate Guidance
           </span>
@@ -81,14 +81,14 @@ const KnowledgeCentreSection = () => {
               <div
                 key={item.id}
                 onClick={() => setSelectedTopic(item)}
-                className="group p-8 rounded-3xl bg-white border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group p-8 rounded-3xl bg-white border-2 border-gray-200/80 hover:border-[#D6B97B] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <div className="w-12 h-12 rounded-2xl bg-[#D6B97B]/15 text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-[#D6B97B] transition-colors flex items-center justify-center">
+                    <div className="w-12 h-12 rounded-2xl bg-gray-50 border border-gray-100 text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-[#D6B97B] transition-all flex items-center justify-center shadow-sm">
                       <Icon size={24} />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-gray-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
                       {item.badge}
                     </span>
                   </div>
@@ -106,7 +106,7 @@ const KnowledgeCentreSection = () => {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#1A335E] group-hover:text-[#D6B97B]">
+                <div className="pt-6 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#1A335E] group-hover:text-[#D6B97B] transition-colors">
                   <span>Read Guide</span>
                   <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </div>
@@ -116,7 +116,7 @@ const KnowledgeCentreSection = () => {
         </div>
 
         {/* Explore Knowledge Centre Button (Wireframe Image 4 CTA) */}
-        <div className="mt-14 text-center">
+        <div className="mt-8 md:mt-10 text-center">
           <Link
             to="/blogs"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A335E] hover:bg-[#D6B97B] text-white hover:text-[#0F0F0F] rounded-2xl font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-lg shadow-[#1A335E]/20"

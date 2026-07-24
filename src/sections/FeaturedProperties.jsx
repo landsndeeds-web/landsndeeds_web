@@ -99,12 +99,12 @@ const FeaturedProperties = ({ onOpenEnquiry }) => {
   const currentProperty = featuredListings[currentIndex];
 
   return (
-    <section id="featured-properties" className="py-20 bg-gray-50/70 relative">
+    <section id="featured-properties" className="py-12 md:py-14 bg-gray-50/70 relative">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-4">
-          <div>
+        <div className="relative mb-12 flex flex-col md:flex-row items-center justify-center">
+          <div className="text-center max-w-2xl mx-auto">
             <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block mb-1">
               Handpicked Verified Listings
             </span>
@@ -114,7 +114,7 @@ const FeaturedProperties = ({ onOpenEnquiry }) => {
           </div>
 
           {/* Slider Navigation Buttons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 mt-6 md:mt-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">
             <button
               onClick={prevSlide}
               aria-label="Previous property"

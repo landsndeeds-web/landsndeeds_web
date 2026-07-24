@@ -30,12 +30,10 @@ img {
   box-sizing: border-box;
 }
 
-h1, h2, h3, h4 {
-  color: var(--color-brand-blue);
-}
-
-section.relative.min-h-screen h1 {
-  color: white !important;
+@layer base {
+  h1, h2, h3, h4 {
+    color: var(--color-brand-blue);
+  }
 }
 
 body {

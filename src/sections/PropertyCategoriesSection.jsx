@@ -60,11 +60,11 @@ const categories = [
 
 const PropertyCategoriesSection = () => {
   return (
-    <section className="py-20 bg-white relative">
+    <section className="py-12 md:py-14 bg-slate-50/70 relative">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-2">
           <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block">
             Tailored Real Estate Solutions
           </span>
@@ -84,14 +84,14 @@ const PropertyCategoriesSection = () => {
               <Link
                 key={cat.id}
                 to={`/properties?type=${encodeURIComponent(cat.title)}`}
-                className="group p-8 rounded-3xl bg-gradient-to-br border border-gray-100 hover:border-[#D6B97B]/60 shadow-sm hover:shadow-xl transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
+                className="group p-8 rounded-3xl bg-white border-2 border-gray-200/80 hover:border-[#D6B97B] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 relative overflow-hidden flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <div className={`w-14 h-14 rounded-2xl bg-white shadow-md flex items-center justify-center ${cat.iconColor} group-hover:scale-110 transition-transform`}>
+                    <div className={`w-14 h-14 rounded-2xl bg-gray-50 border border-gray-100 shadow-sm flex items-center justify-center ${cat.iconColor} group-hover:scale-110 group-hover:bg-[#1A335E] group-hover:text-white transition-all`}>
                       <Icon size={28} />
                     </div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-400 bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-gray-600 bg-slate-100 border border-slate-200 px-3 py-1 rounded-full">
                       {cat.count}
                     </span>
                   </div>
@@ -106,7 +106,7 @@ const PropertyCategoriesSection = () => {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-gray-100/80 flex items-center gap-2 text-xs font-bold text-[#1A335E] group-hover:text-[#D6B97B] transition-colors">
+                <div className="pt-6 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#1A335E] group-hover:text-[#D6B97B] transition-colors">
                   <span>Explore {cat.title}</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
                 </div>
@@ -116,7 +116,7 @@ const PropertyCategoriesSection = () => {
         </div>
 
         {/* View All Categories CTA Button */}
-        <div className="mt-14 text-center">
+        <div className="mt-8 md:mt-10 text-center">
           <Link
             to="/properties"
             className="inline-flex items-center gap-2 px-8 py-4 bg-[#1A335E] hover:bg-[#D6B97B] text-white hover:text-[#0F0F0F] rounded-2xl font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-lg shadow-[#1A335E]/20"
