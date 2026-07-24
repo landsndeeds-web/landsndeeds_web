@@ -36,11 +36,11 @@ const whyChooseItems = [
 
 const WhyChooseUs = ({ onOpenEnquiry }) => {
   return (
-    <section id="why-choose-us" className="py-20 bg-gray-50 relative overflow-hidden">
+    <section id="why-choose-us" className="py-12 md:py-14 bg-gray-50 relative overflow-hidden">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-2">
           <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block">
             Unmatched Expertise & Assurance
           </span>
@@ -53,24 +53,24 @@ const WhyChooseUs = ({ onOpenEnquiry }) => {
         </div>
 
         {/* Feature Grid (Wireframe Checklist Items) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
           {whyChooseItems.map((item, index) => {
             const Icon = item.icon;
             return (
               <div
                 key={index}
-                className="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white p-8 rounded-3xl border-2 border-gray-200/80 hover:border-[#D6B97B] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
               >
                 <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[#1A335E]/5 text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-white transition-colors flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-2xl bg-gray-50 border border-gray-100 text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-white transition-colors flex items-center justify-center shadow-sm">
                     <Icon size={24} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-serif font-bold text-[#1A335E] flex items-center gap-2">
+                    <h3 className="text-lg font-serif font-bold text-[#1A335E] flex items-center gap-2 group-hover:text-[#D6B97B] transition-colors">
                       <CheckCircle2 size={18} className="text-[#D6B97B] shrink-0" />
                       {item.title}
                     </h3>
-                    <p className="text-xs text-gray-500 mt-2 leading-relaxed">
+                    <p className="text-xs text-gray-500 mt-2 leading-relaxed font-medium">
                       {item.desc}
                     </p>
                   </div>

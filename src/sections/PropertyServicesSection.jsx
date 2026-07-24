@@ -47,11 +47,11 @@ const servicesList = [
 
 const PropertyServicesSection = ({ onOpenEnquiry }) => {
   return (
-    <section id="property-services" className="py-20 bg-white relative">
+    <section id="property-services" className="py-12 md:py-14 bg-slate-50/70 relative">
       <div className="container mx-auto px-4 md:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-2">
           <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block">
             End-to-End Real Estate Solutions
           </span>
@@ -71,14 +71,14 @@ const PropertyServicesSection = ({ onOpenEnquiry }) => {
               <div
                 key={service.id}
                 onClick={() => onOpenEnquiry && onOpenEnquiry(service.title)}
-                className="group p-8 rounded-3xl bg-gray-50/80 border border-gray-100 hover:border-[#D6B97B] hover:bg-white shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col justify-between"
+                className="group p-8 rounded-3xl bg-white border-2 border-gray-200/80 hover:border-[#D6B97B] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
-                    <div className="w-14 h-14 rounded-2xl bg-[#1A335E] text-white flex items-center justify-center group-hover:bg-[#D6B97B] group-hover:text-[#0F0F0F] transition-colors">
+                    <div className="w-14 h-14 rounded-2xl bg-[#1A335E] text-white flex items-center justify-center group-hover:bg-[#D6B97B] group-hover:text-[#0F0F0F] transition-colors shadow-sm">
                       <Icon size={26} />
                     </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/70 px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/80 border border-emerald-200 px-3 py-1 rounded-full">
                       {service.badge}
                     </span>
                   </div>
@@ -93,7 +93,7 @@ const PropertyServicesSection = ({ onOpenEnquiry }) => {
                   </div>
                 </div>
 
-                <div className="pt-6 mt-4 border-t border-gray-200/60 flex items-center justify-between text-xs font-bold text-[#1A335E] group-hover:text-[#D6B97B]">
+                <div className="pt-6 mt-4 border-t border-gray-100 flex items-center justify-between text-xs font-bold text-[#1A335E] group-hover:text-[#D6B97B] transition-colors">
                   <span>Request {service.title}</span>
                   <ArrowRight size={14} className="group-hover:translate-x-1.5 transition-transform" />
                 </div>
