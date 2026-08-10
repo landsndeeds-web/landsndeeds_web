@@ -3,7 +3,38 @@ import { ShieldCheck, Star, Handshake, FileText, TrendingUp, HeadphonesIcon } fr
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import property5 from '../assets/property5.webp';
+const whyChooseItems = [
+  {
+    title: 'Verified Property Listings',
+    desc: 'Every property undergoes strict physical inspection and title check before listing.',
+    icon: ShieldCheck
+  },
+  {
+    title: 'Transparent Buying Process',
+    desc: 'No hidden charges, direct owner negotiations, and clear legal documentation.',
+    icon: FileCheck
+  },
+  {
+    title: 'Professional Property Guidance',
+    desc: 'Advised by seasoned real estate, land valuation, and revenue law experts.',
+    icon: Scale
+  },
+  {
+    title: 'Buy • Sell • Lease Support',
+    desc: 'End-to-end management for buying, selling, leasing residential & commercial lands.',
+    icon: Users
+  },
+  {
+    title: 'Investment Consultation',
+    desc: 'Strategic property growth advisory backed by eminent former revenue & registration officials.',
+    icon: BadgeCheck
+  },
+  {
+    title: 'Documentation Assistance',
+    desc: 'Hassle-free support for Patta transfer, Chitta, FMB sketch, and EC verification.',
+    icon: Headphones
+  }
+];
 
 gsap.registerPlugin(ScrollTrigger);
 

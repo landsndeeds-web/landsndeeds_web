@@ -1,21 +1,99 @@
-import { useRef, useEffect } from 'react';
+import { useState } from 'react';
+import { MapPin, Home as HomeIcon, Maximize2, ChevronLeft, ChevronRight, Eye, Send, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Bed, Bath, Move, ArrowUpRight } from 'lucide-react';
-import { properties } from '../data/content';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+// Import property assets
 import prop1 from '../assets/property1.webp';
 import prop2 from '../assets/property2.webp';
+import prop3 from '../assets/property3.webp';
+import prop5 from '../assets/property5.webp';
+import prop6 from '../assets/property6.webp';
+import prop7 from '../assets/property7.webp';
 
-gsap.registerPlugin(ScrollTrigger);
+const featuredListings = [
+  {
+    id: 1,
+    title: 'Premium Apartment near Avinashi Road',
+    location: 'Coimbatore',
+    bhk: '2 & 3 BHK',
+    area: '950–1,450 Sq.ft',
+    price: '₹58 Lakhs',
+    priceText: 'Starting from ₹58 Lakhs',
+    image: prop1,
+    type: 'Apartment',
+    tag: 'DTCP Approved'
+  },
+  {
+    id: 2,
+    title: 'Gated Luxury Villa in Saravanampatti',
+    location: 'Coimbatore',
+    bhk: '3 & 4 BHK',
+    area: '2,200–3,100 Sq.ft',
+    price: '₹1.25 Crore',
+    priceText: 'Starting from ₹1.25 Cr',
+    image: prop2,
+    type: 'Villa',
+    tag: 'RERA Registered'
+  },
+  {
+    id: 3,
+    title: 'Industrial Warehouse & Farmland Plot',
+    location: 'Hosur, Krishnagiri',
+    bhk: 'Industrial Zone',
+    area: '12,000 Sq.ft',
+    price: '₹2.80 Crore',
+    priceText: 'Starting from ₹2.80 Cr',
+    image: prop3,
+    type: 'Industrial',
+    tag: 'Clear Title Deed'
+  },
+  {
+    id: 4,
+    title: 'DTCP Approved Residential Plot',
+    location: 'Sowripalayam, Coimbatore',
+    bhk: 'Residential Plot',
+    area: '2,400 Sq.ft',
+    price: '₹45 Lakhs',
+    priceText: 'Starting from ₹45 Lakhs',
+    image: prop5,
+    type: 'Land',
+    tag: 'Patta Available'
+  },
+  {
+    id: 5,
+    title: 'Prime Commercial Office Building',
+    location: 'Anna Nagar, Chennai',
+    bhk: 'Commercial Space',
+    area: '4,500 Sq.ft',
+    price: '₹3.50 Crore',
+    priceText: 'Starting from ₹3.50 Cr',
+    image: prop6,
+    type: 'Commercial',
+    tag: 'High ROI'
+  },
+  {
+    id: 6,
+    title: 'Organic Agricultural Farmland',
+    location: 'Pollachi, Tamil Nadu',
+    bhk: 'Agri Land',
+    area: '3.5 Acres',
+    price: '₹65 Lakhs',
+    priceText: 'Starting from ₹65 Lakhs',
+    image: prop7,
+    type: 'Agricultural',
+    tag: 'Water Source Included'
+  }
+];
 
-const FeaturedProperties = () => {
-  const containerRef = useRef(null);
-  
-  const propertyImages = {
-    property1: prop1,
-    property2: prop2
+const FeaturedProperties = ({ onOpenEnquiry }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev === 0 ? featuredListings.length - 1 : prev - 1));
+  };
+
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev === featuredListings.length - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -80,8 +158,67 @@ const FeaturedProperties = () => {
                   <p className="text-white/80 text-xs md:text-sm font-medium">{property.location}</p>
                 </div>
               </div>
+
+              {/* Wireframe Specs Row: Location | BHK | Sq.ft */}
+              <div className="grid grid-cols-3 gap-3 py-4 border-y border-gray-100 text-gray-700">
+                <div className="space-y-1">
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block flex items-center gap-1">
+                    <MapPin size={12} className="text-[#D6B97B]" /> Location
+                  </span>
+                  <span className="font-bold text-xs md:text-sm text-[#1A335E]">
+                    {currentProperty.location}
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block flex items-center gap-1">
+                    <HomeIcon size={12} className="text-[#D6B97B]" /> Type/BHK
+                  </span>
+                  <span className="font-bold text-xs md:text-sm text-[#1A335E]">
+                    {currentProperty.bhk}
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-[11px] uppercase tracking-wider text-gray-400 font-bold block flex items-center gap-1">
+                    <Maximize2 size={12} className="text-[#D6B97B]" /> Area
+                  </span>
+                  <span className="font-bold text-xs md:text-sm text-[#1A335E]">
+                    {currentProperty.area}
+                  </span>
+                </div>
+              </div>
+
+              {/* Price Row */}
+              <div>
+                <span className="text-xs text-gray-500 font-medium block">Asking Price</span>
+                <span className="text-2xl md:text-3xl font-extrabold text-[#1A335E]">
+                  ₹ {currentProperty.priceText}
+                </span>
+              </div>
+
+              {/* Wireframe Buttons: [View Details] [Enquire Now] */}
+              <div className="grid grid-cols-2 gap-4 pt-2">
+                <Link
+                  to="/properties"
+                  className="py-3.5 px-4 bg-gray-100 hover:bg-[#1A335E] text-[#1A335E] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 text-center"
+                >
+                  <Eye size={15} />
+                  View Details
+                </Link>
+
+                <button
+                  onClick={() => onOpenEnquiry && onOpenEnquiry(`Enquiry for ${currentProperty.title}`)}
+                  className="py-3.5 px-4 bg-[#D6B97B] hover:bg-[#1A335E] text-[#0F0F0F] hover:text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer shadow-md"
+                >
+                  <Send size={15} />
+                  Enquire Now
+                </button>
+              </div>
+
             </div>
-          ))}
+
+          </div>
         </div>
 
         <div className="mt-8 flex justify-center">
@@ -90,6 +227,7 @@ const FeaturedProperties = () => {
             <ArrowUpRight size={15} />
           </Link>
         </div>
+
       </div>
     </section>
   );

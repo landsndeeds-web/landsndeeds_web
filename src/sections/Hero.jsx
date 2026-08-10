@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
-// Import images for slideshow
+// Import hero background imagery
 import prop2 from '../assets/property2.webp';
 import prop3 from '../assets/property3.webp';
 import prop6 from '../assets/property6.webp';
@@ -146,6 +146,7 @@ const Hero = () => {
               📋 Post Property
             </a>
           </div>
+
         </div>
       </div>
 
