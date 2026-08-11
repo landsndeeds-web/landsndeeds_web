@@ -96,67 +96,74 @@ const FeaturedProperties = ({ onOpenEnquiry }) => {
     setCurrentIndex((prev) => (prev === featuredListings.length - 1 ? 0 : prev + 1));
   };
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(".property-card",
-        { y: 30, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: containerRef.current,
-            start: "top 80%",
-          },
-          y: 0,
-          opacity: 1,
-          duration: 0.7,
-          stagger: 0.15,
-          ease: "power2.out"
-        }
-      );
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
+  const currentProperty = featuredListings[currentIndex];
 
   return (
-    <section ref={containerRef} id="properties" className="py-10 md:py-14 bg-white relative">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8 md:mb-10">
-          <div className="space-y-2">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">Curated Selection</span>
+    <section id="featured-properties" className="py-12 md:py-14 bg-gray-50/70 relative">
+      <div className="container mx-auto px-4 md:px-8">
+        
+        {/* Section Header */}
+        <div className="relative mb-12 flex flex-col md:flex-row items-center justify-center">
+          <div className="text-center max-w-2xl mx-auto">
+            <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block mb-1">
+              Handpicked Verified Listings
+            </span>
             <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
-              Featured <span className="gold-gradient">Properties</span>
+              FEATURED PROPERTIES
             </h2>
           </div>
-          <p className="text-gray-500 max-w-md md:text-right hidden md:block text-sm leading-relaxed">
-            Discover carefully selected properties in well-connected locations across Tamil Nadu. Explore options that suit your budget, lifestyle, or investment goals.
-          </p>
+
+          {/* Slider Navigation Buttons */}
+          <div className="flex items-center gap-3 mt-6 md:mt-0 md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2">
+            <button
+              onClick={prevSlide}
+              aria-label="Previous property"
+              className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-[#1A335E] hover:bg-[#1A335E] hover:text-white transition-all cursor-pointer"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <span className="text-sm font-bold text-[#1A335E]">
+              {currentIndex + 1} / {featuredListings.length}
+            </span>
+            <button
+              onClick={nextSlide}
+              aria-label="Next property"
+              className="w-12 h-12 rounded-full bg-white border border-gray-200 shadow-md flex items-center justify-center text-[#1A335E] hover:bg-[#1A335E] hover:text-white transition-all cursor-pointer"
+            >
+              <ChevronRight size={22} />
+            </button>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {properties.map((property) => (
-            <div 
-              key={property.id} 
-              className="property-card group cursor-pointer relative overflow-hidden rounded-2xl shadow-md border border-gray-100 hover:shadow-xl transition-all duration-300"
-            >
-              {/* Image Container */}
-              <div className="aspect-[16/10] overflow-hidden relative">
-                <img 
-                  src={propertyImages[property.image]} 
-                  alt={property.title} 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-[#D6B97B] text-[#0F0F0F] font-bold text-xs rounded-md shadow-md uppercase tracking-wider">
-                    Verified
-                  </span>
-                </div>
-                <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="!text-white text-xl md:text-2xl font-serif font-bold mb-1">
-                    {property.title}
-                  </h3>
-                  <p className="text-white/80 text-xs md:text-sm font-medium">{property.location}</p>
-                </div>
+        {/* Featured Property Hero Showcase Card (Wireframe Image 1 Design) */}
+        <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            
+            {/* Property Image Container */}
+            <div className="lg:col-span-7 relative min-h-[320px] md:min-h-[420px] overflow-hidden group">
+              <img
+                src={currentProperty.image}
+                alt={currentProperty.title}
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute top-4 left-4 bg-[#1A335E] text-white text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                {currentProperty.tag}
+              </div>
+              <div className="absolute top-4 right-4 bg-[#D6B97B] text-[#0F0F0F] text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider shadow-md">
+                {currentProperty.type}
+              </div>
+            </div>
+
+            {/* Property Info Content */}
+            <div className="lg:col-span-5 p-6 md:p-10 flex flex-col justify-between space-y-6">
+              <div>
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-md inline-block mb-3 flex items-center gap-1.5 w-fit">
+                  <ShieldCheck size={14} /> 100% Verified Title Deed
+                </span>
+                
+                <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#1A335E] leading-snug">
+                  {currentProperty.title}
+                </h3>
               </div>
 
               {/* Wireframe Specs Row: Location | BHK | Sq.ft */}
@@ -221,11 +228,25 @@ const FeaturedProperties = ({ onOpenEnquiry }) => {
           </div>
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <Link to="/properties" className="px-8 py-3 border-2 border-[#1A335E] text-[#1A335E] hover:bg-[#1A335E] hover:text-white rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 flex items-center gap-2 no-underline shadow-sm">
-            View All Properties
-            <ArrowUpRight size={15} />
-          </Link>
+        {/* Card Slider Thumbnail Carousel Grid below */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 mt-8">
+          {featuredListings.map((prop, idx) => (
+            <button
+              key={prop.id}
+              onClick={() => setCurrentIndex(idx)}
+              className={`p-2.5 rounded-2xl bg-white border text-left transition-all cursor-pointer ${
+                currentIndex === idx
+                  ? 'border-[#D6B97B] ring-2 ring-[#D6B97B]/40 shadow-lg scale-105'
+                  : 'border-gray-200 hover:border-gray-300 opacity-80 hover:opacity-100'
+              }`}
+            >
+              <div className="h-20 rounded-xl overflow-hidden mb-2">
+                <img src={prop.image} alt={prop.title} className="w-full h-full object-cover" />
+              </div>
+              <p className="text-[11px] font-bold text-[#1A335E] truncate">{prop.title}</p>
+              <p className="text-[10px] text-[#D6B97B] font-extrabold">{prop.price}</p>
+            </button>
+          ))}
         </div>
 
       </div>
