@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
-import { ShieldCheck, Star, Handshake, FileText, TrendingUp, HeadphonesIcon } from 'lucide-react';
+import { ShieldCheck, Star, Handshake, FileText, TrendingUp, HeadphonesIcon, FileCheck, Scale, Users, BadgeCheck, Headphones } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import property5 from '../assets/property5.webp';
 
 const whyChooseItems = [
   {
