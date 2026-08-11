@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ArrowRight, Globe, Share2, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, ArrowRight, Globe, Share2, MessageCircle, ArrowUpRight } from 'lucide-react';
 import logo from '../assets/Logo_lnd.webp';
 
 const Footer = ({ onOpenEnquiry }) => {
