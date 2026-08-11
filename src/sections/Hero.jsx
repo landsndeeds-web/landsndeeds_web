@@ -1,154 +1,165 @@
-import { useState } from 'react';
-import { Search, MapPin, Building2, Wallet, CheckCircle } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 // Import hero background imagery
 import prop2 from '../assets/property2.webp';
 import prop3 from '../assets/property3.webp';
 import prop6 from '../assets/property6.webp';
+import prop7 from '../assets/property7.webp';
 
-const Hero = ({ onOpenEnquiry }) => {
-  const navigate = useNavigate();
-  const [location, setLocation] = useState('Coimbatore');
-  const [propertyType, setPropertyType] = useState('Apartments');
-  const [budget, setBudget] = useState('Under ₹50 Lakhs');
+const Hero = () => {
+  const containerRef = useRef(null);
+  const textContainerRef = useRef(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    navigate(`/properties?location=${encodeURIComponent(location)}&type=${encodeURIComponent(propertyType)}&budget=${encodeURIComponent(budget)}`);
-  };
+  const slides = [
+    {
+      image: prop3,
+      tagline: "Verified Properties Across Tamil Nadu",
+      headline: "Find the Right Property with Confidence",
+      subtext: "Whether you're buying, selling, leasing, or investing, Lands N Deeds helps you discover verified properties with expert guidance and a transparent process across Tamil Nadu."
+    },
+    {
+      image: prop2,
+      tagline: "Expert Property Consultation",
+      headline: "Find the Right Property with Confidence",
+      subtext: "Whether you're buying, selling, leasing, or investing, Lands N Deeds helps you discover verified properties with expert guidance and a transparent process across Tamil Nadu."
+    },
+    {
+      image: prop6,
+      tagline: "Buy · Sell · Lease · Invest",
+      headline: "Find the Right Property with Confidence",
+      subtext: "Whether you're buying, selling, leasing, or investing, Lands N Deeds helps you discover verified properties with expert guidance and a transparent process across Tamil Nadu."
+    },
+    {
+      image: prop7,
+      tagline: "Transparent Property Platform",
+      headline: "Find the Right Property with Confidence",
+      subtext: "Whether you're buying, selling, leasing, or investing, Lands N Deeds helps you discover verified properties with expert guidance and a transparent process across Tamil Nadu."
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Animation for each slide change
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      
+      tl.fromTo(".reveal-tagline", 
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" }
+      )
+      .fromTo(".reveal-word", 
+        { y: 60, skewY: 7, opacity: 0 },
+        { y: 0, skewY: 0, opacity: 1, duration: 1.2, stagger: 0.1, ease: "power4.out" },
+        "-=0.6"
+      )
+      .fromTo(".reveal-subtext", 
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, ease: "power3.out" },
+        "-=0.8"
+      )
+      .fromTo(".reveal-btn", 
+        { y: 20, opacity: 0 },
+        { y: 0, opacity: 1, duration: 0.8, stagger: 0.2, ease: "power3.out" },
+        "-=0.6"
+      );
+    }, textContainerRef);
+
+    return () => ctx.revert();
+  }, [currentImageIndex]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(".hero-bg", 
+        { scale: 1.2 }, 
+        { scale: 1, duration: 2.5, ease: "power2.out" }
+      );
+    }, containerRef);
+
+    return () => ctx.revert();
+  }, []);
+
+  const currentSlide = slides[currentImageIndex];
 
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 bg-[#1A335E] text-white overflow-hidden">
-      {/* Dynamic Background Overlay */}
-      <div className="absolute inset-0 z-0 opacity-25 mix-blend-overlay pointer-events-none">
-        <img
-          src={prop3}
-          alt="Tamil Nadu Real Estate Hero"
-          className="w-full h-full object-cover"
-        />
+    <section ref={containerRef} className="relative min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden flex items-center bg-white pt-24 pb-10">
+      {/* Background Slideshow */}
+      <div className="absolute inset-0 z-0">
+        {slides.map((slide, i) => (
+          <div 
+            key={i}
+            className={`hero-bg absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1500 ease-in-out ${i === currentImageIndex ? 'opacity-100' : 'opacity-0'}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+          />
+        ))}
+        {/* Brand Gradient Overlays */}
+        <div className="absolute inset-0 luxury-gradient-bg opacity-70 mix-blend-multiply z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#1A335E]/80 via-transparent to-transparent z-[1]" />
       </div>
 
-      {/* Decorative Blur Orbs */}
-      <div className="absolute top-10 left-1/4 w-96 h-96 bg-[#D6B97B]/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
-
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
-          {/* Tagline Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-[#D6B97B] font-bold text-xs uppercase tracking-widest">
-            <span className="w-2 h-2 rounded-full bg-[#D6B97B] animate-pulse" />
-            Tamil Nadu's premier property platform
+      <div ref={textContainerRef} className="container mx-auto px-6 relative z-10">
+        <div className="max-w-4xl">
+          <div className="overflow-hidden mb-3">
+            <span className="reveal-tagline block text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs md:text-sm">
+              {currentSlide.tagline}
+            </span>
+          </div>
+          
+          <div className="overflow-hidden mb-4">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold !text-white leading-tight">
+              {currentSlide.headline.split(' ').map((word, i) => (
+                <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
+                  <span className={`reveal-word inline-block ${word === 'Confidence' ? 'gold-gradient' : ''}`}>
+                    {word}
+                  </span>
+                </span>
+              ))}
+            </h1>
+          </div>
+          
+          <div className="overflow-hidden mb-8">
+            <p className="reveal-subtext text-base md:text-lg lg:text-xl text-white/90 max-w-2xl leading-relaxed font-normal">
+              {currentSlide.subtext}
+            </p>
           </div>
 
-          {/* Wireframe Headline */}
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold text-white tracking-tight leading-tight">
-            FIND THE RIGHT PROPERTY <br className="hidden sm:block" />
-            WITH <span className="gold-gradient">CONFIDENCE</span>
-          </h1>
-
-          {/* Wireframe Subhead */}
-          <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-3xl mx-auto font-medium leading-relaxed">
-            Buy <span className="text-[#D6B97B] font-bold">|</span> Sell <span className="text-[#D6B97B] font-bold">|</span> Lease <span className="text-[#D6B97B] font-bold">|</span> Invest in Verified Properties Across Tamil Nadu
-          </p>
-
-          {/* Wireframe Interactive Search Bar Container */}
-          <div className="mt-8 bg-white/95 backdrop-blur-xl p-4 md:p-6 rounded-3xl shadow-2xl border border-white/40 text-gray-900">
-            <form onSubmit={handleSearch} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
-              
-              {/* Location Select */}
-              <div className="space-y-1 text-left bg-gray-50/80 p-3 rounded-2xl border border-gray-100 hover:border-[#D6B97B] transition-colors">
-                <label className="text-[11px] font-bold uppercase tracking-wider text-gray-500 flex items-center gap-1">
-                  <MapPin size={13} className="text-[#D6B97B]" /> Location
-                </label>
-                <select
-                  value={location}
-                  onChange={(e) => setLocation(e.target.value)}
-                  className="w-full bg-transparent font-bold text-sm text-[#1A335E] focus:outline-none cursor-pointer"
-                >
-                  <option value="All Tamil Nadu">All Tamil Nadu</option>
-                  <option value="Coimbatore">Coimbatore</option>
-                  <option value="Chennai">Chennai</option>
-                  <option value="Madurai">Madurai</option>
-                  <option value="Salem">Salem</option>
-                  <option value="Trichy">Trichy</option>
-                  <option value="Hosur">Hosur</option>
-                  <option value="Erode">Erode</option>
-                  <option value="Tiruppur">Tiruppur</option>
-                </select>
-              </div>
-
-              {/* Property Type Select */}
-              <div className="space-y-1 text-left bg-gray-50/80 p-3 rounded-2xl border border-gray-100 hover:border-[#D6B97B] transition-colors">
-                <label className="text-[11px] font-bold uppercase tracking-wider text-gray-500 flex items-center gap-1">
-                  <Building2 size={13} className="text-[#D6B97B]" /> Property Type
-                </label>
-                <select
-                  value={propertyType}
-                  onChange={(e) => setPropertyType(e.target.value)}
-                  className="w-full bg-transparent font-bold text-sm text-[#1A335E] focus:outline-none cursor-pointer"
-                >
-                  <option value="All Types">All Types</option>
-                  <option value="Apartments">Apartments</option>
-                  <option value="Villas">Villas</option>
-                  <option value="Lands">Lands / Plots</option>
-                  <option value="Commercial">Commercial</option>
-                  <option value="Agricultural">Agricultural</option>
-                  <option value="Industrial">Industrial</option>
-                </select>
-              </div>
-
-              {/* Budget Select */}
-              <div className="space-y-1 text-left bg-gray-50/80 p-3 rounded-2xl border border-gray-100 hover:border-[#D6B97B] transition-colors">
-                <label className="text-[11px] font-bold uppercase tracking-wider text-gray-500 flex items-center gap-1">
-                  <Wallet size={13} className="text-[#D6B97B]" /> Budget Range
-                </label>
-                <select
-                  value={budget}
-                  onChange={(e) => setBudget(e.target.value)}
-                  className="w-full bg-transparent font-bold text-sm text-[#1A335E] focus:outline-none cursor-pointer"
-                >
-                  <option value="Any Budget">Any Budget</option>
-                  <option value="Under ₹25 Lakhs">Under ₹25 Lakhs</option>
-                  <option value="₹25 L - ₹50 L">₹25 L - ₹50 Lakhs</option>
-                  <option value="₹50 L - ₹1 Cr">₹50 L - ₹1 Crore</option>
-                  <option value="Above ₹1 Cr">Above ₹1 Crore</option>
-                </select>
-              </div>
-
-              {/* Search Submit Button */}
-              <button
-                type="submit"
-                className="w-full py-4 bg-[#1A335E] hover:bg-[#D6B97B] text-white hover:text-[#0F0F0F] rounded-2xl font-bold uppercase tracking-widest text-xs transition-all duration-300 flex items-center justify-center gap-2 shadow-lg shadow-[#1A335E]/30 cursor-pointer"
-              >
-                <Search size={16} />
-                Search Properties
-              </button>
-
-            </form>
-          </div>
-
-          {/* Wireframe Value Proposition Highlights (Checklist) */}
-          <div className="pt-6 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold text-gray-200 bg-white/5 py-2.5 px-3 rounded-xl border border-white/10">
-              <CheckCircle size={16} className="text-[#D6B97B] shrink-0" />
-              <span>Verified Listings</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold text-gray-200 bg-white/5 py-2.5 px-3 rounded-xl border border-white/10">
-              <CheckCircle size={16} className="text-[#D6B97B] shrink-0" />
-              <span>Expert Guidance</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold text-gray-200 bg-white/5 py-2.5 px-3 rounded-xl border border-white/10">
-              <CheckCircle size={16} className="text-[#D6B97B] shrink-0" />
-              <span>Buy • Sell • Lease</span>
-            </div>
-            <div className="flex items-center justify-center gap-2 text-xs md:text-sm font-semibold text-gray-200 bg-white/5 py-2.5 px-3 rounded-xl border border-white/10">
-              <CheckCircle size={16} className="text-[#D6B97B] shrink-0" />
-              <span>Trusted Platform</span>
-            </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="/properties"
+              id="hero-explore-properties-btn"
+              className="reveal-btn px-8 py-3.5 bg-gradient-to-r from-[#D6B97B] to-[#C6A56A] hover:from-[#E8C97A] hover:to-[#D6B97B] text-[#0D1B2A] rounded-full font-bold hover:bg-white transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#D6B97B]/20"
+            >
+              🔍 Explore Properties
+            </a>
+            <a
+              href="/contact"
+              id="hero-post-property-btn"
+              className="reveal-btn px-8 py-3.5 border border-white/60 text-white rounded-full font-bold hover:bg-white/20 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
+            >
+              📋 Post Property
+            </a>
           </div>
 
         </div>
+      </div>
+
+      {/* Slide Indicators */}
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex gap-2">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrentImageIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            className={`h-1 rounded-full transition-all duration-500 cursor-pointer border-0 p-0 ${i === currentImageIndex ? 'w-8 bg-[#D6B97B]' : 'w-2 bg-white/40'}`}
+          />
+        ))}
       </div>
     </section>
   );

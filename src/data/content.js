@@ -112,3 +112,34 @@ export const faqs = [
     answer: "Our team includes professionals in legal services to assist with various property-related legal matters."
   }
 ];
+
+export const testimonials = [
+  {
+    id: 1,
+    text: "Lands N Deeds made our property purchase so smooth. Their team verified every document thoroughly and kept us informed throughout. We found our dream plot in Coimbatore without any stress.",
+    name: "Ravi Kumar",
+    role: "Property Buyer – Coimbatore",
+    image: "https://randomuser.me/api/portraits/men/32.jpg"
+  },
+  {
+    id: 2,
+    text: "I was looking to sell my agricultural land in Erode. The Lands N Deeds team found a genuine buyer quickly and helped with all the legal paperwork. Excellent service and transparent process.",
+    name: "Meenakshi Sundaram",
+    role: "Property Seller – Erode",
+    image: "https://randomuser.me/api/portraits/women/45.jpg"
+  },
+  {
+    id: 3,
+    text: "Their investment consultation helped me identify the right emerging areas in Tamil Nadu. I invested in a DTCP plot that has already appreciated significantly. Highly recommended!",
+    name: "Prakash Natarajan",
+    role: "Property Investor – Chennai",
+    image: "https://randomuser.me/api/portraits/men/58.jpg"
+  },
+  {
+    id: 4,
+    text: "The documentation support was outstanding. They explained every legal term clearly and ensured my lease agreement was bulletproof. A truly customer-focused team.",
+    name: "Divya Lakshmi",
+    role: "Tenant – Madurai",
+    image: "https://randomuser.me/api/portraits/women/22.jpg"
+  }
+];

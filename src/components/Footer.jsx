@@ -23,9 +23,8 @@ const Footer = ({ onOpenEnquiry }) => {
                 </span>
               </div>
             </Link>
-
-            <p className="text-xs text-gray-400 leading-relaxed max-w-sm">
-              Tamil Nadu's trusted property platform providing verified listings, complete land title check, Patta/Chitta clearance, and transparent buying, selling, & leasing assistance.
+            <p className="text-white/70 leading-relaxed font-medium">
+              Lands N Deeds is a trusted property platform offering buying, selling, leasing, and property guidance services across Tamil Nadu. We connect people with verified property opportunities through a transparent and customer-focused approach.
             </p>
 
             <div className="flex items-center gap-3 pt-2">
@@ -41,30 +40,27 @@ const Footer = ({ onOpenEnquiry }) => {
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="space-y-3">
-            <h4 className="font-serif font-bold text-sm text-[#D6B97B] uppercase tracking-wider">
-              Quick Links
-            </h4>
-            <ul className="space-y-2 text-xs font-semibold text-gray-400">
-              <li>
-                <Link to="/" className="hover:text-[#D6B97B] transition-colors">Home</Link>
-              </li>
-              <li>
-                <Link to="/properties" className="hover:text-[#D6B97B] transition-colors">Properties</Link>
-              </li>
-              <li>
-                <Link to="/services" className="hover:text-[#D6B97B] transition-colors">Services</Link>
-              </li>
-              <li>
-                <Link to="/blogs" className="hover:text-[#D6B97B] transition-colors">Resources / Knowledge</Link>
-              </li>
-              <li>
-                <Link to="/about" className="hover:text-[#D6B97B] transition-colors">About Us</Link>
-              </li>
-              <li>
-                <Link to="/contact" className="hover:text-[#D6B97B] transition-colors">Contact</Link>
-              </li>
+          {/* Quick Links / Site Map */}
+          <div className="space-y-6 md:pl-8">
+            <h4 className="text-[#D6B97B] font-bold uppercase tracking-[0.3em] text-xs">Site Map</h4>
+            <ul className="space-y-4">
+              {[
+                { name: 'Properties', href: '/properties' },
+                { name: 'Buy Property', href: '/properties' },
+                { name: 'Sell Property', href: '/contact' },
+                { name: 'Lease Property', href: '/contact' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Knowledge Centre', href: '/blogs' },
+                { name: 'Contact Us', href: '/contact' },
+                { name: 'Post Property', href: '/contact' },
+              ].map((link) => (
+                <li key={link.name}>
+                  <Link to={link.href} className="text-white/70 hover:text-[#D6B97B] transition-colors flex items-center justify-between group font-medium text-sm max-w-[150px]">
+                    {link.name}
+                    <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 

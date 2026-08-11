@@ -1,42 +1,88 @@
-import { useOutletContext } from 'react-router-dom';
+import { useEffect } from 'react';
 import Hero from '../sections/Hero';
-import FeaturedProperties from '../sections/FeaturedProperties';
-import PropertyCategoriesSection from '../sections/PropertyCategoriesSection';
+import HomeSearchSection from '../sections/HomeSearchSection';
+import PropertyCategories from '../sections/PropertyCategories';
 import WhyChooseUs from '../sections/WhyChooseUs';
-import PropertyServicesSection from '../sections/PropertyServicesSection';
-import KnowledgeCentreSection from '../sections/KnowledgeCentreSection';
-import CustomerTestimonialsSection from '../sections/CustomerTestimonialsSection';
-import CTASectionWireframe from '../sections/CTASectionWireframe';
+import FeaturedProperties from '../sections/FeaturedProperties';
+import PropertyServices from '../sections/PropertyServices';
+import KnowledgeCentre from '../sections/KnowledgeCentre';
+import Testimonials from '../sections/Testimonials';
+import HomeFinalCTA from '../sections/HomeFinalCTA';
 
 const Home = () => {
-  const context = useOutletContext();
-  const onOpenEnquiry = context?.onOpenEnquiry;
+  // SEO Meta Tags
+  useEffect(() => {
+    document.title = 'Property in Tamil Nadu | Buy, Sell & Lease with Lands N Deeds';
+
+    const setMeta = (name, content, isProperty = false) => {
+      const selector = isProperty
+        ? `meta[property="${name}"]`
+        : `meta[name="${name}"]`;
+      let el = document.querySelector(selector);
+      if (!el) {
+        el = document.createElement('meta');
+        if (isProperty) el.setAttribute('property', name);
+        else el.setAttribute('name', name);
+        document.head.appendChild(el);
+      }
+      el.setAttribute('content', content);
+    };
+
+    setMeta(
+      'description',
+      'Explore verified residential, commercial, agricultural and investment properties across Tamil Nadu. Buy, sell or lease properties with confidence through Lands N Deeds.'
+    );
+    setMeta('keywords', 'property in Tamil Nadu, buy property Tamil Nadu, sell property, lease property, property consultant, property platform, real estate services');
+    setMeta('robots', 'index, follow');
+
+    // Open Graph
+    setMeta('og:title', 'Property in Tamil Nadu | Buy, Sell & Lease with Lands N Deeds', false);
+    setMeta('og:description', 'Explore verified residential, commercial, agricultural and investment properties across Tamil Nadu. Buy, sell or lease properties with confidence through Lands N Deeds.', false);
+    setMeta('og:type', 'website', false);
+    setMeta('og:url', 'https://www.landsndeeds.com/', false);
+
+    // Canonical
+    let canonical = document.querySelector('link[rel="canonical"]');
+    if (!canonical) {
+      canonical = document.createElement('link');
+      canonical.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonical);
+    }
+    canonical.setAttribute('href', 'https://www.landsndeeds.com/');
+
+    return () => {
+      document.title = 'Lands N Deeds';
+    };
+  }, []);
 
   return (
-    <main className="w-full overflow-hidden">
-      {/* 1. Hero Section (Image 1 Wireframe) */}
-      <Hero onOpenEnquiry={onOpenEnquiry} />
+    <main>
+      {/* 1. Hero Section */}
+      <Hero />
 
-      {/* 2. Featured Properties Section (Image 1 Wireframe) */}
-      <FeaturedProperties onOpenEnquiry={onOpenEnquiry} />
+      {/* 2. Search Section */}
+      <HomeSearchSection />
 
-      {/* 3. Explore Property Categories (Image 2 Wireframe) */}
-      <PropertyCategoriesSection />
+      {/* 3. Property Categories */}
+      <PropertyCategories />
 
-      {/* 4. Why Choose Lands N Deeds (Image 2 Wireframe) */}
-      <WhyChooseUs onOpenEnquiry={onOpenEnquiry} />
+      {/* 4. Why Choose Us */}
+      <WhyChooseUs />
 
-      {/* 5. Property Services (Image 3 Wireframe) */}
-      <PropertyServicesSection onOpenEnquiry={onOpenEnquiry} />
+      {/* 5. Featured Properties */}
+      <FeaturedProperties />
 
-      {/* 6. Property Knowledge Centre (Image 3 & 4 Wireframes) */}
-      <KnowledgeCentreSection />
+      {/* 6. Property Services */}
+      <PropertyServices />
 
-      {/* 7. Customer Testimonials (Image 4 Wireframe) */}
-      <CustomerTestimonialsSection />
+      {/* 7. Knowledge Centre */}
+      <KnowledgeCentre />
 
-      {/* 8. Ready To Find Your Property CTA (Image 4 Wireframe) */}
-      <CTASectionWireframe onOpenEnquiry={onOpenEnquiry} />
+      {/* 8. Testimonials */}
+      <Testimonials />
+
+      {/* 9. Final CTA */}
+      <HomeFinalCTA />
     </main>
   );
 };

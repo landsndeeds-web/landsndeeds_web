@@ -1,5 +1,7 @@
-import { CheckCircle2, ShieldCheck, FileCheck, Users, Headphones, BadgeCheck, Scale } from 'lucide-react';
-import rathnaImg from '../assets/Rathna_Sabapathy.webp';
+import { useEffect, useRef } from 'react';
+import { ShieldCheck, Star, Handshake, FileText, TrendingUp, HeadphonesIcon } from 'lucide-react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const whyChooseItems = [
   {
@@ -34,93 +36,138 @@ const whyChooseItems = [
   }
 ];
 
-const WhyChooseUs = ({ onOpenEnquiry }) => {
+gsap.registerPlugin(ScrollTrigger);
+
+const whyPoints = [
+  {
+    icon: ShieldCheck,
+    title: 'Verified Property Listings',
+    description: 'Every listing is checked and verified for authenticity and legal clarity.',
+  },
+  {
+    icon: Star,
+    title: 'Professional Guidance',
+    description: 'Expert consultants with in-depth knowledge of Tamil Nadu real estate.',
+  },
+  {
+    icon: Handshake,
+    title: 'Buying, Selling & Leasing Support',
+    description: 'End-to-end assistance for all types of property transactions.',
+  },
+  {
+    icon: FileText,
+    title: 'Property Documentation Assistance',
+    description: 'Help with legal documents, title deeds, and registration processes.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Investment Consultation',
+    description: 'Strategic guidance to maximize returns on your property investments.',
+  },
+  {
+    icon: HeadphonesIcon,
+    title: 'End-to-End Customer Support',
+    description: 'We stay with you from property search to successful transaction closure.',
+  },
+];
+
+const WhyChooseUs = () => {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo('.why-card', 
+        { y: 30, opacity: 0 },
+        {
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+          },
+          y: 0,
+          opacity: 1,
+          duration: 0.6,
+          stagger: 0.08,
+          ease: 'power2.out',
+        }
+      );
+    }, sectionRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="why-choose-us" className="py-12 md:py-14 bg-gray-50 relative overflow-hidden">
-      <div className="container mx-auto px-4 md:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8 md:mb-10 space-y-2">
-          <span className="text-[#D6B97B] font-bold tracking-[0.25em] uppercase text-xs block">
-            Unmatched Expertise & Assurance
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
-            WHY CHOOSE LANDS N DEEDS
-          </h2>
-          <p className="text-sm md:text-base text-gray-600">
-            We simplify and secure your real estate journey with absolute reliability, legal assurance, and domain authority.
-          </p>
+    <section ref={sectionRef} id="why-choose-us" className="py-10 md:py-14 bg-slate-50 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#D6B97B]/5 rounded-full blur-3xl pointer-events-none" />
+
+      <div className="container mx-auto px-6 relative z-10">
+        {/* Header */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-center mb-8 md:mb-10">
+          {/* Image */}
+          <div className="lg:col-span-5 relative aspect-[16/11] w-full rounded-2xl overflow-hidden shadow-xl group order-2 lg:order-1 border border-gray-100">
+            <img
+              src={property5}
+              alt="Why Choose Lands N Deeds"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#1A335E]/70 via-transparent to-transparent" />
+            {/* Floating badge */}
+            <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md rounded-xl p-3.5 shadow-lg border border-white/50">
+              <p className="text-[#1A335E] font-serif font-bold text-xs md:text-sm">Trusted by buyers, sellers & investors across Tamil Nadu</p>
+              <div className="flex items-center gap-1.5 mt-1.5">
+                {[1,2,3,4,5].map(i => (
+                  <Star key={i} size={11} className="text-[#D6B97B] fill-[#D6B97B]" />
+                ))}
+                <span className="text-gray-500 text-[11px] font-semibold ml-1">Verified Client Ratings</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className="lg:col-span-7 space-y-4 order-1 lg:order-2">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#D6B97B]/15 text-[#B8922E] font-bold tracking-widest uppercase text-xs">
+              The Lands N Deeds Advantage
+            </span>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1A335E] leading-tight">
+              Why Buyers, Sellers & Investors Choose{' '}
+              <span className="gold-gradient">Lands N Deeds</span>
+            </h2>
+            <p className="text-gray-600 leading-relaxed text-base font-normal">
+              Finding the right property is more than just comparing prices. We focus on clarity, transparency, and professional guidance to help every client make confident real estate decisions.
+            </p>
+            <div className="pt-3 border-t border-gray-200/80">
+              <p className="text-gray-500 italic text-xs md:text-sm leading-relaxed">
+                At Lands N Deeds, we prioritise quality and legal transparency. Your real estate journey will be seamless, secure, and stress-free.
+              </p>
+            </div>
+          </div>
         </div>
 
-        {/* Feature Grid (Wireframe Checklist Items) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10 md:mb-12">
-          {whyChooseItems.map((item, index) => {
-            const Icon = item.icon;
+        {/* 6-Card Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+          {whyPoints.map((point, i) => {
+            const Icon = point.icon;
             return (
               <div
-                key={index}
-                className="bg-white p-8 rounded-3xl border-2 border-gray-200/80 hover:border-[#D6B97B] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between group"
+                key={i}
+                className="why-card group relative bg-white p-5 md:p-6 rounded-xl border border-gray-200/70 shadow-sm hover:border-[#D6B97B] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden"
               >
-                <div className="space-y-4">
-                  <div className="w-12 h-12 rounded-2xl bg-gray-50 border border-gray-100 text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-white transition-colors flex items-center justify-center shadow-sm">
-                    <Icon size={24} />
+                {/* Top glow line */}
+                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D6B97B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" />
+
+                <div className="flex items-start gap-3.5">
+                  <div className="w-10 h-10 rounded-lg bg-[#1A335E]/5 flex items-center justify-center text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-[#D6B97B] transition-all duration-300 shrink-0">
+                    <Icon size={18} />
                   </div>
                   <div>
-                    <h3 className="text-lg font-serif font-bold text-[#1A335E] flex items-center gap-2 group-hover:text-[#D6B97B] transition-colors">
-                      <CheckCircle2 size={18} className="text-[#D6B97B] shrink-0" />
-                      {item.title}
+                    <h3 className="text-[#1A335E] font-serif font-bold text-sm md:text-base mb-1 group-hover:text-[#D6B97B] transition-colors duration-300">
+                      ✓ {point.title}
                     </h3>
-                    <p className="text-xs text-gray-500 mt-2 leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
+                    <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{point.description}</p>
                   </div>
                 </div>
               </div>
             );
           })}
         </div>
-
-        {/* Founder & Domain Authority Banner */}
-        <div className="bg-[#1A335E] text-white rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
-            
-            <div className="lg:col-span-3 flex justify-center">
-              <div className="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-[#D6B97B] overflow-hidden shadow-xl">
-                <img src={rathnaImg} alt="Mr. V. Rathna Sabapathy" className="w-full h-full object-cover" />
-              </div>
-            </div>
-
-            <div className="lg:col-span-9 space-y-4 text-center lg:text-left">
-              <span className="text-[#D6B97B] font-bold text-xs uppercase tracking-widest block">
-                Leadership & Domain Excellence
-              </span>
-              <h3 className="text-2xl md:text-3xl font-serif font-bold text-white">
-                Backed by Eminent Revenue & Registration Experts
-              </h3>
-              <p className="text-sm text-gray-200 leading-relaxed max-w-3xl">
-                "Our unique expertise ensures formidable assurance in every immovable property transaction across Tamil Nadu. Backed by former IAS, IRS officers, and high-ranking revenue and registration officials, we mitigate all risks involved in real estate dealings."
-              </p>
-
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-white/10">
-                <div>
-                  <h4 className="font-serif font-bold text-white text-base">MR. V. RATHNA SABAPATHY</h4>
-                  <p className="text-[11px] text-[#D6B97B] font-semibold">
-                    B.Sc., B.Ed., MBA., LL.B., MBL., ADNEC., FOUNDER
-                  </p>
-                </div>
-
-                <button
-                  onClick={() => onOpenEnquiry && onOpenEnquiry('Consultation with Founder')}
-                  className="px-6 py-3 bg-[#D6B97B] hover:bg-white text-[#0F0F0F] rounded-xl font-bold uppercase tracking-widest text-xs transition-all cursor-pointer shrink-0"
-                >
-                  Book Executive Advisory
-                </button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
       </div>
     </section>
   );
