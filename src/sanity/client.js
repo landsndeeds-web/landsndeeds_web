@@ -1,14 +1,14 @@
 import { createClient } from '@sanity/client';
-import imageUrlBuilder from '@sanity/image-url';
+import { createImageUrlBuilder } from '@sanity/image-url';
 
 export const client = createClient({
-  projectId: '9xy3tg1p',
+  projectId: 'apj45rqg',
   dataset: 'production', // Default dataset name for Sanity
-  useCdn: true, // `false` if you want to bypass CDN caching for instant updates
-  apiVersion: '2026-05-19', // Use current date for stable API version
+  useCdn: false, // `false` provides instant live updates when you publish
+  apiVersion: '2024-01-01', // Stable API version
 });
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 
 /**
  * Helper function to generate builder URLs for Sanity images

@@ -15,7 +15,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-white/70 leading-relaxed font-medium">
-              LandsnDeeds connects land sellers and buyers in one convenient platform.
+              Lands N Deeds is a trusted property platform offering buying, selling, leasing, and property guidance services across Tamil Nadu. We connect people with verified property opportunities through a transparent and customer-focused approach.
             </p>
           </div>
 
@@ -24,11 +24,14 @@ const Footer = () => {
             <h4 className="text-[#D6B97B] font-bold uppercase tracking-[0.3em] text-xs">Site Map</h4>
             <ul className="space-y-4">
               {[
-                { name: 'Home', href: '/' },
-                { name: 'About us', href: '/about' },
-                { name: 'Services', href: '/services' },
-                { name: 'Contact', href: '/contact' },
-                { name: 'Gallery', href: '/gallery' }
+                { name: 'Properties', href: '/properties' },
+                { name: 'Buy Property', href: '/properties' },
+                { name: 'Sell Property', href: '/contact' },
+                { name: 'Lease Property', href: '/contact' },
+                { name: 'About Us', href: '/about' },
+                { name: 'Knowledge Centre', href: '/blogs' },
+                { name: 'Contact Us', href: '/contact' },
+                { name: 'Post Property', href: '/contact' },
               ].map((link) => (
                 <li key={link.name}>
                   <Link to={link.href} className="text-white/70 hover:text-[#D6B97B] transition-colors flex items-center justify-between group font-medium text-sm max-w-[150px]">

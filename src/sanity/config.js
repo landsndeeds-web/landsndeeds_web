@@ -8,7 +8,7 @@ export default defineConfig({
   name: 'default',
   title: 'LandsnDeeds Studio',
 
-  projectId: '9xy3tg1p',
+  projectId: 'apj45rqg',
   dataset: 'production',
 
   basePath: '/studio',
