@@ -1,44 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, FileSearch, TrendingUp, Scale, ArrowUpRight } from 'lucide-react';
+import { BookOpen, FileText, TrendingUp, Scale, ArrowRight, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const articles = [
-  {
-    id: 1,
-    icon: BookOpen,
-    category: "Buyer's Guide",
-    title: 'How to Verify a Property Before Buying',
-    excerpt: 'A step-by-step guide to checking title deeds, encumbrance certificates, and legal clearances before any purchase.',
-    readTime: '5 min read',
-  },
-  {
-    id: 2,
-    icon: FileSearch,
-    category: 'Legal Docs',
-    title: 'Understanding Sale Deed, EC & Patta in Tamil Nadu',
-    excerpt: 'Plain-language explanations of the key property documents you need for a safe and legal transaction.',
-    readTime: '7 min read',
-  },
-  {
-    id: 3,
-    icon: TrendingUp,
-    category: 'Investment Tips',
-    title: 'Top Emerging Property Investment Zones in Tamil Nadu 2025',
-    excerpt: 'Discover high-growth corridors and undervalued areas with strong appreciation potential for investors.',
-    readTime: '6 min read',
-  },
-  {
-    id: 4,
-    icon: Scale,
-    category: 'Legal Updates',
-    title: 'Property Registration Rules & Stamp Duty in Tamil Nadu',
-    excerpt: 'Stay updated on the latest regulations, applicable stamp duty rates, and registration procedures.',
-    readTime: '4 min read',
-  },
+const topics = [
+  { label: 'Title Verification Guides', icon: BookOpen },
+  { label: 'Sale Deed, EC & Patta Laws', icon: FileText },
+  { label: 'Market Investment Trends', icon: TrendingUp },
+  { label: 'Stamp Duty & Registration Rules', icon: Scale },
 ];
 
 const KnowledgeCentre = () => {
@@ -46,8 +18,9 @@ const KnowledgeCentre = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.article-card',
-        { y: 30, opacity: 0 },
+      gsap.fromTo(
+        '.knowledge-fade-in',
+        { y: 25, opacity: 0 },
         {
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -56,7 +29,7 @@ const KnowledgeCentre = () => {
           y: 0,
           opacity: 1,
           duration: 0.6,
-          stagger: 0.08,
+          stagger: 0.1,
           ease: 'power2.out',
         }
       );
@@ -65,79 +38,60 @@ const KnowledgeCentre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="knowledge-centre" className="py-10 md:py-14 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="knowledge-centre" className="py-12 md:py-16 bg-white relative overflow-hidden">
+      {/* Decorative background glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#D6B97B]/5 rounded-full blur-3xl pointer-events-none" />
+
       <div className="container mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8 md:mb-10">
-          <div className="space-y-2">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">
-              Expert Insights
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
-              Property Knowledge <span className="gold-gradient">Centre</span>
-            </h2>
-          </div>
-          <p className="text-gray-500 max-w-md md:text-right hidden md:block text-sm leading-relaxed">
-            Make better property decisions with practical guides, legal document explanations, investment tips, and real estate updates prepared by our experts.
-          </p>
-        </div>
+        <div className="bg-gradient-to-br from-[#1A335E]/5 via-[#D6B97B]/10 to-transparent border border-[#1A335E]/10 rounded-2xl md:rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden">
+          
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
+            
+            {/* Left Column */}
+            <div className="space-y-4 text-center lg:text-left max-w-2xl knowledge-fade-in">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1A335E]/10 text-[#1A335E] font-bold tracking-widest uppercase text-xs">
+                <Sparkles size={12} className="text-[#D6B97B]" />
+                Expert Real Estate Insights
+              </span>
 
-        {/* Articles Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {articles.map((article) => {
-            const Icon = article.icon;
-            return (
-              <div
-                key={article.id}
-                className="article-card group relative bg-white rounded-xl border border-gray-200/80 p-5 hover:border-[#D6B97B] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer flex flex-col justify-between"
-              >
-                <div>
-                  {/* Top accent */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D6B97B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" />
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-[#1A335E] leading-tight">
+                Property Knowledge <span className="gold-gradient">Centre</span>
+              </h2>
 
-                  {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg bg-[#1A335E]/5 flex items-center justify-center mb-3 group-hover:bg-[#1A335E] transition-colors duration-300">
-                    <Icon size={18} className="text-[#1A335E] group-hover:text-[#D6B97B] transition-colors duration-300" />
-                  </div>
+              <p className="text-gray-600 text-sm md:text-base leading-relaxed">
+                Make confident property decisions with practical guides, legal document breakdowns, emerging zone updates, and advisory insights prepared by our legal and real estate specialists.
+              </p>
 
-                  {/* Category badge */}
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#D6B97B]/15 text-[#B8922E] text-[10px] font-bold uppercase tracking-wider mb-2">
-                    {article.category}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="text-[#1A335E] font-serif font-bold text-sm md:text-base leading-snug mb-2 group-hover:text-[#D6B97B] transition-colors duration-300">
-                    {article.title}
-                  </h3>
-
-                  {/* Excerpt */}
-                  <p className="text-gray-500 text-xs leading-relaxed mb-4">
-                    {article.excerpt}
-                  </p>
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                  <span className="text-gray-400 text-[10px] uppercase tracking-wider font-semibold">
-                    {article.readTime}
-                  </span>
-                  <ArrowUpRight size={14} className="text-gray-400 group-hover:text-[#D6B97B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </div>
+              {/* Topic chips */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
+                {topics.map((t, idx) => {
+                  const Icon = t.icon;
+                  return (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-gray-200/80 text-gray-700 text-xs font-medium shadow-2xs"
+                    >
+                      <Icon size={13} className="text-[#D6B97B]" />
+                      {t.label}
+                    </span>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
+            </div>
 
-        {/* CTA */}
-        <div className="mt-8 text-center">
-          <Link
-            to="/blogs"
-            id="knowledge-centre-explore-btn"
-            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#1A335E] text-[#1A335E] hover:bg-[#1A335E] hover:text-white rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:scale-[1.02] no-underline"
-          >
-            Explore All Articles
-            <ArrowUpRight size={15} />
-          </Link>
+            {/* Right Column: CTA */}
+            <div className="shrink-0 knowledge-fade-in">
+              <Link
+                to="/blogs"
+                id="knowledge-centre-explore-btn"
+                className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#1A335E] hover:bg-[#D6B97B] text-white hover:text-[#0D1B2A] rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-all duration-300 shadow-md hover:scale-105 no-underline group"
+              >
+                <span>Explore All Articles & Guides</span>
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
