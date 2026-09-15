@@ -13,6 +13,10 @@
   --color-text-secondary: #444444;
   --color-text-muted: #888888;
   --color-brand-blue: #1A335E;
+  --color-brand-navy: #0D1B2A;
+  --color-brand-emerald: #0D5C3A;
+  --color-brand-emerald-light: #ECFDF5;
+  --color-brand-emerald-accent: #10B981;
 
   --font-serif: "Playfair Display", serif;
   --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
@@ -63,8 +67,16 @@ body {
   -webkit-text-stroke: 0.5px rgba(198,165,106,0.3);
 }
 
+.emerald-gradient {
+  background: linear-gradient(135deg, #0D5C3A 0%, #10B981 50%, #34D399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 900;
+}
+
 .luxury-gradient-bg {
-  background: linear-gradient(135deg, #1A335E 0%, #112244 50%, #D6B97B 100%);
+  background: linear-gradient(135deg, #0D1B2A 0%, #1A335E 50%, #0D5C3A 100%);
   color: white;
 }
 

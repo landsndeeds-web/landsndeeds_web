@@ -89,7 +89,7 @@ const Hero = () => {
   const currentSlide = slides[currentImageIndex];
 
   return (
-    <section ref={containerRef} className="relative min-h-[85vh] lg:min-h-[90vh] w-full overflow-hidden flex items-center bg-white pt-24 pb-10">
+    <section ref={containerRef} className="relative min-h-[75vh] lg:min-h-[82vh] w-full overflow-hidden flex items-center bg-[#0D1B2A] pt-20 pb-8">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, i) => (
@@ -100,20 +100,21 @@ const Hero = () => {
           />
         ))}
         {/* Brand Gradient Overlays */}
-        <div className="absolute inset-0 luxury-gradient-bg opacity-70 mix-blend-multiply z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1A335E]/80 via-transparent to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/95 via-[#1A335E]/80 to-[#0D5C3A]/40 z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A] via-transparent to-transparent z-[1]" />
       </div>
 
       <div ref={textContainerRef} className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl">
-          <div className="overflow-hidden mb-3">
-            <span className="reveal-tagline block text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs md:text-sm">
+        <div className="max-w-3xl space-y-4">
+          <div className="overflow-hidden">
+            <div className="reveal-tagline inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D6B97B]/20 border border-[#D6B97B]/40 text-[#D6B97B] font-bold tracking-[0.2em] uppercase text-xs">
+              <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
               {currentSlide.tagline}
-            </span>
+            </div>
           </div>
 
-          <div className="overflow-hidden mb-4">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold !text-white leading-tight">
+          <div className="overflow-hidden">
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold !text-white leading-tight">
               {currentSlide.headline.split(' ').map((word, i) => (
                 <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
                   <span className={`reveal-word inline-block ${word === 'Deal' || word === 'Confidence' ? 'gold-gradient' : ''}`}>
@@ -124,24 +125,24 @@ const Hero = () => {
             </h1>
           </div>
 
-          <div className="overflow-hidden mb-8">
-            <p className="reveal-subtext text-base md:text-lg lg:text-xl text-white/90 max-w-2xl leading-relaxed font-normal">
+          <div className="overflow-hidden">
+            <p className="reveal-subtext text-sm md:text-base lg:text-lg text-white/90 max-w-2xl leading-relaxed font-normal">
               {currentSlide.subtext}
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-3 pt-2">
             <a
               href="/properties"
               id="hero-explore-properties-btn"
-              className="reveal-btn px-8 py-3.5 bg-gradient-to-r from-[#D6B97B] to-[#C6A56A] hover:from-[#E8C97A] hover:to-[#D6B97B] text-[#0D1B2A] rounded-full font-bold hover:bg-white transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#D6B97B]/20"
+              className="reveal-btn px-7 py-3 bg-gradient-to-r from-[#D6B97B] to-[#C6A56A] hover:from-[#E8C97A] hover:to-[#D6B97B] text-[#0D1B2A] rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#D6B97B]/25"
             >
               🔍 Explore Properties
             </a>
             <a
               href="/contact"
               id="hero-post-property-btn"
-              className="reveal-btn px-8 py-3.5 border border-white/60 text-white rounded-full font-bold hover:bg-white/20 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
+              className="reveal-btn px-7 py-3 border border-white/40 text-white hover:border-[#10B981] hover:text-[#10B981] rounded-full font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
             >
               📋 Post Property
             </a>
