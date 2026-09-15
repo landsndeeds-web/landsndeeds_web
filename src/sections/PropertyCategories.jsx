@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Building2, Home, Leaf, BarChart3, Warehouse, Users, TrendingUp, ArrowUpRight } from 'lucide-react';
+import { Building2, Home, Trees, Warehouse, KeyRound, TrendingUp, ArrowUpRight } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -11,55 +11,67 @@ const categories = [
     id: 1,
     icon: Home,
     title: 'Residential Properties',
-    description: 'Apartments, Villas & Plots',
-    tags: ['Apartments', 'Villas', 'Plots & Land'],
+    description: 'Apartments, Individual Villas & Gated Plots',
+    tags: ['Apartments', 'Villas', 'Plots'],
     color: '#1A335E',
     lightColor: '#EEF2FF',
+    accentBorder: 'hover:border-[#1A335E]',
+    badgeBg: 'bg-blue-50 text-[#1A335E]',
   },
   {
     id: 2,
     icon: Building2,
     title: 'Commercial Spaces',
-    description: 'Shops, Offices & Showrooms',
-    tags: ['Retail Shops', 'Office Space', 'Showrooms'],
-    color: '#D6B97B',
+    description: 'Retail Shops, Corporate Offices & Showrooms',
+    tags: ['Shops', 'Office Space', 'Showrooms'],
+    color: '#B8922E',
     lightColor: '#FDF8EE',
+    accentBorder: 'hover:border-[#D6B97B]',
+    badgeBg: 'bg-amber-50 text-[#B8922E]',
   },
   {
     id: 3,
-    icon: Leaf,
+    icon: Trees,
     title: 'Agricultural Land',
-    description: 'Farm & Cultivation Land',
-    tags: ['Farm Land', 'Mango Groves', 'Coconut Groves'],
-    color: '#16a34a',
-    lightColor: '#F0FDF4',
+    description: 'Fertile Farmlands, Coconut & Mango Groves',
+    tags: ['Farm Land', 'Coconut Groves', 'Estates'],
+    color: '#0D5C3A',
+    lightColor: '#ECFDF5',
+    accentBorder: 'hover:border-[#10B981]',
+    badgeBg: 'bg-emerald-50 text-[#0D5C3A]',
   },
   {
     id: 4,
-    icon: Users,
-    title: 'Rental Properties',
-    description: 'Residential & Commercial Rentals',
-    tags: ['Apartments', 'Houses', 'Commercial Units'],
-    color: '#7c3aed',
-    lightColor: '#F5F3FF',
+    icon: KeyRound,
+    title: 'Rental & Lease Assets',
+    description: 'Residential Homes & Commercial Rentals',
+    tags: ['Long-Term Lease', 'Offices', 'Warehouses'],
+    color: '#1A335E',
+    lightColor: '#EEF2FF',
+    accentBorder: 'hover:border-[#1A335E]',
+    badgeBg: 'bg-blue-50 text-[#1A335E]',
   },
   {
     id: 5,
     icon: TrendingUp,
-    title: 'Investment Opportunities',
-    description: 'High-Return Property Investments',
-    tags: ['DTCP Plots', 'Emerging Areas', 'Long-Term Assets'],
-    color: '#dc2626',
-    lightColor: '#FFF1F2',
+    title: 'High-Yield Investments',
+    description: 'DTCP/CMDA Layouts in Rapid Growth Corridors',
+    tags: ['Emerging Corridors', 'DTCP Plots', 'ROI Focus'],
+    color: '#B8922E',
+    lightColor: '#FDF8EE',
+    accentBorder: 'hover:border-[#D6B97B]',
+    badgeBg: 'bg-amber-50 text-[#B8922E]',
   },
   {
     id: 6,
     icon: Warehouse,
-    title: 'Industrial Properties',
-    description: 'Warehouses & Factory Spaces',
-    tags: ['Warehouses', 'SIPCOT Plots', 'Factory Sheds'],
-    color: '#0891b2',
-    lightColor: '#ECFEFF',
+    title: 'Industrial & Warehouses',
+    description: 'SIPCOT Plots, Factory Sheds & Logistics Hubs',
+    tags: ['SIPCOT Lands', 'Factory Sheds', 'Logistics'],
+    color: '#0D5C3A',
+    lightColor: '#ECFDF5',
+    accentBorder: 'hover:border-[#10B981]',
+    badgeBg: 'bg-emerald-50 text-[#0D5C3A]',
   },
 ];
 
@@ -68,8 +80,9 @@ const PropertyCategories = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.category-card',
-        { y: 30, opacity: 0 },
+      gsap.fromTo(
+        '.category-card',
+        { y: 20, opacity: 0 },
         {
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -77,8 +90,8 @@ const PropertyCategories = () => {
           },
           y: 0,
           opacity: 1,
-          duration: 0.6,
-          stagger: 0.08,
+          duration: 0.45,
+          stagger: 0.05,
           ease: 'power2.out',
         }
       );
@@ -87,81 +100,79 @@ const PropertyCategories = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="property-categories" className="py-10 md:py-14 bg-white relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231A335E' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")" }} />
-
+    <section ref={sectionRef} id="property-categories" className="py-5 md:py-7 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-8 md:mb-10 space-y-2">
-          <span className="inline-block px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">
-            Property Types
-          </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
-            Explore Property <span className="gold-gradient">Categories</span>
-          </h2>
-          <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
-            Choose from a wide range of verified properties designed for different needs and budgets.
-          </p>
+        {/* Section Header - Compact */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 mb-4 pb-2 border-b border-gray-100">
+          <div>
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1A335E]/5 text-[#1A335E] font-bold tracking-widest uppercase text-[10px] mb-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#D6B97B]" />
+              Portfolio Overview
+            </span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#1A335E]">
+              Explore Property <span className="gold-gradient">Categories</span>
+            </h2>
+          </div>
+          <Link
+            to="/properties"
+            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1A335E] hover:text-[#D6B97B] transition-colors shrink-0 no-underline group"
+          >
+            <span>View All Categories</span>
+            <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#D6B97B]" />
+          </Link>
         </div>
 
-        {/* Categories Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {/* Categories Grid - Compact Height */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-3.5">
           {categories.map((cat) => {
             const Icon = cat.icon;
             return (
-              <div
+              <Link
                 key={cat.id}
-                className="category-card group relative bg-white rounded-xl border border-gray-200/80 p-6 hover:border-[#D6B97B] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer"
+                to="/properties"
+                className={`category-card group relative bg-slate-50/70 hover:bg-white rounded-xl border border-gray-200/80 p-3.5 sm:p-4 ${cat.accentBorder} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 overflow-hidden block no-underline`}
               >
                 {/* Top accent line */}
-                <div className="absolute top-0 left-0 w-full h-[3px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" style={{ background: `linear-gradient(90deg, transparent, ${cat.color}, transparent)` }} />
-
-                {/* Icon */}
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105"
-                  style={{ backgroundColor: cat.lightColor }}
-                >
-                  <Icon size={22} style={{ color: cat.color }} />
+                  className="absolute top-0 left-0 w-full h-[2.5px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl"
+                  style={{ background: `linear-gradient(90deg, transparent, ${cat.color}, transparent)` }}
+                />
+
+                <div className="flex items-center justify-between mb-2">
+                  {/* Icon */}
+                  <div
+                    className="w-9 h-9 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105 shadow-2xs"
+                    style={{ backgroundColor: cat.lightColor }}
+                  >
+                    <Icon size={17} style={{ color: cat.color }} />
+                  </div>
+
+                  {/* Arrow Indicator */}
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-100 shadow-2xs group-hover:bg-[#1A335E] group-hover:text-white transition-all">
+                    <ArrowUpRight size={11} className="text-gray-400 group-hover:text-[#D6B97B] transition-colors" />
+                  </div>
                 </div>
 
                 {/* Text */}
-                <h3 className="text-[#1A335E] font-serif font-bold text-base md:text-lg mb-1 group-hover:text-[#D6B97B] transition-colors duration-300">
+                <h3 className="text-[#1A335E] font-serif font-bold text-sm sm:text-base mb-0.5 group-hover:text-[#B8922E] transition-colors duration-300">
                   {cat.title}
                 </h3>
-                <p className="text-gray-500 text-xs md:text-sm mb-3.5">{cat.description}</p>
+                <p className="text-gray-500 text-[11px] sm:text-xs mb-2 leading-snug">{cat.description}</p>
 
                 {/* Tags */}
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1 pt-1.5 border-t border-gray-200/50">
                   {cat.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2.5 py-1 rounded-md text-[10px] font-semibold bg-gray-100/80 text-gray-600 border border-gray-200/60"
+                      className={`px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] font-semibold ${cat.badgeBg} border border-transparent`}
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-
-                {/* Arrow indicator */}
-                <div className="absolute top-5 right-5 w-7 h-7 rounded-full bg-gray-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:bg-[#D6B97B]">
-                  <ArrowUpRight size={14} className="text-gray-400 group-hover:text-white transition-colors" />
-                </div>
-              </div>
+              </Link>
             );
           })}
-        </div>
-
-        {/* CTA */}
-        <div className="mt-8 text-center">
-          <Link
-            to="/properties"
-            id="categories-view-all-btn"
-            className="inline-flex items-center gap-2 px-8 py-3 bg-[#1A335E] hover:bg-[#D6B97B] text-white hover:text-[#0F0F0F] rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:scale-[1.02] shadow-md no-underline"
-          >
-            View All Properties
-            <ArrowUpRight size={15} />
-          </Link>
         </div>
       </div>
     </section>
