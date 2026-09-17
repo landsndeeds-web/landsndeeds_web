@@ -2,10 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 
 // Import images for slideshow
-import prop2 from '../assets/property2.webp';
-import prop3 from '../assets/property3.webp';
-import prop6 from '../assets/property6.webp';
-import prop7 from '../assets/property7.webp';
+import homeBanner1 from '../assets/homeBanner1.webp';
+import homeBanner2 from '../assets/homeBanner2.webp';
 
 const Hero = () => {
   const containerRef = useRef(null);
@@ -14,26 +12,14 @@ const Hero = () => {
 
   const slides = [
     {
-      image: prop3,
+      image: homeBanner1,
       tagline: "Verified Properties Across Tamil Nadu",
       headline: "Trusted For Every Deal",
       subtext: "South India's premium real estate firm providing guaranteed due diligence, marketing, and registration under one single roof."
     },
     {
-      image: prop2,
-      tagline: "Expert Property Consultation",
-      headline: "Trusted For Every Deal",
-      subtext: "South India's premium real estate firm providing guaranteed due diligence, marketing, and registration under one single roof."
-    },
-    {
-      image: prop6,
+      image: homeBanner2,
       tagline: "Buy · Sell · Lease · Invest",
-      headline: "Trusted For Every Deal",
-      subtext: "South India's premium real estate firm providing guaranteed due diligence, marketing, and registration under one single roof."
-    },
-    {
-      image: prop7,
-      tagline: "Transparent Property Platform",
       headline: "Trusted For Every Deal",
       subtext: "South India's premium real estate firm providing guaranteed due diligence, marketing, and registration under one single roof."
     }
@@ -89,7 +75,7 @@ const Hero = () => {
   const currentSlide = slides[currentImageIndex];
 
   return (
-    <section ref={containerRef} className="relative min-h-[75vh] lg:min-h-[82vh] w-full overflow-hidden flex items-center bg-[#0D1B2A] pt-20 pb-8">
+    <section ref={containerRef} className="relative min-h-screen w-full overflow-hidden flex items-center bg-[#0D1B2A] pt-24 pb-12">
       {/* Background Slideshow */}
       <div className="absolute inset-0 z-0">
         {slides.map((slide, i) => (
@@ -99,13 +85,13 @@ const Hero = () => {
             style={{ backgroundImage: `url(${slide.image})` }}
           />
         ))}
-        {/* Brand Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/95 via-[#1A335E]/80 to-[#0D5C3A]/40 z-[1]" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A] via-transparent to-transparent z-[1]" />
+        {/* Balanced overlay: keeps the banner images clear and visible while ensuring sharp text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D1B2A]/85 via-[#0D1B2A]/45 to-transparent z-[1]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/40 via-transparent to-black/15 z-[1]" />
       </div>
 
       <div ref={textContainerRef} className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl space-y-4">
+        <div className="max-w-3xl space-y-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
           <div className="overflow-hidden">
             <div className="reveal-tagline inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D6B97B]/20 border border-[#D6B97B]/40 text-[#D6B97B] font-bold tracking-[0.2em] uppercase text-xs">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
