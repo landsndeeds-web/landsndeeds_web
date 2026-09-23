@@ -120,17 +120,17 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 pt-2">
             <a
               href="/properties"
-              id="hero-explore-properties-btn"
+              id="hero-find-verified-property-btn"
               className="reveal-btn px-7 py-3 bg-gradient-to-r from-[#D6B97B] to-[#C6A56A] hover:from-[#E8C97A] hover:to-[#D6B97B] text-[#0D1B2A] rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#D6B97B]/25"
             >
-              🔍 Explore Properties
+              🔍 Find Verified Property
             </a>
             <a
-              href="/contact"
-              id="hero-post-property-btn"
+              href="/services"
+              id="hero-verify-existing-property-btn"
               className="reveal-btn px-7 py-3 border border-white/40 text-white hover:border-[#10B981] hover:text-[#10B981] rounded-full font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
             >
-              📋 Post Property
+              🛡️ Verify Existing Property
             </a>
           </div>
         </div>
