@@ -4,11 +4,11 @@ import logo from '../assets/Logo_lnd.webp';
 
 const quickLinks = [
   { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
   { name: 'Properties', href: '/properties' },
-  { name: 'Our Services', href: '/services' },
-  { name: 'Knowledge Centre', href: '/blogs' },
-  { name: 'Contact Us', href: '/contact' },
+  { name: 'Blog', href: '/blogs' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 const Footer = () => {
