@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import Hero from '../sections/Hero';
-import HomeSearchSection from '../sections/HomeSearchSection';
 import PropertyCategories from '../sections/PropertyCategories';
 import WhyChooseUs from '../sections/WhyChooseUs';
 import PropertyServices from '../sections/PropertyServices';
 import KnowledgeCentre from '../sections/KnowledgeCentre';
 // import Testimonials from '../sections/Testimonials';
-import HomeFinalCTA from '../sections/HomeFinalCTA';
 
 const Home = () => {
   // SEO Meta Tags
@@ -59,9 +57,6 @@ const Home = () => {
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Search Section */}
-      <HomeSearchSection />
-
       {/* 3. Property Categories */}
       <PropertyCategories />
 
@@ -77,8 +72,6 @@ const Home = () => {
       {/* 7. Testimonials (Hidden) */}
       {/* <Testimonials /> */}
 
-      {/* 8. Final CTA */}
-      <HomeFinalCTA />
     </main>
   );
 };
