@@ -19,9 +19,9 @@ const keyServices = [
     icon: FileCheck,
     title: 'Registration & Deeds',
     description: 'End-to-end guidance with sale deed drafting, stamp duty valuation, and Sub-Registrar office processing.',
-    color: '#B8922E',
-    bg: '#FDF8EE',
-    border: 'hover:border-[#D6B97B]',
+    color: '#1d3557',
+    bg: '#f8f9fa',
+    border: 'hover:border-[#1d3557]',
   },
   {
     icon: Compass,
@@ -35,9 +35,9 @@ const keyServices = [
     icon: Users,
     title: 'Strategic Consultation',
     description: 'Tailored property advisory for buyers, sellers, and investors backed by decades of Tamil Nadu market expertise.',
-    color: '#1A335E',
+    color: '#1d3557',
     bg: '#EEF2FF',
-    border: 'hover:border-[#1A335E]',
+    border: 'hover:border-[#1d3557]',
   },
 ];
 
@@ -72,21 +72,21 @@ const PropertyServices = () => {
         {/* Section Header - Compact */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 mb-6 md:mb-8 pb-3 border-b border-gray-100">
           <div>
-            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#1A335E]/5 text-[#1A335E] font-bold tracking-widest uppercase text-[11px] mb-1.5">
-              <Sparkles size={11} className="text-[#D6B97B]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#1d3557]/10 text-[#1d3557] font-bold tracking-widest uppercase text-[11px] mb-1.5">
+              <Sparkles size={11} className="text-[#1d3557]" />
               Professional Real Estate Services
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1A335E]">
-              End-to-End Property <span className="gold-gradient">Solutions</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1d3557]">
+              End-to-End Property Solutions
             </h2>
           </div>
           <Link
             to="/services"
             id="home-explore-services-btn"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1A335E] hover:bg-[#D6B97B] text-white hover:text-[#0D1B2A] rounded-full font-bold uppercase tracking-widest text-[11px] transition-all duration-300 shadow-sm hover:scale-105 no-underline group shrink-0"
+            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full font-bold uppercase tracking-widest text-[11px] transition-all duration-300 shadow-md hover:scale-105 no-underline group shrink-0"
           >
             <span>Explore All Services</span>
-            <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1 text-white" />
           </Link>
         </div>
 
@@ -98,7 +98,7 @@ const PropertyServices = () => {
               <Link
                 key={i}
                 to="/services"
-                className={`service-item group bg-slate-50/70 hover:bg-white rounded-2xl p-5 border border-gray-200/80 shadow-2xs ${svc.border} hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 flex flex-col justify-between no-underline`}
+                className={`service-item group bg-[#f8f9fa] hover:bg-white rounded-2xl p-5 border border-gray-200/80 shadow-2xs ${svc.border} hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 flex flex-col justify-between no-underline`}
               >
                 <div>
                   <div
@@ -107,7 +107,7 @@ const PropertyServices = () => {
                   >
                     <Icon size={19} style={{ color: svc.color }} />
                   </div>
-                  <h3 className="text-[#1A335E] font-serif font-bold text-base mb-1.5 group-hover:text-[#B8922E] transition-colors duration-300">
+                  <h3 className="text-[#1d3557] font-serif font-bold text-base mb-1.5 transition-colors duration-300">
                     {svc.title}
                   </h3>
                   <p className="text-gray-500 text-xs leading-relaxed">
@@ -115,7 +115,7 @@ const PropertyServices = () => {
                   </p>
                 </div>
 
-                <div className="pt-3 mt-3 border-t border-gray-200/50 flex items-center gap-1 text-[11px] font-bold text-[#1A335E] group-hover:text-[#D6B97B] transition-colors">
+                <div className="pt-3 mt-3 border-t border-gray-200/50 flex items-center gap-1 text-[11px] font-bold text-[#1d3557] group-hover:text-[#c5a059] transition-colors">
                   <span>Learn more</span>
                   <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>

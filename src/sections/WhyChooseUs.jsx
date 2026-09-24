@@ -10,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const advantages = [
   { text: '100% Verified & Title-Clear Listings', iconColor: 'text-[#10B981]', border: 'hover:border-[#10B981]/50' },
-  { text: 'In-Depth Tamil Nadu Real Estate Expertise', iconColor: 'text-[#D6B97B]', border: 'hover:border-[#D6B97B]/50' },
+  { text: 'In-Depth Tamil Nadu Real Estate Expertise', iconColor: 'text-[#1d3557]', border: 'hover:border-[#1d3557]/50' },
   { text: 'End-to-End Legal & Registration Support', iconColor: 'text-[#10B981]', border: 'hover:border-[#10B981]/50' },
-  { text: 'Transparent Advisory & Zero Hidden Costs', iconColor: 'text-[#D6B97B]', border: 'hover:border-[#D6B97B]/50' },
+  { text: 'Transparent Advisory & Zero Hidden Costs', iconColor: 'text-[#1d3557]', border: 'hover:border-[#1d3557]/50' },
 ];
 
 const WhyChooseUs = () => {
@@ -40,10 +40,9 @@ const WhyChooseUs = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="why-choose-us" className="py-8 md:py-10 bg-slate-50 relative overflow-hidden">
+    <section ref={sectionRef} id="why-choose-us" className="py-8 md:py-10 bg-[#f8f9fa] relative overflow-hidden">
       {/* Decorative subtle background glow */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#D6B97B]/5 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-[#10B981]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-[#1d3557]/5 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
@@ -60,12 +59,12 @@ const WhyChooseUs = () => {
             {/* Floating Trust Badge */}
             <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-lg border border-white/60 flex items-center justify-between">
               <div>
-                <p className="text-[#1A335E] font-serif font-bold text-xs">
+                <p className="text-[#1d3557] font-serif font-bold text-xs">
                   Trusted Across Tamil Nadu
                 </p>
                 <div className="flex items-center gap-1 mt-0.5">
                   {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} size={10} className="text-[#D6B97B] fill-[#D6B97B]" />
+                    <Star key={i} size={10} className="text-[#c5a059] fill-[#c5a059]" />
                   ))}
                   <span className="text-gray-500 text-[10px] font-semibold ml-1">Verified Client Ratings</span>
                 </div>
@@ -78,13 +77,13 @@ const WhyChooseUs = () => {
 
           {/* Right Column: Simplified Content */}
           <div className="lg:col-span-7 space-y-4 advantage-fade-in">
-            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#D6B97B]/15 text-[#B8922E] font-bold tracking-widest uppercase text-[11px]">
-              <ShieldCheck size={12} className="text-[#0D5C3A]" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#1d3557]/10 text-[#1d3557] font-bold tracking-widest uppercase text-[11px]">
+              <ShieldCheck size={12} className="text-[#1d3557]" />
               The Lands N Deeds Advantage
             </span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1A335E] leading-tight">
-              Why Buyers, Sellers & Investors Choose <span className="gold-gradient">Lands N Deeds</span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1d3557] leading-tight">
+              Why Buyers, Sellers & Investors Choose Lands N Deeds
             </h2>
 
             <p className="text-gray-600 leading-relaxed text-xs sm:text-sm font-normal">
@@ -99,7 +98,7 @@ const WhyChooseUs = () => {
                   className={`flex items-center gap-2.5 p-2.5 rounded-xl bg-white border border-gray-200/80 shadow-2xs transition-colors ${item.border}`}
                 >
                   <CheckCircle2 size={16} className={`${item.iconColor} shrink-0`} />
-                  <span className="text-xs font-semibold text-[#1A335E]">
+                  <span className="text-xs font-semibold text-[#1d3557]">
                     {item.text}
                   </span>
                 </div>
@@ -111,10 +110,10 @@ const WhyChooseUs = () => {
               <Link
                 to="/about"
                 id="why-choose-us-learn-more"
-                className="inline-flex items-center gap-2 text-xs font-bold text-[#1A335E] hover:text-[#B8922E] transition-colors uppercase tracking-wider group no-underline"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md hover:scale-105 group no-underline"
               >
                 <span>Learn more about our advisory approach</span>
-                <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1 text-[#D6B97B]" />
+                <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1 text-white" />
               </Link>
             </div>
           </div>

@@ -13,10 +13,10 @@ const categories = [
     title: 'Residential Properties',
     description: 'Apartments, Individual Villas & Gated Plots',
     tags: ['Apartments', 'Villas', 'Plots'],
-    color: '#1A335E',
+    color: '#1d3557',
     lightColor: '#EEF2FF',
-    accentBorder: 'hover:border-[#1A335E]',
-    badgeBg: 'bg-blue-50 text-[#1A335E]',
+    accentBorder: 'hover:border-[#1d3557]',
+    badgeBg: 'bg-blue-50 text-[#1d3557]',
   },
   {
     id: 2,
@@ -24,10 +24,10 @@ const categories = [
     title: 'Commercial Spaces',
     description: 'Retail Shops, Corporate Offices & Showrooms',
     tags: ['Shops', 'Office Space', 'Showrooms'],
-    color: '#B8922E',
-    lightColor: '#FDF8EE',
-    accentBorder: 'hover:border-[#D6B97B]',
-    badgeBg: 'bg-amber-50 text-[#B8922E]',
+    color: '#1d3557',
+    lightColor: '#f8f9fa',
+    accentBorder: 'hover:border-[#1d3557]',
+    badgeBg: 'bg-slate-100 text-[#1d3557]',
   },
   {
     id: 3,
@@ -46,10 +46,10 @@ const categories = [
     title: 'Rental & Lease Assets',
     description: 'Residential Homes & Commercial Rentals',
     tags: ['Long-Term Lease', 'Offices', 'Warehouses'],
-    color: '#1A335E',
+    color: '#1d3557',
     lightColor: '#EEF2FF',
-    accentBorder: 'hover:border-[#1A335E]',
-    badgeBg: 'bg-blue-50 text-[#1A335E]',
+    accentBorder: 'hover:border-[#1d3557]',
+    badgeBg: 'bg-blue-50 text-[#1d3557]',
   },
   {
     id: 5,
@@ -57,10 +57,10 @@ const categories = [
     title: 'High-Yield Investments',
     description: 'DTCP/CMDA Layouts in Rapid Growth Corridors',
     tags: ['Emerging Corridors', 'DTCP Plots', 'ROI Focus'],
-    color: '#B8922E',
-    lightColor: '#FDF8EE',
-    accentBorder: 'hover:border-[#D6B97B]',
-    badgeBg: 'bg-amber-50 text-[#B8922E]',
+    color: '#1d3557',
+    lightColor: '#f8f9fa',
+    accentBorder: 'hover:border-[#1d3557]',
+    badgeBg: 'bg-slate-100 text-[#1d3557]',
   },
   {
     id: 6,
@@ -105,20 +105,20 @@ const PropertyCategories = () => {
         {/* Section Header - Compact */}
         <div className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-2 mb-4 pb-2 border-b border-gray-100">
           <div>
-            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1A335E]/5 text-[#1A335E] font-bold tracking-widest uppercase text-[10px] mb-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#D6B97B]" />
+            <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#1d3557]/10 text-[#1d3557] font-bold tracking-widest uppercase text-[10px] mb-1">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#1d3557]" />
               Portfolio Overview
             </span>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#1A335E]">
-              Explore Property <span className="gold-gradient">Categories</span>
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#1d3557]">
+              Explore Property Categories
             </h2>
           </div>
           <Link
             to="/properties"
-            className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#1A335E] hover:text-[#D6B97B] transition-colors shrink-0 no-underline group"
+            className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-lg text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-sm hover:scale-105 shrink-0 no-underline group"
           >
             <span>View All Categories</span>
-            <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-[#D6B97B]" />
+            <ArrowUpRight size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform text-white" />
           </Link>
         </div>
 
@@ -130,7 +130,7 @@ const PropertyCategories = () => {
               <Link
                 key={cat.id}
                 to="/properties"
-                className={`category-card group relative bg-slate-50/70 hover:bg-white rounded-xl border border-gray-200/80 p-3.5 sm:p-4 ${cat.accentBorder} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 overflow-hidden block no-underline`}
+                className={`category-card group relative bg-[#f8f9fa] hover:bg-white rounded-xl border border-gray-200/80 p-3.5 sm:p-4 ${cat.accentBorder} hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 overflow-hidden block no-underline`}
               >
                 {/* Top accent line */}
                 <div
@@ -148,13 +148,13 @@ const PropertyCategories = () => {
                   </div>
 
                   {/* Arrow Indicator */}
-                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-100 shadow-2xs group-hover:bg-[#1A335E] group-hover:text-white transition-all">
-                    <ArrowUpRight size={11} className="text-gray-400 group-hover:text-[#D6B97B] transition-colors" />
+                  <div className="w-6 h-6 rounded-full bg-white flex items-center justify-center border border-gray-100 shadow-2xs group-hover:bg-[#1d3557] group-hover:text-white transition-all">
+                    <ArrowUpRight size={11} className="text-gray-400 group-hover:text-white transition-colors" />
                   </div>
                 </div>
 
                 {/* Text */}
-                <h3 className="text-[#1A335E] font-serif font-bold text-sm sm:text-base mb-0.5 group-hover:text-[#B8922E] transition-colors duration-300">
+                <h3 className="text-[#1d3557] font-serif font-bold text-sm sm:text-base mb-0.5 transition-colors duration-300">
                   {cat.title}
                 </h3>
                 <p className="text-gray-500 text-[11px] sm:text-xs mb-2 leading-snug">{cat.description}</p>

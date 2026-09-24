@@ -53,7 +53,7 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <main className="bg-white">
       {/* 1. Hero Section */}
       <Hero />
 
