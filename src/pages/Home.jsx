@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import Hero from '../sections/Hero';
-import PropertyCategories from '../sections/PropertyCategories';
-import WhyChooseUs from '../sections/WhyChooseUs';
-import PropertyServices from '../sections/PropertyServices';
+import HomeOfficeIntro from '../sections/HomeOfficeIntro';
+import HomeShieldSection from '../sections/HomeShieldSection';
+import HomeTrackRecord from '../sections/HomeTrackRecord';
+import HomeLeadership from '../sections/HomeLeadership';
+
 import KnowledgeCentre from '../sections/KnowledgeCentre';
 // import Testimonials from '../sections/Testimonials';
 
@@ -57,14 +59,19 @@ const Home = () => {
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 3. Property Categories */}
-      <PropertyCategories />
+      {/* 2. Office & About Section */}
+      <HomeOfficeIntro />
 
-      {/* 4. Why Choose Us */}
-      <WhyChooseUs />
+      {/* 3. The 360° Shield */}
+      <HomeShieldSection />
 
-      {/* 5. Property Services */}
-      <PropertyServices />
+      {/* 4. Track Record Showcase */}
+      <HomeTrackRecord />
+
+      {/* 5. Leadership & Trust */}
+      <HomeLeadership />
+
+
 
       {/* 6. Knowledge Centre */}
       <KnowledgeCentre />
