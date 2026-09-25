@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/Logo_lnd.webp';
 
@@ -57,11 +57,30 @@ const Navbar = () => {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
-            <Link to="/contact" className="px-5 py-2.5 bg-[#1A335E] text-white rounded-lg font-bold text-[11px] hover:bg-[#D6B97B] transition-all duration-300 uppercase tracking-widest">
-              Get in touch
+          <div className="hidden md:flex items-center gap-3">
+            {/* Get in Touch — premium gold pill */}
+            <Link
+              to="/contact"
+              id="navbar-get-in-touch-btn"
+              className="group relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-widest text-white overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_rgba(197,160,89,0.45)] shadow-[0_3px_12px_rgba(197,160,89,0.3)]"
+              style={{ background: 'linear-gradient(135deg,#c5a059 0%,#d4b475 50%,#c5a059 100%)', backgroundSize: '200% 100%' }}
+            >
+              {/* Shimmer overlay */}
+              <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none" />
+              <Phone size={12} className="shrink-0" />
+              <span>Get in Touch</span>
+              <ArrowRight size={11} className="transition-transform duration-300 group-hover:translate-x-0.5" />
             </Link>
-            <a href="https://soft.landsndeeds.com/login" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 bg-[#D6B97B] text-white rounded-lg font-bold text-[11px] hover:bg-[#1A335E] transition-all duration-300 uppercase tracking-widest">
+
+            {/* Login — crisp navy outlined pill */}
+            <a
+              href="https://soft.landsndeeds.com/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              id="navbar-login-btn"
+              className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-full font-bold text-[11px] uppercase tracking-widest transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1d3557] hover:text-white hover:shadow-md"
+              style={{ color: '#1d3557', border: '1.5px solid #1d3557', background: 'transparent' }}
+            >
               Login
             </a>
           </div>
@@ -110,9 +129,12 @@ const Navbar = () => {
         <Link
           to="/contact"
           onClick={() => setIsMobileMenuOpen(false)}
-          className="mt-4 px-10 py-3 bg-[#D6B97B] text-[#0F0F0F] rounded-full font-bold text-base shadow-lg shadow-black/10 uppercase tracking-widest text-center"
+          className="group relative mt-4 inline-flex items-center justify-center gap-2 px-10 py-3.5 rounded-full font-bold text-base text-white uppercase tracking-widest overflow-hidden shadow-[0_4px_16px_rgba(197,160,89,0.4)] hover:shadow-[0_8px_24px_rgba(197,160,89,0.5)] transition-all duration-300"
+          style={{ background: 'linear-gradient(135deg,#c5a059 0%,#d4b475 50%,#c5a059 100%)' }}
         >
-          Get in touch
+          <span className="absolute inset-0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent skew-x-12 pointer-events-none" />
+          <Phone size={15} />
+          <span>Get in Touch</span>
         </Link>
       </div>
     </>
