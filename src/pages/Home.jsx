@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 import Hero from '../sections/Hero';
-import HomeSearchSection from '../sections/HomeSearchSection';
-import PropertyCategories from '../sections/PropertyCategories';
-import WhyChooseUs from '../sections/WhyChooseUs';
-import PropertyServices from '../sections/PropertyServices';
+import HomeOfficeIntro from '../sections/HomeOfficeIntro';
+import HomeShieldSection from '../sections/HomeShieldSection';
+import HomeTrackRecord from '../sections/HomeTrackRecord';
+import HomeLeadership from '../sections/HomeLeadership';
+
 import KnowledgeCentre from '../sections/KnowledgeCentre';
 // import Testimonials from '../sections/Testimonials';
-import HomeFinalCTA from '../sections/HomeFinalCTA';
 
 const Home = () => {
   // SEO Meta Tags
@@ -55,21 +55,23 @@ const Home = () => {
   }, []);
 
   return (
-    <main>
+    <main className="bg-white">
       {/* 1. Hero Section */}
       <Hero />
 
-      {/* 2. Search Section */}
-      <HomeSearchSection />
+      {/* 2. Office & About Section */}
+      <HomeOfficeIntro />
 
-      {/* 3. Property Categories */}
-      <PropertyCategories />
+      {/* 3. The 360° Shield */}
+      <HomeShieldSection />
 
-      {/* 4. Why Choose Us */}
-      <WhyChooseUs />
+      {/* 4. Track Record Showcase */}
+      <HomeTrackRecord />
 
-      {/* 5. Property Services */}
-      <PropertyServices />
+      {/* 5. Leadership & Trust */}
+      <HomeLeadership />
+
+
 
       {/* 6. Knowledge Centre */}
       <KnowledgeCentre />
@@ -77,8 +79,6 @@ const Home = () => {
       {/* 7. Testimonials (Hidden) */}
       {/* <Testimonials /> */}
 
-      {/* 8. Final CTA */}
-      <HomeFinalCTA />
     </main>
   );
 };

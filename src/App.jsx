@@ -8,11 +8,10 @@ import ChunkErrorBoundary from './components/ChunkErrorBoundary';
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Services = lazy(() => import('./pages/Services'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Gallery = lazy(() => import('./pages/Gallery'));
 const Properties = lazy(() => import('./pages/Properties'));
 const Blogs = lazy(() => import('./pages/Blogs'));
 const BlogDetails = lazy(() => import('./pages/BlogDetails'));
+const Contact = lazy(() => import('./pages/Contact'));
 const StudioPage = lazy(() => import('./pages/StudioPage'));
 
 const PageLoader = () => (
@@ -36,11 +35,10 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/services" element={<Services />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/gallery" element={<Gallery />} />
               <Route path="/properties" element={<Properties />} />
               <Route path="/blogs" element={<Blogs />} />
               <Route path="/blogs/:slug" element={<BlogDetails />} />
+              <Route path="/contact" element={<Contact />} />
             </Route>
           </Routes>
         </Suspense>

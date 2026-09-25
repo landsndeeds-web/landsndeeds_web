@@ -93,7 +93,7 @@ const Hero = () => {
       <div ref={textContainerRef} className="container mx-auto px-6 relative z-10">
         <div className="max-w-3xl space-y-4 drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">
           <div className="overflow-hidden">
-            <div className="reveal-tagline inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#D6B97B]/20 border border-[#D6B97B]/40 text-[#D6B97B] font-bold tracking-[0.2em] uppercase text-xs">
+            <div className="reveal-tagline inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/15 border border-white/25 text-white font-bold tracking-[0.2em] uppercase text-xs">
               <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
               {currentSlide.tagline}
             </div>
@@ -103,7 +103,7 @@ const Hero = () => {
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold !text-white leading-tight">
               {currentSlide.headline.split(' ').map((word, i) => (
                 <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
-                  <span className={`reveal-word inline-block ${word === 'Deal' || word === 'Confidence' ? 'gold-gradient' : ''}`}>
+                  <span className="reveal-word inline-block">
                     {word}
                   </span>
                 </span>
@@ -120,17 +120,17 @@ const Hero = () => {
           <div className="flex flex-wrap gap-3 pt-2">
             <a
               href="/properties"
-              id="hero-explore-properties-btn"
-              className="reveal-btn px-7 py-3 bg-gradient-to-r from-[#D6B97B] to-[#C6A56A] hover:from-[#E8C97A] hover:to-[#D6B97B] text-[#0D1B2A] rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#D6B97B]/25"
+              id="hero-find-verified-property-btn"
+              className="reveal-btn px-7 py-3 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#c5a059]/25"
             >
-              🔍 Explore Properties
+              🔍 Find Verified Property
             </a>
             <a
-              href="/contact"
-              id="hero-post-property-btn"
-              className="reveal-btn px-7 py-3 border border-white/40 text-white hover:border-[#10B981] hover:text-[#10B981] rounded-full font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
+              href="/services"
+              id="hero-verify-existing-property-btn"
+              className="reveal-btn px-7 py-3 border border-white/40 text-white hover:border-[#c5a059] hover:text-[#c5a059] rounded-full font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
             >
-              📋 Post Property
+              🛡️ Verify Existing Property
             </a>
           </div>
         </div>
@@ -143,7 +143,7 @@ const Hero = () => {
             key={i}
             onClick={() => setCurrentImageIndex(i)}
             aria-label={`Go to slide ${i + 1}`}
-            className={`h-1 rounded-full transition-all duration-500 cursor-pointer border-0 p-0 ${i === currentImageIndex ? 'w-8 bg-[#D6B97B]' : 'w-2 bg-white/40'}`}
+            className={`h-1 rounded-full transition-all duration-500 cursor-pointer border-0 p-0 ${i === currentImageIndex ? 'w-8 bg-[#c5a059]' : 'w-2 bg-white/40'}`}
           />
         ))}
       </div>
