@@ -38,18 +38,17 @@ const leaders = [
 
 const HomeLeadership = () => {
   return (
-    <section id="leadership-trust" className="py-8 md:py-10 bg-[#fafbfc] relative overflow-hidden">
-      {/* Decorative blurred accents */}
-      <div className="absolute top-0 left-0 -ml-20 -mt-20 w-64 h-64 rounded-full bg-[#1d3557]/5 blur-[80px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 -mr-20 -mb-20 w-64 h-64 rounded-full bg-[#c5a059]/10 blur-[80px] pointer-events-none" />
+    <section id="leadership-trust" className="py-8 md:py-10 relative overflow-hidden" style={{ background: 'linear-gradient(180deg,#fdf6e8 0%,#fef9f2 100%)', borderTop: '4px solid #c5a059' }}>
+      {/* Decorative warm accents */}
+      <div className="absolute inset-0 pointer-events-none opacity-40" style={{ backgroundImage: 'radial-gradient(circle at 85% 15%, rgba(197,160,89,0.08) 0%, transparent 50%), radial-gradient(circle at 15% 85%, rgba(29,53,87,0.05) 0%, transparent 50%)' }} />
 
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-gray-200/60">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4" style={{ borderBottom: '1px solid rgba(197,160,89,0.25)' }}>
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1d3557]/5 text-[#1d3557] font-bold tracking-widest uppercase text-[10px] ring-1 ring-[#1d3557]/10 mb-2.5">
-              <Award size={12} className="text-[#c5a059]" />
+            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full font-bold tracking-widest uppercase text-[10px] mb-2.5" style={{ background: 'rgba(197,160,89,0.12)', color: '#b08a40', border: '1px solid rgba(197,160,89,0.3)' }}>
+              <Award size={12} style={{ color: '#c5a059' }} />
               Leadership & Trust
             </span>
             <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif font-bold text-[#1d3557] leading-[1.2]">

@@ -38,19 +38,20 @@ const KnowledgeCentre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="knowledge-centre" className="py-8 md:py-10 bg-[#f8f9fa] relative overflow-hidden">
+    <section ref={sectionRef} id="knowledge-centre" className="py-8 md:py-10 relative overflow-hidden" style={{ background: 'linear-gradient(160deg,#fdf9f4 0%,#fafbfc 100%)' }}>
       {/* Decorative background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#1d3557]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(197,160,89,0.08) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(29,53,87,0.04) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="bg-white border border-gray-200/80 rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-sm relative overflow-hidden">
-          
+        <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-sm relative overflow-hidden" style={{ border: '1px solid rgba(197,160,89,0.2)' }}>
+
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
-            
+
             {/* Left Column */}
             <div className="space-y-3 text-center lg:text-left max-w-2xl knowledge-fade-in">
-              <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full bg-[#1d3557]/10 text-[#1d3557] font-bold tracking-widest uppercase text-[11px]">
-                <Sparkles size={11} className="text-[#1d3557]" />
+              <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full font-bold tracking-widest uppercase text-[11px]" style={{ background: 'rgba(197,160,89,0.12)', color: '#b08a40', border: '1px solid rgba(197,160,89,0.25)' }}>
+                <Sparkles size={11} style={{ color: '#c5a059' }} />
                 Legal & Real Estate Insights
               </span>
 
@@ -58,7 +59,7 @@ const KnowledgeCentre = () => {
                 Property Knowledge Centre
               </h2>
 
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
                 Make confident property decisions with practical guides, legal document breakdowns, emerging zone updates, and advisory insights prepared by our legal and real estate specialists.
               </p>
 
@@ -69,9 +70,14 @@ const KnowledgeCentre = () => {
                   return (
                     <span
                       key={idx}
-                      className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white border ${t.accent} text-xs font-semibold shadow-2xs`}
+                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold"
+                      style={{
+                        background: idx % 2 === 0 ? 'rgba(29,53,87,0.05)' : 'rgba(197,160,89,0.08)',
+                        color: idx % 2 === 0 ? '#1d3557' : '#b08a40',
+                        border: `1px solid ${idx % 2 === 0 ? 'rgba(29,53,87,0.12)' : 'rgba(197,160,89,0.2)'}`,
+                      }}
                     >
-                      <Icon size={12} className="text-[#1d3557]" />
+                      <Icon size={12} style={{ color: idx % 2 === 0 ? '#1d3557' : '#c5a059' }} />
                       {t.label}
                     </span>
                   );
@@ -84,10 +90,11 @@ const KnowledgeCentre = () => {
               <Link
                 to="/blogs"
                 id="knowledge-centre-explore-btn"
-                className="inline-flex items-center gap-2 px-7 py-3 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 shadow-md hover:scale-105 no-underline group"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:scale-105 no-underline group"
+                style={{ background: 'linear-gradient(135deg,#c5a059,#d4b475)', color: '#fff', boxShadow: '0 6px 18px rgba(197,160,89,0.3)' }}
               >
                 <span>Explore All Articles</span>
-                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1 text-white" />
+                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 

@@ -60,11 +60,14 @@ const marqueeDeals = [
 
 const HomeTrackRecord = () => {
   return (
-    <section id="track-record" className="py-8 md:py-10 bg-white relative overflow-hidden">
+    <section id="track-record" className="py-8 md:py-10 relative overflow-hidden" style={{ background: 'linear-gradient(160deg,#fdf8f0 0%,#fefcf8 100%)' }}>
+      {/* Warm subtle background accents */}
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(197,160,89,0.1) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
+      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(29,53,87,0.05) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-gray-200/60">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4" style={{ borderBottom: '1px solid rgba(197,160,89,0.25)' }}>
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1d3557]/5 text-[#1d3557] font-bold tracking-widest uppercase text-[10px] ring-1 ring-[#1d3557]/10 mb-2.5">
               <ShieldCheck size={12} className="text-[#c5a059]" />
