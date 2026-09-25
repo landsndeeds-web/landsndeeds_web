@@ -8,6 +8,7 @@ const pillars = [
     title: 'Legal Excellence',
     description: 'Comprehensive document screening, ownership tracing, and ironclad legal opinions.',
     tags: ['Title Verification', 'Parent Deed Tracing', 'Legal Scrutiny'],
+    isGold: false,
   },
   {
     icon: Map,
@@ -15,6 +16,7 @@ const pillars = [
     title: 'Survey & Revenue',
     description: 'Advanced land record audits, accurate boundary verification, and title validation.',
     tags: ['Patta & Chitta Audits', 'FMB Boundary Check', 'Revenue Records'],
+    isGold: true,
   },
   {
     icon: Building2,
@@ -22,6 +24,7 @@ const pillars = [
     title: 'Town & Country Planning',
     description: 'Seamless navigation of local municipal approvals, zoning criteria, and regulatory clearances.',
     tags: ['DTCP / CMDA Approvals', 'Zoning Compliance', 'Municipal Clearances'],
+    isGold: false,
   },
   {
     icon: FileText,
@@ -29,6 +32,7 @@ const pillars = [
     title: 'Flawless Registration',
     description: 'End-to-end processing from initial document drafting right up to official sub-registrar filing.',
     tags: ['Custom Deed Drafting', 'Stamp Duty Valuation', 'Sub-Registrar Filing'],
+    isGold: true,
   },
 ];
 
@@ -36,9 +40,9 @@ const HomeShieldSection = () => {
   return (
     <section id="the-360-shield" className="py-8 md:py-10 bg-[#fafbfc] relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
-        
+
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gray-200/60">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-gray-200/60">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1d3557]/5 text-[#1d3557] font-bold tracking-widest uppercase text-[10px] ring-1 ring-[#1d3557]/10 mb-2.5">
               <ShieldCheck size={12} className="text-[#c5a059]" />
@@ -62,48 +66,87 @@ const HomeShieldSection = () => {
           </Link>
         </div>
 
-        {/* 4 Interactive Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+        {/* 4 Redesigned Cards Grid */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {pillars.map((item, idx) => {
             const Icon = item.icon;
+            const { isGold } = item;
             return (
               <div
                 key={idx}
-                className="group bg-white rounded-2xl p-5 border border-gray-200 shadow-sm hover:shadow-[0_8px_25px_-5px_rgba(29,53,87,0.1)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden"
+                className="group relative rounded-2xl overflow-hidden border shadow-sm hover:shadow-[0_10px_30px_-8px_rgba(29,53,87,0.18)] transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                style={{
+                  borderColor: isGold ? 'rgba(197,160,89,0.25)' : 'rgba(29,53,87,0.12)',
+                  background: isGold
+                    ? 'linear-gradient(145deg,#fffdf7 0%,#fff 100%)'
+                    : 'linear-gradient(145deg,#f6f8fb 0%,#fff 100%)',
+                }}
               >
-                {/* Accent top border on hover */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#c5a059] to-[#1d3557] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-2xl" />
+                {/* Colored top strip */}
+                <div
+                  className="h-1.5 w-full shrink-0"
+                  style={{
+                    background: isGold
+                      ? 'linear-gradient(90deg,#c5a059,#d4b06a)'
+                      : 'linear-gradient(90deg,#1d3557,#2a4a7f)',
+                  }}
+                />
 
-                <div>
-                  {/* Visual Anchor / Icon Header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 rounded-xl bg-gray-50 ring-1 ring-gray-100 flex items-center justify-center text-xl group-hover:scale-105 group-hover:bg-[#1d3557]/5 group-hover:ring-[#1d3557]/20 transition-all duration-300">
+                {/* Card Body */}
+                <div className="p-4 flex flex-col gap-2 flex-1">
+
+                  {/* Icon row */}
+                  <div className="flex items-center justify-between">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 transition-all duration-300 group-hover:scale-105"
+                      style={{ background: isGold ? 'rgba(197,160,89,0.1)' : 'rgba(29,53,87,0.07)' }}
+                    >
                       <span role="img" aria-label={item.title}>{item.symbol}</span>
                     </div>
-                    <div className="w-7 h-7 rounded-full bg-gray-50 ring-1 ring-gray-100 flex items-center justify-center group-hover:bg-white group-hover:shadow-sm transition-all duration-300">
-                      <Icon size={12} className="text-[#1d3557]" />
+                    <div
+                      className="w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300"
+                      style={{ background: isGold ? 'rgba(197,160,89,0.08)' : 'rgba(29,53,87,0.06)' }}
+                    >
+                      <Icon size={12} style={{ color: isGold ? '#c5a059' : '#1d3557' }} />
                     </div>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-base sm:text-lg font-serif font-bold text-[#1d3557] mb-2 leading-snug group-hover:text-[#c5a059] transition-colors duration-200">
+                  {/* Title */}
+                  <h3
+                    className="text-[15px] font-serif font-bold leading-snug transition-colors duration-200"
+                    style={{ color: isGold ? '#c5a059' : '#1d3557' }}
+                  >
                     {item.title}
                   </h3>
-                  <p className="text-gray-500 text-xs sm:text-sm leading-relaxed font-normal mb-4">
+
+                  {/* Description */}
+                  <p className="text-gray-500 text-xs leading-relaxed">
                     {item.description}
                   </p>
-                </div>
 
-                {/* Badges / Micro-deliverables */}
-                <div className="pt-3 border-t border-gray-100 flex flex-wrap gap-1.5">
-                  {item.tags.map((tag, tIdx) => (
-                    <span
-                      key={tIdx}
-                      className="px-2 py-1 rounded-md bg-gray-50 text-[10px] font-bold text-[#1d3557]/80 group-hover:bg-[#1d3557]/5 group-hover:text-[#1d3557] transition-colors duration-200 border border-gray-100"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  {/* Divider */}
+                  <div
+                    className="h-px w-full mt-auto mb-0 transition-colors duration-300"
+                    style={{ background: isGold ? 'rgba(197,160,89,0.2)' : 'rgba(29,53,87,0.1)' }}
+                  />
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-1.5 pt-0.5">
+                    {item.tags.map((tag, tIdx) => (
+                      <span
+                        key={tIdx}
+                        className="px-2 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wide border transition-colors duration-200"
+                        style={{
+                          background: isGold ? 'rgba(197,160,89,0.07)' : 'rgba(29,53,87,0.04)',
+                          color: isGold ? '#b08a40' : 'rgba(29,53,87,0.75)',
+                          borderColor: isGold ? 'rgba(197,160,89,0.25)' : 'rgba(29,53,87,0.1)',
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
                 </div>
               </div>
             );

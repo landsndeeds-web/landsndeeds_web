@@ -17,6 +17,7 @@ const leaders = [
       'Advanced legal foundation: LL.B. & Master of Business Laws (MBL)',
       'Specialist in high-value asset security & dispute mitigation',
     ],
+    isGold: false,
   },
   {
     name: 'Mr. Narayana Moorthy',
@@ -31,6 +32,7 @@ const leaders = [
       'Mastery of Patta, Chitta, Adangal, and TSLR land registers',
       'Authoritative vetting for zero revenue encumbrance or government claims',
     ],
+    isGold: true,
   },
 ];
 
@@ -44,7 +46,7 @@ const HomeLeadership = () => {
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-4 border-b border-gray-200/60">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-gray-200/60">
           <div className="max-w-2xl">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1d3557]/5 text-[#1d3557] font-bold tracking-widest uppercase text-[10px] ring-1 ring-[#1d3557]/10 mb-2.5">
               <Award size={12} className="text-[#c5a059]" />
@@ -68,75 +70,135 @@ const HomeLeadership = () => {
           </Link>
         </div>
 
-        {/* 2 Leadership Cards in a Clean Row */}
-        <div className="grid lg:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {leaders.map((leader, idx) => (
-            <div
-              key={idx}
-              className="group bg-white rounded-2xl p-5 sm:p-6 border border-gray-200 shadow-sm hover:shadow-[0_8px_25px_-5px_rgba(29,53,87,0.1)] transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between relative overflow-hidden"
-            >
-              {/* Highlight bar on hover */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-[#1d3557] to-[#c5a059] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        {/* 2 Leadership Cards — full container width */}
+        <div className="grid lg:grid-cols-2 gap-4">
+          {leaders.map((leader, idx) => {
+            const { isGold } = leader;
+            return (
+              <div
+                key={idx}
+                className="group relative rounded-2xl overflow-hidden border shadow-sm hover:shadow-[0_10px_30px_-8px_rgba(29,53,87,0.18)] transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                style={{
+                  borderColor: isGold ? 'rgba(197,160,89,0.25)' : 'rgba(29,53,87,0.12)',
+                  background: isGold
+                    ? 'linear-gradient(145deg,#fffdf7 0%,#fff 100%)'
+                    : 'linear-gradient(145deg,#f6f8fb 0%,#fff 100%)',
+                }}
+              >
+                {/* Always-visible colored top strip */}
+                <div
+                  className="h-1.5 w-full shrink-0"
+                  style={{
+                    background: isGold
+                      ? 'linear-gradient(90deg,#c5a059,#d4b06a)'
+                      : 'linear-gradient(90deg,#1d3557,#2a4a7f)',
+                  }}
+                />
 
-              <div>
-                {/* Header with Photo & Credential Badge */}
-                <div className="flex flex-col sm:flex-row items-start gap-4 mb-5">
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-xl overflow-hidden border-2 border-white shadow-md shrink-0 bg-gray-50 transform group-hover:scale-105 transition-transform duration-300">
-                    <img
-                      src={leader.image}
-                      alt={leader.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
+                {/* Card Body */}
+                <div className="p-4 flex flex-col gap-3 flex-1">
 
-                  <div className="space-y-1 pt-0.5">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#10B981]/10 text-[#0D5C3A] text-[9px] font-bold uppercase tracking-widest ring-1 ring-[#10B981]/20 mb-1">
-                      <ShieldCheck size={11} />
-                      {leader.credential}
-                    </span>
-
-                    <h3 className="text-lg sm:text-xl font-serif font-bold text-[#1d3557] leading-snug group-hover:text-[#c5a059] transition-colors duration-200">
-                      {leader.name}
-                    </h3>
-
-                    <p className="text-xs font-bold text-[#1d3557]/80">
-                      {leader.designation}
-                    </p>
-
-                    <p className="text-[11px] text-gray-500 font-medium pt-0.5">
-                      {leader.qualifications}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Bio text */}
-                <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-4">
-                  {leader.bio}
-                </p>
-
-                {/* Bullet Points */}
-                <div className="space-y-2 pt-4 border-t border-gray-100">
-                  {leader.points.map((pt, pIdx) => (
-                    <div key={pIdx} className="flex items-start gap-2.5 text-xs text-gray-700">
-                      <div className="w-4 h-4 rounded-full bg-[#10B981]/10 flex items-center justify-center shrink-0 mt-0.5">
-                        <CheckCircle2 size={11} className="text-[#10B981]" />
-                      </div>
-                      <span className="font-medium">{pt}</span>
+                  {/* Header: Photo + Info side by side */}
+                  <div className="flex items-start gap-3">
+                    <div
+                      className="relative w-16 h-16 rounded-xl overflow-hidden shrink-0 group-hover:scale-105 transition-transform duration-300"
+                      style={{
+                        border: `2px solid ${isGold ? 'rgba(197,160,89,0.4)' : 'rgba(29,53,87,0.2)'}`,
+                        boxShadow: isGold
+                          ? '0 4px 12px rgba(197,160,89,0.15)'
+                          : '0 4px 12px rgba(29,53,87,0.12)',
+                      }}
+                    >
+                      <img
+                        src={leader.image}
+                        alt={leader.name}
+                        className="w-full h-full object-cover object-top"
+                      />
                     </div>
-                  ))}
+
+                    <div className="flex flex-col gap-1 pt-0.5 min-w-0">
+                      <span
+                        className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[9px] font-bold uppercase tracking-widest self-start"
+                        style={{
+                          background: isGold ? 'rgba(197,160,89,0.1)' : 'rgba(29,53,87,0.07)',
+                          color: isGold ? '#b08a40' : '#1d3557',
+                          border: `1px solid ${isGold ? 'rgba(197,160,89,0.3)' : 'rgba(29,53,87,0.15)'}`,
+                        }}
+                      >
+                        <ShieldCheck size={10} />
+                        {leader.credential}
+                      </span>
+
+                      <h3
+                        className="text-base font-serif font-bold leading-snug transition-colors duration-200"
+                        style={{ color: isGold ? '#c5a059' : '#1d3557' }}
+                      >
+                        {leader.name}
+                      </h3>
+
+                      <p className="text-[11px] font-bold" style={{ color: isGold ? '#b08a40' : 'rgba(29,53,87,0.8)' }}>
+                        {leader.designation}
+                      </p>
+
+                      <p className="text-[10px] text-gray-400 font-medium leading-tight">
+                        {leader.qualifications}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Bio */}
+                  <p className="text-gray-500 text-xs leading-relaxed">
+                    {leader.bio}
+                  </p>
+
+                  {/* Divider */}
+                  <div
+                    className="h-px w-full"
+                    style={{ background: isGold ? 'rgba(197,160,89,0.2)' : 'rgba(29,53,87,0.1)' }}
+                  />
+
+                  {/* Bullet Points */}
+                  <div className="flex flex-col gap-1.5">
+                    {leader.points.map((pt, pIdx) => (
+                      <div key={pIdx} className="flex items-start gap-2 text-xs text-gray-700">
+                        <div
+                          className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5"
+                          style={{ background: isGold ? 'rgba(197,160,89,0.12)' : 'rgba(29,53,87,0.07)' }}
+                        >
+                          <CheckCircle2 size={10} style={{ color: isGold ? '#c5a059' : '#1d3557' }} />
+                        </div>
+                        <span className="font-medium leading-snug">{pt}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Footer Badge */}
+                  <div
+                    className="flex items-center justify-between text-[10px] font-bold rounded-xl px-3 py-2 mt-auto"
+                    style={{
+                      background: isGold ? 'rgba(197,160,89,0.07)' : 'rgba(29,53,87,0.05)',
+                      border: `1px solid ${isGold ? 'rgba(197,160,89,0.2)' : 'rgba(29,53,87,0.1)'}`,
+                    }}
+                  >
+                    <span style={{ color: isGold ? '#b08a40' : '#1d3557' }} className="tracking-wide">
+                      {leader.badge}
+                    </span>
+                    <span
+                      className="flex items-center gap-1 px-2 py-0.5 rounded-md"
+                      style={{
+                        background: isGold ? 'rgba(197,160,89,0.12)' : 'rgba(16,185,129,0.1)',
+                        color: isGold ? '#c5a059' : '#10B981',
+                      }}
+                    >
+                      <ShieldCheck size={11} />
+                      100% Verified Authority
+                    </span>
+                  </div>
+
                 </div>
               </div>
-
-              {/* Verified Government Badge Footer */}
-              <div className="mt-6 pt-3 border-t border-gray-100 flex items-center justify-between text-[11px] text-[#1d3557] font-bold bg-gray-50/80 -mx-5 -mb-5 px-5 py-3 sm:-mx-6 sm:-mb-6 sm:px-6 sm:py-3.5 rounded-b-2xl">
-                <span className="tracking-wide">{leader.badge}</span>
-                <span className="text-[#10B981] flex items-center gap-1 bg-[#10B981]/10 px-2 py-1 rounded-md">
-                  <ShieldCheck size={12} />
-                  100% Verified Authority
-                </span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>
