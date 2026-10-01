@@ -49,35 +49,36 @@ const KnowledgeCentre = () => {
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
 
             {/* Left Column */}
-            <div className="space-y-3 text-center lg:text-left max-w-2xl knowledge-fade-in">
-              <span className="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full font-bold tracking-widest uppercase text-[11px]" style={{ background: 'rgba(197,160,89,0.12)', color: '#b08a40', border: '1px solid rgba(197,160,89,0.25)' }}>
-                <Sparkles size={11} style={{ color: '#c5a059' }} />
+            <div className="space-y-4 text-center lg:text-left max-w-2xl knowledge-fade-in">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase text-xs sm:text-[13px]" style={{ background: 'rgba(254,243,199,0.8)', color: '#855306', border: '1px solid rgba(197,160,89,0.4)' }}>
+                <Sparkles size={13} style={{ color: '#855306' }} />
                 Legal & Real Estate Insights
               </span>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1d3557] leading-tight">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0F2444] leading-tight">
                 Property Knowledge Centre
               </h2>
 
-              <p className="text-gray-500 text-xs sm:text-sm leading-relaxed">
+              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
                 Make confident property decisions with practical guides, legal document breakdowns, emerging zone updates, and advisory insights prepared by our legal and real estate specialists.
               </p>
 
               {/* Topic Chips */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
                 {topics.map((t, idx) => {
                   const Icon = t.icon;
+                  const isGoldTopic = idx % 2 === 1;
                   return (
                     <span
                       key={idx}
-                      className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold"
+                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold shadow-2xs"
                       style={{
-                        background: idx % 2 === 0 ? 'rgba(29,53,87,0.05)' : 'rgba(197,160,89,0.08)',
-                        color: idx % 2 === 0 ? '#1d3557' : '#b08a40',
-                        border: `1px solid ${idx % 2 === 0 ? 'rgba(29,53,87,0.12)' : 'rgba(197,160,89,0.2)'}`,
+                        background: isGoldTopic ? 'rgba(254,243,199,0.7)' : 'rgba(238,242,255,0.8)',
+                        color: isGoldTopic ? '#855306' : '#1d3557',
+                        border: `1.5px solid ${isGoldTopic ? 'rgba(197,160,89,0.4)' : 'rgba(29,53,87,0.2)'}`,
                       }}
                     >
-                      <Icon size={12} style={{ color: idx % 2 === 0 ? '#1d3557' : '#c5a059' }} />
+                      <Icon size={14} style={{ color: isGoldTopic ? '#855306' : '#1d3557' }} />
                       {t.label}
                     </span>
                   );
@@ -90,11 +91,11 @@ const KnowledgeCentre = () => {
               <Link
                 to="/blogs"
                 id="knowledge-centre-explore-btn"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:scale-105 no-underline group"
-                style={{ background: 'linear-gradient(135deg,#c5a059,#d4b475)', color: '#fff', boxShadow: '0 6px 18px rgba(197,160,89,0.3)' }}
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 hover:scale-105 no-underline group shadow-md"
+                style={{ background: 'linear-gradient(135deg,#c5a059,#d4b475)', color: '#fff', boxShadow: '0 6px 18px rgba(197,160,89,0.35)' }}
               >
                 <span>Explore All Articles</span>
-                <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
 
