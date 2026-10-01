@@ -100,9 +100,9 @@ const Hero = () => {
           </div>
 
           <div className="overflow-hidden">
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold !text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Outfit',sans-serif] font-black !text-white leading-[1.1] tracking-tight">
               {currentSlide.headline.split(' ').map((word, i) => (
-                <span key={i} className="inline-block overflow-hidden mr-[0.2em] last:mr-0">
+                <span key={i} className="inline-block overflow-hidden mr-[0.25em] last:mr-0">
                   <span className="reveal-word inline-block">
                     {word}
                   </span>
@@ -112,23 +112,23 @@ const Hero = () => {
           </div>
 
           <div className="overflow-hidden">
-            <p className="reveal-subtext text-base md:text-lg lg:text-xl text-white/95 max-w-2xl leading-relaxed font-normal">
+            <p className="reveal-subtext text-base sm:text-lg lg:text-xl text-slate-100 max-w-2xl leading-relaxed font-normal">
               {currentSlide.subtext}
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3.5 pt-3">
+          <div className="flex flex-wrap gap-4 pt-3">
             <a
               href="/properties"
               id="hero-find-verified-property-btn"
-              className="reveal-btn px-7 sm:px-8 py-3.5 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-wider text-xs sm:text-sm inline-flex items-center gap-2 no-underline shadow-lg shadow-[#c5a059]/30"
+              className="reveal-btn px-8 py-4 bg-gradient-to-r from-[#F59E0B] via-[#FBBF24] to-[#F59E0B] hover:from-[#D97706] hover:to-[#F59E0B] text-slate-950 rounded-full font-extrabold transition-all transform hover:scale-105 uppercase tracking-wider text-xs sm:text-sm inline-flex items-center gap-2.5 no-underline shadow-xl shadow-amber-500/30"
             >
               <span>🔍</span> Find Verified Property
             </a>
             <a
               href="/services"
               id="hero-verify-existing-property-btn"
-              className="reveal-btn px-7 sm:px-8 py-3.5 border border-white/50 text-white hover:border-[#c5a059] hover:text-[#c5a059] rounded-full font-bold hover:bg-white/15 transition-all uppercase tracking-wider text-xs sm:text-sm backdrop-blur-sm inline-flex items-center gap-2 no-underline"
+              className="reveal-btn px-8 py-4 bg-white/10 hover:bg-white/20 border-2 border-white/60 hover:border-white text-white rounded-full font-bold transition-all uppercase tracking-wider text-xs sm:text-sm backdrop-blur-md inline-flex items-center gap-2.5 no-underline shadow-lg"
             >
               <span>🛡️</span> Verify Existing Property
             </a>
