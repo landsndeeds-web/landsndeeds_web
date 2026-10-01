@@ -112,25 +112,25 @@ const Hero = () => {
           </div>
 
           <div className="overflow-hidden">
-            <p className="reveal-subtext text-sm md:text-base lg:text-lg text-white/90 max-w-2xl leading-relaxed font-normal">
+            <p className="reveal-subtext text-base md:text-lg lg:text-xl text-white/95 max-w-2xl leading-relaxed font-normal">
               {currentSlide.subtext}
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3 pt-2">
+          <div className="flex flex-wrap gap-3.5 pt-3">
             <a
               href="/properties"
               id="hero-find-verified-property-btn"
-              className="reveal-btn px-7 py-3 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-widest text-xs inline-flex items-center gap-2 no-underline shadow-lg shadow-[#c5a059]/25"
+              className="reveal-btn px-7 sm:px-8 py-3.5 bg-[#c5a059] hover:bg-[#b58f48] text-white rounded-full font-bold transition-all transform hover:scale-105 uppercase tracking-wider text-xs sm:text-sm inline-flex items-center gap-2 no-underline shadow-lg shadow-[#c5a059]/30"
             >
-              🔍 Find Verified Property
+              <span>🔍</span> Find Verified Property
             </a>
             <a
               href="/services"
               id="hero-verify-existing-property-btn"
-              className="reveal-btn px-7 py-3 border border-white/40 text-white hover:border-[#c5a059] hover:text-[#c5a059] rounded-full font-bold hover:bg-white/10 transition-all uppercase tracking-widest text-xs backdrop-blur-sm inline-flex items-center gap-2 no-underline"
+              className="reveal-btn px-7 sm:px-8 py-3.5 border border-white/50 text-white hover:border-[#c5a059] hover:text-[#c5a059] rounded-full font-bold hover:bg-white/15 transition-all uppercase tracking-wider text-xs sm:text-sm backdrop-blur-sm inline-flex items-center gap-2 no-underline"
             >
-              🛡️ Verify Existing Property
+              <span>🛡️</span> Verify Existing Property
             </a>
           </div>
         </div>

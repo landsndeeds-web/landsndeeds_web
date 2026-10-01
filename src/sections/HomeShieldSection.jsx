@@ -38,23 +38,23 @@ const pillars = [
 
 const HomeShieldSection = () => {
   return (
-    <section id="the-360-shield" className="py-8 md:py-10 relative overflow-hidden" style={{ background: 'linear-gradient(180deg,#eef4fb 0%,#f4f8fd 100%)', borderTop: '4px solid #1d3557' }}>
+    <section id="the-360-shield" className="py-10 md:py-14 relative overflow-hidden" style={{ background: 'linear-gradient(180deg,#eef4fb 0%,#f4f8fd 100%)', borderTop: '4px solid #1d3557' }}>
       {/* Decorative subtle pattern */}
       <div className="absolute inset-0 pointer-events-none opacity-30" style={{ backgroundImage: 'radial-gradient(circle at 80% 20%, rgba(29,53,87,0.06) 0%, transparent 50%), radial-gradient(circle at 20% 80%, rgba(197,160,89,0.06) 0%, transparent 50%)' }} />
 
       <div className="container mx-auto px-6 relative z-10">
 
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-[#1d3557]/10">
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-5 border-b border-[#1d3557]/15">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1d3557]/8 text-[#1d3557] font-bold tracking-widest uppercase text-[10px] ring-1 ring-[#1d3557]/15 mb-2.5" style={{ background: 'rgba(29,53,87,0.07)' }}>
-              <ShieldCheck size={12} className="text-[#c5a059]" />
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1d3557]/10 text-[#1d3557] font-bold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-[#1d3557]/20 mb-3">
+              <ShieldCheck size={14} className="text-[#c5a059]" />
               The 360° Shield • Core Expertise
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-3xl font-serif font-bold text-[#1d3557] leading-[1.2]">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0F2444] leading-tight">
               Four Pillars of Watertight Property Assurance
             </h2>
-            <p className="text-gray-600 text-sm mt-2 leading-relaxed max-w-xl">
+            <p className="text-slate-700 text-sm sm:text-base mt-2.5 leading-relaxed max-w-xl font-normal">
               Instead of a wall of text, our multidisciplinary methodology breaks down property security into four structured, audit-ready operational anchors.
             </p>
           </div>
@@ -62,24 +62,24 @@ const HomeShieldSection = () => {
           <Link
             to="/services"
             id="shield-explore-services-btn"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1d3557] hover:bg-[#2a4a7f] text-white rounded-full font-bold uppercase tracking-widest text-[11px] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1d3557] hover:bg-[#2a4a7f] text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
           >
             <span>Explore All Services</span>
-            <ArrowRight size={13} className="transition-transform duration-300 group-hover:translate-x-1" />
+            <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
 
         {/* 4 Redesigned Cards Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {pillars.map((item, idx) => {
             const Icon = item.icon;
             const { isGold } = item;
             return (
               <div
                 key={idx}
-                className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_10px_30px_-8px_rgba(29,53,87,0.15)] transition-all duration-300 hover:-translate-y-1 flex flex-col bg-white"
+                className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_12px_35px_-8px_rgba(29,53,87,0.18)] transition-all duration-300 hover:-translate-y-1 flex flex-col bg-white"
                 style={{
-                  border: `1px solid ${isGold ? 'rgba(197,160,89,0.25)' : 'rgba(29,53,87,0.1)'}`,
+                  border: `1.5px solid ${isGold ? 'rgba(197,160,89,0.35)' : 'rgba(29,53,87,0.15)'}`,
                 }}
               >
                 {/* Colored top strip */}
@@ -93,53 +93,50 @@ const HomeShieldSection = () => {
                 />
 
                 {/* Card Body */}
-                <div className="p-4 flex flex-col gap-2 flex-1">
+                <div className="p-5 sm:p-6 flex flex-col gap-3 flex-1">
 
                   {/* Icon row */}
                   <div className="flex items-center justify-between">
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0 transition-all duration-300 group-hover:scale-105"
-                      style={{ background: isGold ? 'rgba(197,160,89,0.1)' : 'rgba(29,53,87,0.07)' }}
+                      className="w-11 h-11 rounded-xl flex items-center justify-center text-xl shrink-0 transition-all duration-300 group-hover:scale-105 shadow-sm"
+                      style={{ background: isGold ? 'rgba(197,160,89,0.15)' : 'rgba(29,53,87,0.09)' }}
                     >
                       <span role="img" aria-label={item.title}>{item.symbol}</span>
                     </div>
                     <div
-                      className="w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300"
-                      style={{ background: isGold ? 'rgba(197,160,89,0.08)' : 'rgba(29,53,87,0.06)' }}
+                      className="w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300"
+                      style={{ background: isGold ? 'rgba(197,160,89,0.12)' : 'rgba(29,53,87,0.08)' }}
                     >
-                      <Icon size={12} style={{ color: isGold ? '#c5a059' : '#1d3557' }} />
+                      <Icon size={15} style={{ color: isGold ? '#855306' : '#1d3557' }} />
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3
-                    className="text-[15px] font-serif font-bold leading-snug transition-colors duration-200"
-                    style={{ color: isGold ? '#c5a059' : '#1d3557' }}
-                  >
+                  {/* Title - Bold, deep, crystal clear on white */}
+                  <h3 className="text-base sm:text-lg font-serif font-bold text-[#0F2444] leading-snug">
                     {item.title}
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-gray-500 text-xs leading-relaxed">
+                  {/* Description - Larger, darker slate text for maximum readability */}
+                  <p className="text-slate-600 text-sm sm:text-[14px] leading-relaxed">
                     {item.description}
                   </p>
 
                   {/* Divider */}
                   <div
-                    className="h-px w-full mt-auto mb-0"
-                    style={{ background: isGold ? 'rgba(197,160,89,0.2)' : 'rgba(29,53,87,0.08)' }}
+                    className="h-px w-full mt-auto pt-1"
+                    style={{ background: isGold ? 'rgba(197,160,89,0.25)' : 'rgba(29,53,87,0.1)' }}
                   />
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5 pt-0.5">
+                  {/* Tags - Bigger text, clear borders and high contrast */}
+                  <div className="flex flex-wrap gap-1.5 pt-1">
                     {item.tags.map((tag, tIdx) => (
                       <span
                         key={tIdx}
-                        className="px-2 py-0.5 rounded-md text-[9px] font-bold uppercase tracking-wide border"
+                        className="px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-semibold tracking-wide border shadow-xs"
                         style={{
-                          background: isGold ? 'rgba(197,160,89,0.07)' : 'rgba(29,53,87,0.04)',
-                          color: isGold ? '#b08a40' : 'rgba(29,53,87,0.75)',
-                          borderColor: isGold ? 'rgba(197,160,89,0.25)' : 'rgba(29,53,87,0.1)',
+                          background: isGold ? 'rgba(254,243,199,0.6)' : 'rgba(238,242,255,0.7)',
+                          color: isGold ? '#855306' : '#1d3557',
+                          borderColor: isGold ? 'rgba(197,160,89,0.4)' : 'rgba(29,53,87,0.2)',
                         }}
                       >
                         {tag}
