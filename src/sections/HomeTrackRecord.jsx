@@ -13,14 +13,13 @@ const marqueeDeals = [
     image: prop1,
     description: 'High-visibility prime commercial development on Avinashi Road. Full legal title validation and ownership chain audit.',
     highlights: ['Avinashi Road Corridor', '100% Clear Title', 'Prime Commercial Asset'],
-    strip: 'linear-gradient(90deg,#1d3557,#2a4a7f)',
-    accentColor: '#1d3557',
-    accentBg: 'rgba(29,53,87,0.08)',
-    accentBorder: 'rgba(29,53,87,0.2)',
-    cardBg: '#ffffff',
-    tagColor: '#1d3557',
-    tagBg: 'rgba(238,242,255,0.9)',
-    tagBorder: 'rgba(29,53,87,0.2)',
+    strip: 'linear-gradient(90deg, #2563EB, #38BDF8)',
+    accentColor: '#1D4ED8',
+    accentBg: '#EFF6FF',
+    accentBorder: '#BFDBFE',
+    tagColor: '#1E40AF',
+    tagBg: '#EFF6FF',
+    tagBorder: '#BFDBFE',
   },
   {
     title: 'Kongunad Multi Specialty Hospital',
@@ -30,14 +29,13 @@ const marqueeDeals = [
     image: prop2,
     description: 'Extensive multi-tier title scrutiny and institutional zoning approval for a state-of-the-art multi-specialty healthcare campus.',
     highlights: ['Healthcare Compliance', 'Multi-Tier Title Audited', 'Statutory Approvals'],
-    strip: 'linear-gradient(90deg,#c5a059,#d4b06a)',
-    accentColor: '#855306',
-    accentBg: 'rgba(197,160,89,0.12)',
-    accentBorder: 'rgba(197,160,89,0.3)',
-    cardBg: '#ffffff',
-    tagColor: '#855306',
-    tagBg: 'rgba(254,243,199,0.85)',
-    tagBorder: 'rgba(197,160,89,0.35)',
+    strip: 'linear-gradient(90deg, #F59E0B, #FBBF24)',
+    accentColor: '#D97706',
+    accentBg: '#FEF3C7',
+    accentBorder: '#FDE68A',
+    tagColor: '#92400E',
+    tagBg: '#FEF3C7',
+    tagBorder: '#FDE68A',
   },
   {
     title: 'Premium Farmlands at Devarayapuram',
@@ -47,36 +45,35 @@ const marqueeDeals = [
     image: prop3,
     description: 'Scenic fertile agro-parcels near Isha / Adiyogi. Clean revenue records, FMB survey, and verified Patta transfer.',
     highlights: ['Near Isha / Adiyogi', 'Abundant Water Table', 'Verified Revenue Title'],
-    strip: 'linear-gradient(90deg,#0d7a55,#10B981)',
-    accentColor: '#065f46',
-    accentBg: 'rgba(13,122,85,0.08)',
-    accentBorder: 'rgba(13,122,85,0.2)',
-    cardBg: '#ffffff',
-    tagColor: '#065f46',
-    tagBg: 'rgba(236,253,245,0.9)',
-    tagBorder: 'rgba(16,185,129,0.25)',
+    strip: 'linear-gradient(90deg, #10B981, #34D399)',
+    accentColor: '#059669',
+    accentBg: '#ECFDF5',
+    accentBorder: '#A7F3D0',
+    tagColor: '#065F46',
+    tagBg: '#ECFDF5',
+    tagBorder: '#A7F3D0',
   },
 ];
 
 const HomeTrackRecord = () => {
   return (
-    <section id="track-record" className="py-10 md:py-14 relative overflow-hidden" style={{ background: 'linear-gradient(160deg,#fdf8f0 0%,#fefcf8 100%)' }}>
+    <section id="track-record" className="pt-6 pb-8 md:pt-8 md:pb-10 relative overflow-hidden bg-gradient-to-b from-white via-amber-50/20 to-slate-50/60 border-t border-slate-200/80">
       {/* Warm subtle background accents */}
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(197,160,89,0.1) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(29,53,87,0.05) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(245,158,11,0.08) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(37,99,235,0.06) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-5" style={{ borderBottom: '1px solid rgba(197,160,89,0.3)' }}>
+        <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-slate-200/80">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1d3557]/8 text-[#1d3557] font-bold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-[#1d3557]/15 mb-3">
-              <ShieldCheck size={14} className="text-[#c5a059]" />
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-amber-200/80 shadow-xs mb-2">
+              <ShieldCheck size={15} className="text-amber-600" />
               Proven Marquee Transactions
             </span>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0F2444] leading-tight">
-              Track Record Showcase
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Outfit',sans-serif] font-black text-slate-900 leading-tight tracking-tight">
+              Track Record <span className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text text-transparent">Showcase</span>
             </h2>
-            <p className="text-slate-700 text-sm sm:text-base mt-2.5 leading-relaxed max-w-xl font-normal">
+            <p className="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed max-w-xl font-normal">
               A curated showcase of our marquee commercial landmarks, healthcare infrastructure, and prime agricultural corridors executed with absolute legal certainty.
             </p>
           </div>
@@ -84,7 +81,7 @@ const HomeTrackRecord = () => {
           <Link
             to="/properties"
             id="track-record-view-all-btn"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-[#1d3557] hover:bg-[#2a4d7c] text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
           >
             <span>View All Listings</span>
             <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -98,7 +95,7 @@ const HomeTrackRecord = () => {
             return (
               <div
                 key={idx}
-                className="group relative rounded-2xl overflow-hidden border shadow-sm hover:shadow-[0_12px_35px_-8px_rgba(29,53,87,0.18)] transition-all duration-300 hover:-translate-y-1 flex flex-col bg-white"
+                className="group relative rounded-3xl overflow-hidden border shadow-sm hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] transition-all duration-300 hover:-translate-y-1.5 flex flex-col bg-white"
                 style={{ borderColor: deal.accentBorder }}
               >
                 {/* Image */}
@@ -108,25 +105,25 @@ const HomeTrackRecord = () => {
                     alt={deal.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/90 via-[#0D1B2A]/30 to-transparent pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent pointer-events-none" />
 
                   {/* Category pill */}
                   <div
-                    className="absolute top-3 left-3 px-2.5 py-1 rounded-md text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md backdrop-blur-md bg-white/95"
+                    className="absolute top-3.5 left-3.5 px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider flex items-center gap-1.5 shadow-md backdrop-blur-md bg-white/95"
                     style={{ color: deal.accentColor }}
                   >
-                    <Icon size={13} style={{ color: deal.accentColor }} />
+                    <Icon size={14} style={{ color: deal.accentColor }} />
                     <span>{deal.typeBadge}</span>
                   </div>
 
                   {/* Verified pill */}
-                  <div className="absolute top-3 right-3 bg-emerald-600 px-2.5 py-1 rounded-md text-white text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
+                  <div className="absolute top-3.5 right-3.5 bg-emerald-600 px-3 py-1.5 rounded-lg text-white text-xs font-bold uppercase tracking-wider shadow-md flex items-center gap-1">
                     <span>✓</span> Verified
                   </div>
 
                   {/* Location overlay */}
-                  <div className="absolute bottom-3 left-3 right-3">
-                    <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] text-white font-semibold bg-black/40 backdrop-blur-xs px-2.5 py-1 rounded-md">
+                  <div className="absolute bottom-3.5 left-3.5 right-3.5">
+                    <div className="inline-flex items-center gap-1.5 text-xs sm:text-[13px] text-white font-medium bg-slate-950/60 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20">
                       <MapPin size={13} className="shrink-0 text-amber-300" />
                       <span className="truncate">{deal.location}</span>
                     </div>
@@ -134,34 +131,34 @@ const HomeTrackRecord = () => {
                 </div>
 
                 {/* Accent strip below image */}
-                <div className="h-1.5 w-full shrink-0" style={{ background: deal.strip }} />
+                <div className="h-2 w-full shrink-0" style={{ background: deal.strip }} />
 
                 {/* Body */}
-                <div className="p-5 flex flex-col gap-3 flex-1">
-                  <h3 className="text-base sm:text-lg lg:text-xl font-serif font-bold text-[#0F2444] leading-snug line-clamp-1 transition-colors duration-200 group-hover:text-[#1d3557]">
+                <div className="p-6 flex flex-col gap-3.5 flex-1">
+                  <h3 className="text-lg sm:text-xl font-['Outfit',sans-serif] font-bold text-slate-900 leading-snug line-clamp-1 transition-colors duration-200 group-hover:text-blue-600">
                     {deal.title}
                   </h3>
 
-                  <p className="text-slate-600 text-sm sm:text-[14px] leading-relaxed line-clamp-2">
+                  <p className="text-slate-600 text-sm sm:text-[14.5px] leading-relaxed line-clamp-2">
                     {deal.description}
                   </p>
 
                   {/* Divider */}
-                  <div className="h-px w-full my-1" style={{ background: deal.accentBorder }} />
+                  <div className="h-px w-full my-1 bg-slate-100" />
 
                   {/* Highlights as inline tags */}
                   <div className="flex flex-wrap gap-1.5">
                     {deal.highlights.map((item, hIdx) => (
                       <span
                         key={hIdx}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] sm:text-xs font-semibold tracking-wide border shadow-2xs"
+                        className="inline-flex items-center gap-1 px-3 py-1 rounded-lg text-xs font-bold tracking-wide border shadow-2xs"
                         style={{
                           background: deal.tagBg,
                           color: deal.tagColor,
                           borderColor: deal.tagBorder,
                         }}
                       >
-                        <CheckCircle2 size={11} />
+                        <CheckCircle2 size={12} />
                         {item}
                       </span>
                     ))}
@@ -170,11 +167,11 @@ const HomeTrackRecord = () => {
                   {/* CTA */}
                   <Link
                     to="/properties"
-                    className="mt-auto flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 group/btn"
+                    className="mt-auto flex items-center justify-center gap-2 py-3 px-4 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 group/btn border shadow-xs"
                     style={{
                       background: deal.accentBg,
                       color: deal.accentColor,
-                      border: `1.5px solid ${deal.accentBorder}`,
+                      borderColor: deal.accentBorder,
                     }}
                     onMouseEnter={e => {
                       e.currentTarget.style.background = deal.accentColor;
@@ -186,7 +183,7 @@ const HomeTrackRecord = () => {
                     }}
                   >
                     <span>Explore Details</span>
-                    <ArrowRight size={14} className="transition-transform group-hover/btn:translate-x-1" />
+                    <ArrowRight size={15} className="transition-transform group-hover/btn:translate-x-1" />
                   </Link>
                 </div>
               </div>

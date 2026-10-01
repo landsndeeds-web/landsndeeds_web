@@ -7,10 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const topics = [
-  { label: 'Title Verification Guides', icon: BookOpen, accent: 'border-blue-100 text-[#1d3557]' },
-  { label: 'Sale Deed, EC & Patta Laws', icon: FileText, accent: 'border-gray-200 text-[#1d3557]' },
-  { label: 'Market Investment Trends', icon: TrendingUp, accent: 'border-emerald-100 text-[#0D5C3A]' },
-  { label: 'Stamp Duty & Registration', icon: Scale, accent: 'border-blue-100 text-[#1d3557]' },
+  { label: 'Title Verification Guides', icon: BookOpen, bg: '#EFF6FF', color: '#1E40AF', border: '#BFDBFE', iconColor: '#2563EB' },
+  { label: 'Sale Deed, EC & Patta Laws', icon: FileText, bg: '#FEF3C7', color: '#92400E', border: '#FDE68A', iconColor: '#D97706' },
+  { label: 'Market Investment Trends', icon: TrendingUp, bg: '#ECFDF5', color: '#065F46', border: '#A7F3D0', iconColor: '#059669' },
+  { label: 'Stamp Duty & Registration', icon: Scale, bg: '#EEF2FF', color: '#3730A3', border: '#C7D2FE', iconColor: '#4F46E5' },
 ];
 
 const KnowledgeCentre = () => {
@@ -38,47 +38,46 @@ const KnowledgeCentre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="knowledge-centre" className="py-8 md:py-10 relative overflow-hidden" style={{ background: 'linear-gradient(160deg,#fdf9f4 0%,#fafbfc 100%)' }}>
+    <section ref={sectionRef} id="knowledge-centre" className="pt-6 pb-8 md:pt-8 md:pb-10 relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-white border-t border-slate-200/80">
       {/* Decorative background glow */}
-      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(197,160,89,0.08) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
-      <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(29,53,87,0.04) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(37,99,235,0.06) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(245,158,11,0.06) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-sm relative overflow-hidden" style={{ border: '1px solid rgba(197,160,89,0.2)' }}>
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/90 relative overflow-hidden">
 
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
             {/* Left Column */}
             <div className="space-y-4 text-center lg:text-left max-w-2xl knowledge-fade-in">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full font-bold tracking-wider uppercase text-xs sm:text-[13px]" style={{ background: 'rgba(254,243,199,0.8)', color: '#855306', border: '1px solid rgba(197,160,89,0.4)' }}>
-                <Sparkles size={13} style={{ color: '#855306' }} />
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-blue-200/80 shadow-xs">
+                <Sparkles size={14} className="text-amber-500" />
                 Legal & Real Estate Insights
               </span>
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-[#0F2444] leading-tight">
-                Property Knowledge Centre
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Outfit',sans-serif] font-black text-slate-900 leading-tight tracking-tight">
+                Property Knowledge <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent">Centre</span>
               </h2>
 
-              <p className="text-slate-700 text-sm sm:text-base leading-relaxed">
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
                 Make confident property decisions with practical guides, legal document breakdowns, emerging zone updates, and advisory insights prepared by our legal and real estate specialists.
               </p>
 
               {/* Topic Chips */}
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-1">
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
                 {topics.map((t, idx) => {
                   const Icon = t.icon;
-                  const isGoldTopic = idx % 2 === 1;
                   return (
                     <span
                       key={idx}
-                      className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs sm:text-sm font-semibold shadow-2xs"
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-2xs border transition-all hover:scale-105"
                       style={{
-                        background: isGoldTopic ? 'rgba(254,243,199,0.7)' : 'rgba(238,242,255,0.8)',
-                        color: isGoldTopic ? '#855306' : '#1d3557',
-                        border: `1.5px solid ${isGoldTopic ? 'rgba(197,160,89,0.4)' : 'rgba(29,53,87,0.2)'}`,
+                        background: t.bg,
+                        color: t.color,
+                        borderColor: t.border,
                       }}
                     >
-                      <Icon size={14} style={{ color: isGoldTopic ? '#855306' : '#1d3557' }} />
+                      <Icon size={16} style={{ color: t.iconColor }} />
                       {t.label}
                     </span>
                   );
@@ -91,11 +90,10 @@ const KnowledgeCentre = () => {
               <Link
                 to="/blogs"
                 id="knowledge-centre-explore-btn"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 hover:scale-105 no-underline group shadow-md"
-                style={{ background: 'linear-gradient(135deg,#c5a059,#d4b475)', color: '#fff', boxShadow: '0 6px 18px rgba(197,160,89,0.35)' }}
+                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 hover:scale-105 no-underline group shadow-xl shadow-blue-600/25 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white"
               >
                 <span>Explore All Articles</span>
-                <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />
               </Link>
             </div>
 

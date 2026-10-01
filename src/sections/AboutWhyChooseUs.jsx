@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ShieldCheck, Award, Handshake, FileText, TrendingUp, HeadphonesIcon, HelpCircle } from 'lucide-react';
+import { ShieldCheck, Award, Handshake, FileText, TrendingUp, HeadphonesIcon, HelpCircle, CheckCircle2 } from 'lucide-react';
 
 const reasons = [
   {
@@ -36,18 +36,18 @@ const reasons = [
 
 const AboutWhyChooseUs = () => {
   return (
-    <section id="why-choose-landsndeeds" className="py-10 md:py-14 bg-white relative overflow-hidden">
+    <section id="why-choose-landsndeeds" className="py-8 md:py-10 bg-[#FAF8F3] relative overflow-hidden font-['Plus_Jakarta_Sans',sans-serif]">
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-8 md:mb-10 space-y-2 max-w-2xl mx-auto">
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">
-            <HelpCircle size={14} />
+        <div className="text-center mb-6 md:mb-8 space-y-2 max-w-2xl mx-auto">
+          <span className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#FAF3E0] text-[#8C6B1C] border border-[#EADBB6] font-extrabold tracking-wider uppercase text-xs">
+            <HelpCircle size={14} className="text-[#8C6B1C]" />
             Why Choose Us
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
-            Why Buyers, Sellers &amp; Investors Choose <span className="gold-gradient">Lands N Deeds</span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#0D1B2A] leading-tight">
+            Why Buyers, Sellers &amp; Investors Choose <span className="bg-gradient-to-r from-[#0D1B2A] via-[#1A335E] to-[#B8860B] bg-clip-text text-transparent">Lands N Deeds</span>
           </h2>
-          <p className="text-gray-600 text-sm md:text-base leading-relaxed font-normal">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-normal">
             Finding the right property is more than comparing prices. We focus on absolute clarity, legal safety, and professional guidance to help every client make confident real estate decisions.
           </p>
         </div>
@@ -61,22 +61,23 @@ const AboutWhyChooseUs = () => {
                 key={idx}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: idx * 0.05 }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
                 viewport={{ once: true }}
-                className="group relative bg-slate-50 p-5 rounded-xl border border-gray-200/80 hover:border-[#D6B97B] hover:shadow-md transition-all duration-300 overflow-hidden"
+                className="group relative bg-white p-5 sm:p-6 rounded-2xl border border-[#E9E2D0] hover:border-[#D4AF37] hover:shadow-[0_10px_30px_rgba(26,51,94,0.08)] transition-all duration-300 overflow-hidden"
               >
                 {/* Accent top line */}
-                <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D6B97B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" />
+                <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-                <div className="flex items-start gap-3.5">
-                  <div className="w-9 h-9 rounded-lg bg-[#1A335E]/10 flex items-center justify-center text-[#1A335E] group-hover:bg-[#1A335E] group-hover:text-[#D6B97B] transition-all duration-300 shrink-0">
-                    <Icon size={18} />
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#0D1B2A] to-[#1A335E] flex items-center justify-center text-[#F3DA90] group-hover:from-[#1A335E] group-hover:to-[#D4AF37] group-hover:text-white transition-all duration-300 shrink-0 shadow-sm">
+                    <Icon size={20} />
                   </div>
                   <div>
-                    <h3 className="text-[#1A335E] font-serif font-bold text-sm md:text-base mb-1 group-hover:text-[#D6B97B] transition-colors duration-300">
-                      ✓ {item.title}
+                    <h3 className="text-[#0D1B2A] font-extrabold text-base md:text-lg mb-1.5 group-hover:text-[#9A7318] transition-colors duration-300 flex items-center gap-1.5">
+                      <CheckCircle2 size={16} className="text-[#B8860B] shrink-0" />
+                      {item.title}
                     </h3>
-                    <p className="text-gray-600 text-xs md:text-sm leading-relaxed">{item.description}</p>
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </motion.div>

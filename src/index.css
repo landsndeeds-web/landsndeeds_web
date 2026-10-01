@@ -18,12 +18,13 @@
   --color-brand-emerald-light: #ECFDF5;
   --color-brand-emerald-accent: #10B981;
 
+  --font-heading: "Outfit", "Plus Jakarta Sans", sans-serif;
   --font-serif: "Playfair Display", serif;
   --font-sans: "Plus Jakarta Sans", "Inter", sans-serif;
 }
 
 :root {
-  background-color: var(--color-bg-deep);
+  background-color: #FFFFFF;
   color: var(--color-text-primary);
   font-family: var(--font-sans);
   overflow-x: hidden;

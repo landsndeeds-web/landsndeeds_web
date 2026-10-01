@@ -88,27 +88,27 @@ const AboutTeam = () => {
   ];
 
   return (
-    <section id="about-team" className="py-10 md:py-14 bg-slate-50 relative overflow-hidden">
+    <section id="about-team" className="pt-8 pb-10 md:pt-10 md:pb-12 bg-gradient-to-b from-[#FAF8F2] via-white to-slate-50/80 relative overflow-hidden border-b border-slate-200/80">
       {/* Decorative Glow */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#D6B97B]/5 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#C5A059]/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-8 space-y-2 max-w-2xl mx-auto">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">
-            <UserCheck size={14} />
+        <div className="text-center mb-8 space-y-2.5 max-w-2xl mx-auto">
+          <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 font-extrabold tracking-wider uppercase text-xs shadow-xs">
+            <UserCheck size={14} className="text-[#C5A059]" />
             Our Leadership &amp; Experts
           </span>
-          <h2 className="text-3xl md:text-4xl font-serif font-bold text-[#1A335E]">
-            Our Eminent <span className="gold-gradient">Team Members</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] tracking-tight leading-tight">
+            Our Eminent <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Team Members</span>
           </h2>
-          <p className="text-gray-500 text-xs md:text-sm leading-relaxed font-normal">
+          <p className="text-slate-600 text-sm md:text-base leading-relaxed font-normal">
             Former IAS, IRS officers, DROs, Tahsildars, and Advocates bringing legal authority and risk mitigation to every deal.
           </p>
         </div>
 
         {/* Compact Team Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 md:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-5">
           {team.map((member, i) => (
             <motion.div
               key={i}
@@ -116,37 +116,37 @@ const AboutTeam = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: (i % 5) * 0.05 }}
               viewport={{ once: true }}
-              className="group relative bg-white rounded-xl border border-gray-200/80 p-3 shadow-sm hover:border-[#D6B97B] hover:shadow-md transition-all duration-300 flex flex-col justify-between overflow-hidden"
+              className="group relative bg-white rounded-2xl border border-slate-200/90 p-3.5 shadow-sm hover:border-amber-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between overflow-hidden"
             >
               {/* Top Accent Line */}
-              <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D6B97B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" />
+              <div className="absolute top-0 left-0 w-full h-[3px] bg-gradient-to-r from-[#1A335E] via-[#C5A059] to-[#1A335E] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
               <div>
                 {/* Photo Container */}
-                <div className="aspect-[4/3.8] rounded-lg overflow-hidden relative bg-slate-100 mb-2.5">
+                <div className="aspect-[4/3.8] rounded-xl overflow-hidden relative bg-slate-100 mb-3 border border-slate-100 group-hover:border-amber-200 transition-colors">
                   <img
                     src={member.image}
                     alt={member.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
-                  <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded bg-[#1A335E] text-[#D6B97B] text-[9px] font-extrabold tracking-wider uppercase shadow">
+                  <span className="absolute top-2 right-2 px-2 py-0.5 rounded-md bg-[#0D1B2A] text-[#E5C378] text-[9.5px] font-black tracking-wider uppercase shadow-md border border-[#C5A059]/30">
                     {member.badge}
                   </span>
                 </div>
 
                 {/* Text Info */}
                 <div className="space-y-1">
-                  <h3 className="text-xs md:text-sm font-serif font-bold text-[#1A335E] group-hover:text-[#D6B97B] transition-colors leading-snug line-clamp-1">
+                  <h3 className="text-xs sm:text-sm md:text-[14.5px] font-['Plus_Jakarta_Sans',sans-serif] font-extrabold text-[#0D1B2A] group-hover:text-blue-700 transition-colors leading-snug line-clamp-1">
                     {member.name}
                   </h3>
-                  <p className="text-[#D6B97B] text-[10px] font-bold uppercase tracking-wider line-clamp-1">
+                  <p className="text-[#B8860B] text-[11px] font-bold uppercase tracking-wider line-clamp-1">
                     {member.title}
                   </p>
                 </div>
               </div>
 
               {/* Qualification */}
-              <p className="text-gray-400 text-[10px] leading-tight pt-2 mt-2 border-t border-gray-100 line-clamp-2">
+              <p className="text-slate-600 text-xs font-medium leading-tight pt-2.5 mt-2.5 border-t border-slate-100 line-clamp-2">
                 {member.qualification}
               </p>
             </motion.div>
