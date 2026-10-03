@@ -100,7 +100,7 @@ const Hero = () => {
           </div>
 
           <div className="overflow-hidden">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Outfit',sans-serif] font-black !text-white leading-[1.1] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-['Plus_Jakarta_Sans',sans-serif] font-black !text-white leading-[1.1] tracking-tight">
               {currentSlide.headline.split(' ').map((word, i) => (
                 <span key={i} className="inline-block overflow-hidden mr-[0.25em] last:mr-0">
                   <span className="reveal-word inline-block">

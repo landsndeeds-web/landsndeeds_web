@@ -14,7 +14,7 @@ const ServicesWhyChooseUs = () => {
         <div className="grid lg:grid-cols-2 gap-20 items-center mb-32">
           <div className="space-y-8">
             <span className="text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs">Why Choose Us?</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-gray-900">
               Unparalleled Service and <span className="gold-gradient italic">Accurate Guidance</span>
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed">

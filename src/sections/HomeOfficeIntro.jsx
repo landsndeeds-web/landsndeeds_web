@@ -25,11 +25,11 @@ const HomeOfficeIntro = () => {
               {/* Office Location Badge */}
               <div className="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6 bg-white/95 backdrop-blur-xl rounded-2xl p-4 sm:p-5 shadow-2xl ring-1 ring-white/80 flex items-center justify-between transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                 <div className="flex items-center gap-3.5">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center shrink-0 shadow-md">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#1A335E] to-[#0D1B2A] flex items-center justify-center shrink-0 shadow-md">
                     <MapPin size={22} className="text-white" />
                   </div>
                   <div>
-                    <h4 className="font-['Outfit',sans-serif] font-bold text-slate-900 text-base sm:text-lg leading-tight">
+                    <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-slate-900 text-base sm:text-lg leading-tight">
                       Race Course Landmark
                     </h4>
                     <p className="text-slate-600 text-xs sm:text-sm font-medium mt-0.5">
@@ -46,13 +46,13 @@ const HomeOfficeIntro = () => {
 
           {/* Right Column: Text Explaining What We Do */}
           <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-blue-200/80 shadow-xs">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-amber-200/80 shadow-xs">
               <Building2 size={15} className="text-amber-500" />
               Who We Are & What We Do
             </span>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Outfit',sans-serif] font-black text-slate-900 leading-[1.12] tracking-tight">
-              Bridging Real Estate Deals & <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent">Watertight Due Diligence</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-[1.12] tracking-tight">
+              Bridging Real Estate Deals & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Watertight Due Diligence</span>
             </h2>
 
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
@@ -61,9 +61,9 @@ const HomeOfficeIntro = () => {
 
             {/* Key Assurance Badges */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
-              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all hover:shadow-md hover:border-blue-300">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 ring-1 ring-blue-100">
-                  <ShieldCheck size={20} className="text-blue-600" />
+              <div className="flex items-center gap-3.5 p-4 rounded-2xl bg-white border border-slate-200/90 shadow-sm transition-all hover:shadow-md hover:border-[#C5A059]">
+                <div className="w-10 h-10 rounded-xl bg-amber-50 text-[#1A335E] flex items-center justify-center shrink-0 ring-1 ring-amber-100">
+                  <ShieldCheck size={20} className="text-[#1A335E]" />
                 </div>
                 <span className="text-sm sm:text-base font-bold text-slate-900">
                   360° Title & Document Scrutiny
@@ -84,7 +84,7 @@ const HomeOfficeIntro = () => {
               <Link
                 to="/about"
                 id="home-about-explore-btn"
-                className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 group"
+                className="inline-flex items-center gap-2.5 px-8 py-4 bg-gradient-to-r from-[#1A335E] via-[#0D1B2A] to-[#1A335E] hover:from-[#0D1B2A] hover:to-[#1A335E] text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-[#1A335E]/25 hover:shadow-[#1A335E]/40 hover:-translate-y-0.5 group"
               >
                 <span>Learn More About Us</span>
                 <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />

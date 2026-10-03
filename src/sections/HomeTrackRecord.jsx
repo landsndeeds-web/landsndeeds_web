@@ -13,13 +13,13 @@ const marqueeDeals = [
     image: prop1,
     description: 'High-visibility prime commercial development on Avinashi Road. Full legal title validation and ownership chain audit.',
     highlights: ['Avinashi Road Corridor', '100% Clear Title', 'Prime Commercial Asset'],
-    strip: 'linear-gradient(90deg, #2563EB, #38BDF8)',
-    accentColor: '#1D4ED8',
-    accentBg: '#EFF6FF',
-    accentBorder: '#BFDBFE',
-    tagColor: '#1E40AF',
-    tagBg: '#EFF6FF',
-    tagBorder: '#BFDBFE',
+    strip: 'linear-gradient(90deg, #1A335E, #2C5282)',
+    accentColor: '#1A335E',
+    accentBg: '#EFF3FA',
+    accentBorder: '#C5D3E8',
+    tagColor: '#1A335E',
+    tagBg: '#EFF3FA',
+    tagBorder: '#C5D3E8',
   },
   {
     title: 'Kongunad Multi Specialty Hospital',
@@ -29,13 +29,13 @@ const marqueeDeals = [
     image: prop2,
     description: 'Extensive multi-tier title scrutiny and institutional zoning approval for a state-of-the-art multi-specialty healthcare campus.',
     highlights: ['Healthcare Compliance', 'Multi-Tier Title Audited', 'Statutory Approvals'],
-    strip: 'linear-gradient(90deg, #F59E0B, #FBBF24)',
-    accentColor: '#D97706',
-    accentBg: '#FEF3C7',
-    accentBorder: '#FDE68A',
-    tagColor: '#92400E',
-    tagBg: '#FEF3C7',
-    tagBorder: '#FDE68A',
+    strip: 'linear-gradient(90deg, #D4AF37, #C5A059)',
+    accentColor: '#B8860B',
+    accentBg: '#FEF9E7',
+    accentBorder: '#F0D88A',
+    tagColor: '#7D5A0E',
+    tagBg: '#FEF9E7',
+    tagBorder: '#F0D88A',
   },
   {
     title: 'Premium Farmlands at Devarayapuram',
@@ -70,8 +70,8 @@ const HomeTrackRecord = () => {
               <ShieldCheck size={15} className="text-amber-600" />
               Proven Marquee Transactions
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Outfit',sans-serif] font-black text-slate-900 leading-tight tracking-tight">
-              Track Record <span className="bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 bg-clip-text text-transparent">Showcase</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
+              Track Record <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Showcase</span>
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed max-w-xl font-normal">
               A curated showcase of our marquee commercial landmarks, healthcare infrastructure, and prime agricultural corridors executed with absolute legal certainty.
@@ -81,7 +81,7 @@ const HomeTrackRecord = () => {
           <Link
             to="/properties"
             id="track-record-view-all-btn"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#1A335E] via-[#0D1B2A] to-[#1A335E] hover:from-[#0D1B2A] hover:to-[#1A335E] text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-[#1A335E]/25 hover:shadow-[#1A335E]/40 hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
           >
             <span>View All Listings</span>
             <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -135,7 +135,7 @@ const HomeTrackRecord = () => {
 
                 {/* Body */}
                 <div className="p-6 flex flex-col gap-3.5 flex-1">
-                  <h3 className="text-lg sm:text-xl font-['Outfit',sans-serif] font-bold text-slate-900 leading-snug line-clamp-1 transition-colors duration-200 group-hover:text-blue-600">
+                  <h3 className="text-lg sm:text-xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-slate-900 leading-snug line-clamp-1 transition-colors duration-200 group-hover:text-[#B8860B]">
                     {deal.title}
                   </h3>
 

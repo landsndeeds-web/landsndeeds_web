@@ -17,14 +17,14 @@ const leaders = [
       'Advanced legal foundation: LL.B. & Master of Business Laws (MBL)',
       'Specialist in high-value asset security & dispute mitigation',
     ],
-    themeGradient: 'linear-gradient(90deg, #2563EB, #38BDF8)',
-    accentBg: '#EFF6FF',
-    accentColor: '#1D4ED8',
-    borderColor: '#BFDBFE',
-    tagBg: '#EFF6FF',
-    tagColor: '#1E40AF',
-    tagBorder: '#BFDBFE',
-    photoRing: '#2563EB',
+    themeGradient: 'linear-gradient(90deg, #1A335E, #2C5282)',
+    accentBg: '#EFF3FA',
+    accentColor: '#1A335E',
+    borderColor: '#C5D3E8',
+    tagBg: '#EFF3FA',
+    tagColor: '#1A335E',
+    tagBorder: '#C5D3E8',
+    photoRing: '#1A335E',
   },
   {
     name: 'Mr. Narayana Moorthy',
@@ -61,12 +61,12 @@ const HomeLeadership = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-slate-200/80">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-50 text-blue-700 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-blue-200/80 shadow-xs mb-2">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-amber-200/80 shadow-xs mb-2">
               <Award size={15} className="text-amber-500" />
               Leadership & Trust
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Outfit',sans-serif] font-black text-slate-900 leading-tight tracking-tight">
-              Guided by <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-800 bg-clip-text text-transparent">Public Service Experts</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
+              Guided by <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Public Service Experts</span>
             </h2>
             <p className="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed max-w-xl font-normal">
               Their historical government credentials serve as our strongest security badge, bridging executive administrative vigilance directly into private real estate transactions.
@@ -76,7 +76,7 @@ const HomeLeadership = () => {
           <Link
             to="/about"
             id="leadership-view-team-btn"
-            className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 hover:from-blue-800 hover:to-indigo-800 text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-blue-600/25 hover:shadow-blue-600/40 hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
+            className="inline-flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#1A335E] via-[#0D1B2A] to-[#1A335E] hover:from-[#0D1B2A] hover:to-[#1A335E] text-white rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 shadow-xl shadow-[#1A335E]/25 hover:shadow-[#1A335E]/40 hover:-translate-y-0.5 group shrink-0 mt-4 md:mt-0"
           >
             <span>Meet Full Advisory Team</span>
             <ArrowRight size={15} className="transition-transform duration-300 group-hover:translate-x-1" />
@@ -127,7 +127,7 @@ const HomeLeadership = () => {
                         {leader.credential}
                       </span>
 
-                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-['Outfit',sans-serif] font-black text-slate-900 leading-snug">
+                      <h3 className="text-xl sm:text-2xl lg:text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-slate-900 leading-snug">
                         {leader.name}
                       </h3>
 

@@ -8,7 +8,7 @@ const ServicesSummary = () => {
         <div className="w-20 h-20 bg-white shadow-xl rounded-2xl flex items-center justify-center mx-auto mb-10">
           <BadgeCheck className="text-[#D6B97B]" size={40} />
         </div>
-        <h2 className="text-4xl font-serif font-bold text-gray-900">Your Trusted Partner in <span className="gold-gradient">Real Estate Growth</span></h2>
+        <h2 className="text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-gray-900">Your Trusted Partner in <span className="gold-gradient">Real Estate Growth</span></h2>
         <p className="text-gray-600 text-lg leading-relaxed italic">
           "We are a dynamic and modern team specializing in land development and property management. With a deep understanding of the real estate market, we bridge innovation and expertise to deliver exceptional results."
         </p>

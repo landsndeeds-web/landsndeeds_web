@@ -7,7 +7,7 @@ const ServicesCategorisation = () => {
         <div className="space-y-20">
           <div className="text-center space-y-4">
             <span className="text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs">Categorisation</span>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-gray-900">Our Property <span className="gold-gradient">Categorisation</span></h2>
+            <h2 className="text-4xl md:text-6xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-gray-900">Our Property <span className="gold-gradient">Categorisation</span></h2>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16">
@@ -17,7 +17,7 @@ const ServicesCategorisation = () => {
                 <div className="w-16 h-16 bg-[#1A335E] rounded-2xl flex items-center justify-center text-white">
                   <Map size={32} />
                 </div>
-                <h3 className="text-3xl font-serif font-bold text-gray-900">Lands</h3>
+                <h3 className="text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-gray-900">Lands</h3>
               </div>
               <p className="text-gray-600 text-lg">We offer diverse land solutions to meet your specific requirements:</p>
               <div className="space-y-8">
@@ -41,7 +41,7 @@ const ServicesCategorisation = () => {
                 <div className="w-16 h-16 bg-[#D6B97B] rounded-2xl flex items-center justify-center text-white">
                   <Building size={32} />
                 </div>
-                <h3 className="text-3xl font-serif font-bold text-gray-900">Buildings</h3>
+                <h3 className="text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-gray-900">Buildings</h3>
               </div>
               <p className="text-gray-600 text-lg">Our building services encompass a wide range of options:</p>
               <div className="space-y-10">

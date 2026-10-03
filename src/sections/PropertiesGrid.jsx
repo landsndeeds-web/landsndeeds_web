@@ -139,7 +139,7 @@ const PropertiesGrid = () => {
                             <MapPin size={12} className="text-[#D6B97B]" />
                             <span className="text-xs uppercase tracking-wider font-semibold line-clamp-1">{property.location}</span>
                           </div>
-                          <h3 className="!text-[#1A335E] group-hover:!text-[#D6B97B] font-serif font-bold text-xl leading-tight transition-colors line-clamp-2">
+                          <h3 className="!text-[#1A335E] group-hover:!text-[#D6B97B] font-['Plus_Jakarta_Sans',sans-serif] font-black text-xl leading-tight transition-colors line-clamp-2">
                             {property.title}
                           </h3>
                         </div>
@@ -234,7 +234,7 @@ const PropertiesGrid = () => {
                         <FileText size={12} />
                         Property Inquiry
                       </span>
-                      <h3 className="!text-[#1A335E] font-serif font-bold text-2xl line-clamp-1">
+                      <h3 className="!text-[#1A335E] font-['Plus_Jakarta_Sans',sans-serif] font-black text-2xl line-clamp-1">
                         {inquiryProperty.title}
                       </h3>
                       <p className="text-gray-400 text-xs uppercase tracking-wider font-semibold line-clamp-1">
@@ -311,7 +311,7 @@ const PropertiesGrid = () => {
                       <CheckCircle2 size={40} />
                     </div>
                     <div className="space-y-2">
-                      <h3 className="!text-[#1A335E] font-serif font-bold text-2xl">Request Submitted!</h3>
+                      <h3 className="!text-[#1A335E] font-['Plus_Jakarta_Sans',sans-serif] font-black text-2xl">Request Submitted!</h3>
                       <p className="text-gray-600 text-sm max-w-sm">
                         Thank you, <span className="font-bold text-gray-800">{formData.name}</span>. Our legal experts and property advisors will contact you shortly at <span className="font-semibold text-gray-800">{formData.email}</span>.
                       </p>

@@ -38,7 +38,7 @@ const ServicesRegistration = () => {
             <FileCheck size={14} />
             Sub-Registrar Office Support
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
+          <h2 className="text-3xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E]">
             End to End - <span className="gold-gradient">Registration Process</span>
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed font-normal">
@@ -70,7 +70,7 @@ const ServicesRegistration = () => {
                 </div>
 
                 <div className="space-y-2 mb-4">
-                  <h3 className="font-serif font-bold text-[#1A335E] text-base leading-snug">
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] text-base leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 text-xs md:text-sm leading-relaxed">

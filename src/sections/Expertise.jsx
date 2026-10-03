@@ -33,7 +33,7 @@ const Expertise = () => {
         <div className="expertise-content max-w-4xl mx-auto text-center space-y-3">
           <div className="space-y-1">
             <span className="text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs">{expertiseContent.headline}</span>
-            <h2 className="text-4xl md:text-5xl font-serif font-bold text-gray-900">
+            <h2 className="text-4xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-gray-900">
               {expertiseContent.subtext}
             </h2>
           </div>

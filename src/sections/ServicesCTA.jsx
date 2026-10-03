@@ -9,7 +9,7 @@ const ServicesCTA = () => {
       </div>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-10">
-          <h2 className="text-4xl md:text-5xl font-serif font-bold !text-white leading-tight">
+          <h2 className="text-4xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black !text-white leading-tight">
             Find world Best <span className="gold-gradient">Services & Resources!</span>
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed">

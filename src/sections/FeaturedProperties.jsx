@@ -45,7 +45,7 @@ const FeaturedProperties = () => {
         <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8 md:mb-10">
           <div className="space-y-2">
             <span className="inline-block px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">Curated Selection</span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
+            <h2 className="text-3xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E]">
               Featured <span className="gold-gradient">Properties</span>
             </h2>
           </div>
@@ -74,7 +74,7 @@ const FeaturedProperties = () => {
                   </span>
                 </div>
                 <div className="absolute bottom-4 left-4 right-4 text-white">
-                  <h3 className="!text-white text-xl md:text-2xl font-serif font-bold mb-1">
+                  <h3 className="!text-white text-xl md:text-2xl font-['Plus_Jakarta_Sans',sans-serif] font-bold mb-1">
                     {property.title}
                   </h3>
                   <p className="text-white/80 text-xs md:text-sm font-medium">{property.location}</p>

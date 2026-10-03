@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
             {/* Floating Trust Badge */}
             <div className="absolute bottom-3 left-3 right-3 bg-white/95 backdrop-blur-md rounded-xl p-3 shadow-lg border border-white/60 flex items-center justify-between">
               <div>
-                <p className="text-[#1d3557] font-serif font-bold text-xs">
+                <p className="text-[#1d3557] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs">
                   Trusted Across Tamil Nadu
                 </p>
                 <div className="flex items-center gap-1 mt-0.5">
@@ -82,7 +82,7 @@ const WhyChooseUs = () => {
               The Lands N Deeds Advantage
             </span>
 
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1d3557] leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1d3557] leading-tight">
               Why Buyers, Sellers & Investors Choose Lands N Deeds
             </h2>
 
