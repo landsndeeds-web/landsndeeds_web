@@ -51,7 +51,7 @@ const ServicesGrid = () => {
               <div className="mb-8 p-4 bg-gray-50 rounded-2xl w-fit group-hover:bg-[#D6B97B]/10 transition-colors">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-serif font-bold text-gray-900 mb-4">{service.title}</h3>
+              <h3 className="text-2xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-gray-900 mb-4">{service.title}</h3>
               <p className="text-gray-600 leading-relaxed">{service.desc}</p>
             </motion.div>
           ))}

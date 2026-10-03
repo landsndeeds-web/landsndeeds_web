@@ -35,7 +35,7 @@ const HomeFinalCTA = () => {
                 Start Your Property Journey
               </span>
 
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#1A335E] leading-tight">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] leading-tight">
                 Looking for the <span className="gold-gradient">Right Property?</span>
               </h2>
 

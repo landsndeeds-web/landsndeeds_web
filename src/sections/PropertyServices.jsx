@@ -76,7 +76,7 @@ const PropertyServices = () => {
               <Sparkles size={11} className="text-[#1d3557]" />
               Professional Real Estate Services
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1d3557]">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1d3557]">
               End-to-End Property Solutions
             </h2>
           </div>
@@ -107,7 +107,7 @@ const PropertyServices = () => {
                   >
                     <Icon size={19} style={{ color: svc.color }} />
                   </div>
-                  <h3 className="text-[#1d3557] font-serif font-bold text-base mb-1.5 transition-colors duration-300">
+                  <h3 className="text-[#1d3557] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-base mb-1.5 transition-colors duration-300">
                     {svc.title}
                   </h3>
                   <p className="text-gray-500 text-xs leading-relaxed">

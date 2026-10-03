@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="bg-[#0A1626] text-white relative overflow-hidden border-t-2 border-[#D4AF37]/40 font-['Plus_Jakarta_Sans',sans-serif]">
       {/* Top Accent Strip */}
-      <div className="h-[3px] w-full bg-gradient-to-r from-[#0D1B2A] via-[#D4AF37] to-[#10B981]" />
+      <div className="h-[3px] w-full bg-gradient-to-r from-[#0D1B2A] via-[#D4AF37] to-[#1A335E]" />
 
       <div className="container mx-auto px-6 pt-9 pb-6 relative z-10">
         
@@ -52,7 +52,8 @@ const Footer = () => {
 
           {/* Col 2: Quick Links (3 Cols) */}
           <div className="md:col-span-3 space-y-3">
-            <h4 className="text-[#F3DA90] font-black uppercase tracking-wider text-xs sm:text-sm">
+            <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-black !text-white text-sm sm:text-base uppercase tracking-[0.15em] mb-1 flex items-center gap-2">
+              <span className="w-1 h-4 rounded-full bg-gradient-to-b from-[#D4AF37] to-[#C5A059] shrink-0"></span>
               Quick Links
             </h4>
             <ul className="space-y-2">
@@ -72,7 +73,8 @@ const Footer = () => {
 
           {/* Col 3: Direct Contact & Office (4 Cols) */}
           <div className="md:col-span-4 space-y-3">
-            <h4 className="text-[#F3DA90] font-black uppercase tracking-wider text-xs sm:text-sm">
+            <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-black !text-white text-sm sm:text-base uppercase tracking-[0.15em] mb-1 flex items-center gap-2">
+              <span className="w-1 h-4 rounded-full bg-gradient-to-b from-[#D4AF37] to-[#C5A059] shrink-0"></span>
               Get in Touch
             </h4>
             

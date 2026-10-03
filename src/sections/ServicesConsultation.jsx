@@ -34,7 +34,7 @@ const ServicesConsultation = () => {
             <Headphones size={14} />
             Professional Advisory Services
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
+          <h2 className="text-3xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E]">
             Expert <span className="gold-gradient">Consultation</span>
           </h2>
           <p className="text-gray-600 text-sm md:text-base leading-relaxed font-normal">
@@ -59,7 +59,7 @@ const ServicesConsultation = () => {
                   <div className="w-10 h-10 rounded-xl bg-[#1A335E]/10 flex items-center justify-center text-[#1A335E]">
                     <Icon size={20} />
                   </div>
-                  <h3 className="font-serif font-bold text-[#1A335E] text-base leading-snug">
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] text-base leading-snug">
                     {item.title}
                   </h3>
                   <p className="text-gray-500 text-xs md:text-sm leading-relaxed">

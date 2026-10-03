@@ -30,7 +30,7 @@ const HomeSearchSection = () => {
                 Verified & Legally Clear Listings
               </div>
 
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1A335E] leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] leading-tight">
                 Find Your Ideal Property in <span className="gold-gradient">Tamil Nadu</span>
               </h2>
 

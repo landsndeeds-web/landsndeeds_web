@@ -109,7 +109,7 @@ const PropertyCategories = () => {
               <span className="w-1.5 h-1.5 rounded-full bg-[#1d3557]" />
               Portfolio Overview
             </span>
-            <h2 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#1d3557]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1d3557]">
               Explore Property Categories
             </h2>
           </div>
@@ -154,7 +154,7 @@ const PropertyCategories = () => {
                 </div>
 
                 {/* Text */}
-                <h3 className="text-[#1d3557] font-serif font-bold text-sm sm:text-base mb-0.5 transition-colors duration-300">
+                <h3 className="text-[#1d3557] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-sm sm:text-base mb-0.5 transition-colors duration-300">
                   {cat.title}
                 </h3>
                 <p className="text-gray-500 text-[11px] sm:text-xs mb-2 leading-snug">{cat.description}</p>

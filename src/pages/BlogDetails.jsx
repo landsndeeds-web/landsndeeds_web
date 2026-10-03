@@ -62,12 +62,12 @@ const components = {
     ),
   },
   block: {
-    h1: ({ children }) => <h1 className="text-4xl font-serif font-bold text-[#1A335E] mt-12 mb-5 leading-tight">{children}</h1>,
-    h2: ({ children }) => <h2 className="text-3xl font-serif font-bold text-[#1A335E] mt-10 mb-4 leading-snug border-b border-gray-100 pb-2">{children}</h2>,
-    h3: ({ children }) => <h3 className="text-2xl font-serif font-bold text-[#1A335E] mt-8 mb-3 leading-snug">{children}</h3>,
-    h4: ({ children }) => <h4 className="text-xl font-serif font-semibold text-[#1A335E] mt-7 mb-3">{children}</h4>,
-    h5: ({ children }) => <h5 className="text-lg font-serif font-semibold text-[#1A335E] mt-6 mb-2">{children}</h5>,
-    h6: ({ children }) => <h6 className="text-base font-serif font-semibold text-gray-600 uppercase tracking-wider mt-5 mb-2">{children}</h6>,
+    h1: ({ children }) => <h1 className="text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] mt-12 mb-5 leading-tight">{children}</h1>,
+    h2: ({ children }) => <h2 className="text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] mt-10 mb-4 leading-snug border-b border-gray-100 pb-2">{children}</h2>,
+    h3: ({ children }) => <h3 className="text-2xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] mt-8 mb-3 leading-snug">{children}</h3>,
+    h4: ({ children }) => <h4 className="text-xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] mt-7 mb-3">{children}</h4>,
+    h5: ({ children }) => <h5 className="text-lg font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-[#1A335E] mt-6 mb-2">{children}</h5>,
+    h6: ({ children }) => <h6 className="text-base font-['Plus_Jakarta_Sans',sans-serif] font-semibold text-gray-600 uppercase tracking-wider mt-5 mb-2">{children}</h6>,
     normal: ({ children }) => {
       // Render empty paragraphs as spacers
       if (!children || (Array.isArray(children) && children.every(c => c === '' || c == null))) {
@@ -208,7 +208,7 @@ const BlogDetails = () => {
   if (!post) {
     return (
       <div className="min-h-screen pt-40 pb-20 bg-white flex flex-col items-center">
-        <h1 className="text-4xl font-serif font-bold text-[#1A335E] mb-6">Post Not Found</h1>
+        <h1 className="text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] mb-6">Post Not Found</h1>
         <p className="text-gray-600 mb-8">The article you are looking for does not exist or has been removed.</p>
         <Link to="/blogs" className="px-8 py-3 bg-[#D6B97B] text-gray-900 rounded-full font-bold uppercase tracking-widest text-xs hover:bg-[#1A335E] hover:text-white transition-all">
           Back to Blogs
@@ -235,7 +235,7 @@ const BlogDetails = () => {
             </span>
           )}
           
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-serif font-bold text-[#1A335E] leading-tight">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] leading-tight">
             {post.title}
           </h1>
           
