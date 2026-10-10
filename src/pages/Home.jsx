@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Hero from '../sections/Hero';
 import HomeOfficeIntro from '../sections/HomeOfficeIntro';
 import HomeShieldSection from '../sections/HomeShieldSection';
-import HomeTrackRecord from '../sections/HomeTrackRecord';
+import HomeClientLogos from '../sections/HomeClientLogos';
 import HomeLeadership from '../sections/HomeLeadership';
 
 import KnowledgeCentre from '../sections/KnowledgeCentre';
@@ -65,8 +65,8 @@ const Home = () => {
       {/* 3. The 360° Shield */}
       <HomeShieldSection />
 
-      {/* 4. Track Record Showcase */}
-      <HomeTrackRecord />
+      {/* 4. Proven Client Logos */}
+      <HomeClientLogos />
 
       {/* 5. Leadership & Trust */}
       <HomeLeadership />

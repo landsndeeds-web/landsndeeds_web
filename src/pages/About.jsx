@@ -5,7 +5,6 @@ import AboutVision from '../sections/AboutVision';
 import AboutMission from '../sections/AboutMission';
 import AboutInfrastructure from '../sections/AboutInfrastructure';
 import AboutLandBanks from '../sections/AboutLandBanks';
-import AboutWhyChooseUs from '../sections/AboutWhyChooseUs';
 
 const About = () => {
   useEffect(() => {
@@ -44,9 +43,6 @@ const About = () => {
 
       {/* 5. Section e: Our Land Banks – Executed Projects */}
       <AboutLandBanks />
-
-      {/* 6. Section f: Why Choose Lands N Deeds? */}
-      <AboutWhyChooseUs />
     </main>
   );
 };
