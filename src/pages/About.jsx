@@ -1,8 +1,7 @@
 import { useEffect } from 'react';
 import AboutHero from '../sections/AboutHero';
 import AboutTeam from '../sections/AboutTeam';
-import AboutVision from '../sections/AboutVision';
-import AboutMission from '../sections/AboutMission';
+import AboutVisionMission from '../sections/AboutVisionMission';
 import AboutInfrastructure from '../sections/AboutInfrastructure';
 import AboutLandBanks from '../sections/AboutLandBanks';
 
@@ -32,11 +31,8 @@ const About = () => {
       <AboutHero />
       <AboutTeam />
 
-      {/* 2. Section b: Our Vision */}
-      <AboutVision />
-
-      {/* 3. Section c: Our Mission */}
-      <AboutMission />
+      {/* 2. Section b & c: Our Vision, Mission & Strategic Goals */}
+      <AboutVisionMission />
 
       {/* 4. Section d: Infrastructure */}
       <AboutInfrastructure />
