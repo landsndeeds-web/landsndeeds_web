@@ -11,73 +11,72 @@ import {
   Layers
 } from 'lucide-react';
 
+import sugunaLogo from '../assets/Suguna-Foods-Brand-Logo.png';
+import aromaLogo from '../assets/aroma-group-logo.avif';
+import cagLogo from '../assets/cag_logo.png';
+import kkLogo from '../assets/kk-logo.avif';
+import sdtLogo from '../assets/sdt-logo.png';
+import ssvmLogo from '../assets/ssvm-logo.png';
+
 // Client Categories
 const categories = ['All Sectors', 'Corporate & Infra', 'Healthcare & Institutions', 'Real Estate & Developers', 'Agro & Industrial'];
 
-// Client Logos Data (4 placeholder clients ready for future live logos)
+// Client Logos Data (6 Live Institutional & Corporate Clients)
 const clients = [
   {
-    name: 'Apex Infrastructure',
+    name: 'Suguna Foods',
+    sector: 'Agro & Industrial',
+    subtitle: 'Poultry & Agro-Food Conglomerate',
+    type: 'Agro-Food Enterprise',
+    logo: sugunaLogo,
+    color: '#E11D48',
+    accentBg: '#FFE4E6',
+  },
+  {
+    name: 'Aroma Group',
+    sector: 'Agro & Industrial',
+    subtitle: 'Dairy & Food Processing Conglomerate',
+    type: 'Food Processing Leader',
+    logo: aromaLogo,
+    color: '#0284C7',
+    accentBg: '#E0F2FE',
+  },
+  {
+    name: 'Hotel CAG Pride',
     sector: 'Corporate & Infra',
-    subtitle: 'Industrial Corridors & SEZ Parks',
-    type: 'Enterprise Client',
-    // Custom SVG Placeholder
-    icon: (
-      <svg className="w-9 h-9" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="10" fill="#1A335E" />
-        <path d="M20 9L29 25H11L20 9Z" stroke="#E5C378" strokeWidth="2.5" strokeLinejoin="round" />
-        <path d="M20 16L24.5 24H15.5L20 16Z" fill="#E5C378" />
-        <circle cx="20" cy="30" r="2" fill="#E5C378" />
-      </svg>
-    ),
-    color: '#1A335E',
-    accentBg: '#EFF3FA',
-  },
-  {
-    name: 'Kongunad Healthcare',
-    sector: 'Healthcare & Institutions',
-    subtitle: 'Multi-Specialty Hospital Campus',
-    type: 'Healthcare Conglomerate',
-    icon: (
-      <svg className="w-9 h-9" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="10" fill="#0D5C75" />
-        <path d="M20 10V30M10 20H30" stroke="#5EEAD4" strokeWidth="3" strokeLinecap="round" />
-        <circle cx="20" cy="20" r="13" stroke="#FFFFFF" strokeWidth="1.5" strokeDasharray="3 3" />
-      </svg>
-    ),
-    color: '#0D5C75',
-    accentBg: '#F0FDFA',
-  },
-  {
-    name: 'Zenith Realty Group',
-    sector: 'Real Estate & Developers',
-    subtitle: 'Premium Commercial & Residential',
-    type: 'Urban Developer',
-    icon: (
-      <svg className="w-9 h-9" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="10" fill="#0F172A" />
-        <path d="M12 12H28L12 28H28" stroke="#F59E0B" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-        <circle cx="12" cy="12" r="2" fill="#FBBF24" />
-        <circle cx="28" cy="28" r="2" fill="#FBBF24" />
-      </svg>
-    ),
+    subtitle: 'Hospitality & Commercial Landmarks',
+    type: 'Hospitality & Infra',
+    logo: cagLogo,
     color: '#D97706',
     accentBg: '#FEF3C7',
   },
   {
-    name: 'Southern Agro Holdings',
-    sector: 'Agro & Industrial',
-    subtitle: 'Agro-Estates & Commercial Farms',
-    type: 'Agri-Business Asset',
-    icon: (
-      <svg className="w-9 h-9" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="40" height="40" rx="10" fill="#14532D" />
-        <path d="M20 30V15C20 15 15 10 10 15C10 20 15 25 20 25C25 25 30 20 30 15C30 10 25 15 25 15" stroke="#86EFAC" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="20" cy="11" r="2" fill="#4ADE80" />
-      </svg>
-    ),
-    color: '#16A34A',
-    accentBg: '#DCFCE7',
+    name: 'Shree Devi Textile',
+    sector: 'Real Estate & Developers',
+    subtitle: 'Textile & Commercial Retail Icon',
+    type: 'Commercial Conglomerate',
+    logo: sdtLogo,
+    color: '#DC2626',
+    accentBg: '#FEE2E2',
+  },
+  {
+    name: 'SSVM Institutions',
+    sector: 'Healthcare & Institutions',
+    subtitle: 'World-Class Educational Campuses',
+    type: 'Premier Educational',
+    logo: ssvmLogo,
+    color: '#1A335E',
+    accentBg: '#EFF3FA',
+    isDarkLogo: true,
+  },
+  {
+    name: 'KK Group',
+    sector: 'Corporate & Infra',
+    subtitle: 'Infrastructure, Trading & Industrial Parks',
+    type: 'Industrial Conglomerate',
+    logo: kkLogo,
+    color: '#059669',
+    accentBg: '#ECFDF5',
   },
 ];
 
@@ -145,7 +144,7 @@ const HomeClientLogos = () => {
         </div>
 
         {/* Logos Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredClients.map((client, idx) => (
             <div
               key={idx}
@@ -158,10 +157,14 @@ const HomeClientLogos = () => {
               />
 
               <div>
-                {/* Header: Logo Icon & Sector Badge */}
+                {/* Header: Logo Image & Sector Badge */}
                 <div className="flex items-start justify-between gap-3 mb-4">
-                  <div className="p-2 rounded-xl bg-slate-50 border border-slate-100 group-hover:scale-110 group-hover:shadow-md transition-all duration-300">
-                    {client.icon}
+                  <div className={`h-14 w-28 p-2 rounded-xl border border-slate-100 flex items-center justify-center group-hover:scale-105 group-hover:shadow-md transition-all duration-300 ${client.isDarkLogo ? 'bg-[#0D1B2A]' : 'bg-slate-50'}`}>
+                    <img
+                      src={client.logo}
+                      alt={client.name}
+                      className="max-h-full max-w-full object-contain"
+                    />
                   </div>
                   <span
                     className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wider"
