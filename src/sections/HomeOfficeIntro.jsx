@@ -46,14 +46,15 @@ const HomeOfficeIntro = () => {
 
           {/* Right Column: Text Explaining What We Do */}
           <div className="lg:col-span-6 space-y-6 order-1 lg:order-2">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-amber-200/80 shadow-xs">
-              <Building2 size={15} className="text-amber-500" />
-              Who We Are & What We Do
-            </span>
+            <div>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-[1.12] tracking-tight">
+                Who We Are & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">What We Do</span>
+              </h2>
 
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-[1.12] tracking-tight">
-              Your Bridge to <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Secure, Risk-Free Real Estate</span>
-            </h2>
+              <p className="text-xl sm:text-2xl font-bold text-[#1A335E] mt-2.5 leading-snug">
+                Your Bridge to <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Secure, Risk-Free Real Estate</span>
+              </p>
+            </div>
 
             <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-normal">
               Welcome to Lands N Deeds, Coimbatore’s premier real estate firm dedicated to helping you seamlessly buy, sell, and lease all types of lands, buildings, plots, and flats. As a RERA-registered official channel partner with a robust network across South India, we bring you premium layout, apartment, and industrial options. Our core distinction lies in our unified panel of retired experts specialized in Law, Land Records, Town & Country Planning, and Registration. We conduct a meticulous, 360-degree legal due diligence process that safeguards your investments from initial document verification to final registry filing. Experience a secure, stress-free real estate journey backed by certified experts and complete legal transparency.

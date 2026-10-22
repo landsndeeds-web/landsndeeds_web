@@ -105,14 +105,13 @@ const HomeClientLogos = () => {
 
         {/* Section Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-8 pb-5 border-b border-slate-200/80">
-          <div className="max-w-2xl space-y-2.5">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] shadow-xs">
-              <ShieldCheck size={15} className="text-amber-600" />
-              Proven Institutional Trust
-            </span>
+          <div className="max-w-2xl space-y-2">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
-              Trusted by <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Leading Brands & Enterprises</span>
+              Proven <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Institutional Trust</span>
             </h2>
+            <p className="text-xl sm:text-2xl font-bold text-[#1A335E] leading-snug">
+              Trusted by <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Leading Brands & Enterprises</span>
+            </p>
             <p className="text-slate-600 text-base sm:text-lg leading-relaxed max-w-xl font-normal">
               Partnering with prominent conglomerates, healthcare networks, industrial developers, and institutional investors with absolute title integrity.
             </p>

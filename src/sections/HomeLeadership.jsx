@@ -61,13 +61,12 @@ const HomeLeadership = () => {
         {/* Section Header */}
         <div className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-6 pb-4 border-b border-slate-200/80">
           <div className="max-w-2xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] ring-1 ring-amber-200/80 shadow-xs mb-2">
-              <Award size={15} className="text-amber-500" />
-              Leadership & Trust
-            </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
-              Guided by <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Public Service Experts</span>
+              Leadership & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Trust</span>
             </h2>
+            <p className="text-xl sm:text-2xl font-bold text-[#1A335E] mt-2.5 leading-snug">
+              Guided by <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Public Service Experts</span>
+            </p>
             <p className="text-slate-600 text-base sm:text-lg mt-2 leading-relaxed max-w-xl font-normal">
               Their historical government credentials serve as our strongest security badge, bridging executive administrative vigilance directly into private real estate transactions.
             </p>
