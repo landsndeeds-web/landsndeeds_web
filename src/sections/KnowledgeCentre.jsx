@@ -50,14 +50,14 @@ const KnowledgeCentre = () => {
 
             {/* Left Column */}
             <div className="space-y-4 text-center lg:text-left max-w-2xl knowledge-fade-in">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 font-extrabold tracking-wider uppercase text-xs sm:text-[13px] border border-amber-200/80 shadow-xs">
-                <Sparkles size={14} className="text-[#C5A059]" />
-                Legal & Real Estate Insights
-              </span>
-
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
-                Property Knowledge <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Centre</span>
-              </h2>
+              <div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
+                  Knowledge Centre & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Insights</span>
+                </h2>
+                <p className="text-xl sm:text-2xl font-bold text-[#1A335E] mt-2.5 leading-snug">
+                  Property Intelligence & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Regulatory Guides</span>
+                </p>
+              </div>
 
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
                 Make confident property decisions with practical guides, legal document breakdowns, emerging zone updates, and advisory insights prepared by our legal and real estate specialists.
