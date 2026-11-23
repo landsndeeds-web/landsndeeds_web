@@ -30,7 +30,7 @@ const ContactHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold !text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-['Plus_Jakarta_Sans',sans-serif] font-black !text-white leading-tight"
           >
             Get in Touch <span className="gold-gradient">With Us</span>
           </motion.h1>

@@ -48,7 +48,7 @@ const AboutSection = () => {
         <div className="about-content space-y-10">
           <div className="space-y-4">
             <span className="text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs">Unparalleled Expertise</span>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
+            <h2 className="text-4xl md:text-6xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-gray-900 leading-tight">
               {aboutContent.headline}
             </h2>
           </div>
@@ -68,7 +68,7 @@ const AboutSection = () => {
               <img src={founderImage} alt={aboutContent.founder} className="w-full h-full object-cover" />
             </div>
             <div>
-              <h4 className="text-xl font-serif font-bold text-gray-900 mb-1">{aboutContent.founder}</h4>
+              <h4 className="text-xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-gray-900 mb-1">{aboutContent.founder}</h4>
               <p className="text-[#D6B97B] text-[10px] uppercase tracking-widest font-bold">
                 {aboutContent.founderTitle}
               </p>

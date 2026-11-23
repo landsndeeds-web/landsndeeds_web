@@ -38,7 +38,7 @@ const ServicesDueDiligence = () => {
             <ShieldCheck size={14} />
             Full Spectrum Risk Elimination
           </span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold !text-white leading-tight">
+          <h2 className="text-3xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black !text-white leading-tight">
             360 Degree <span className="gold-gradient">Due Diligence</span>
           </h2>
           <p className="!text-gray-300 text-sm md:text-base leading-relaxed font-normal">
@@ -63,7 +63,7 @@ const ServicesDueDiligence = () => {
                   <div className="w-11 h-11 rounded-xl bg-[#D6B97B]/10 flex items-center justify-center text-[#D6B97B] group-hover:bg-[#D6B97B] group-hover:text-[#0D1B2A] transition-colors">
                     <Icon size={22} />
                   </div>
-                  <h3 className="font-serif font-bold !text-white text-base md:text-lg leading-snug group-hover:!text-[#D6B97B] transition-colors">
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold !text-white text-base md:text-lg leading-snug group-hover:!text-[#D6B97B] transition-colors">
                     {step.title}
                   </h3>
                   <p className="!text-gray-300 text-xs md:text-sm leading-relaxed">

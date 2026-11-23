@@ -171,7 +171,7 @@ const BlogsGrid = () => {
                             <span className="text-[10px] uppercase tracking-wider font-bold">{formatDate(blog.publishedAt)}</span>
                           </div>
                           
-                          <h3 className="!text-[#1A335E] group-hover:!text-[#D6B97B] font-serif font-bold text-xl leading-tight transition-colors line-clamp-2">
+                          <h3 className="!text-[#1A335E] group-hover:!text-[#D6B97B] font-['Plus_Jakarta_Sans',sans-serif] font-black text-xl leading-tight transition-colors line-clamp-2">
                             {blog.title}
                           </h3>
 

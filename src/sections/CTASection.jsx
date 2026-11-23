@@ -16,7 +16,7 @@ const CTASection = () => {
           </div>
 
           <div className="relative z-10 p-12 md:p-24 max-w-3xl space-y-8">
-            <h2 className="text-4xl md:text-7xl font-serif font-bold text-text-primary leading-tight">
+            <h2 className="text-4xl md:text-7xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-text-primary leading-tight">
               Ready to Own Your <br />
               <span className="gold-gradient">Masterpiece?</span>
             </h2>

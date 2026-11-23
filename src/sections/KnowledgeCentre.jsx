@@ -1,44 +1,16 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { BookOpen, FileSearch, TrendingUp, Scale, ArrowUpRight } from 'lucide-react';
+import { BookOpen, FileText, TrendingUp, Scale, ArrowRight, Sparkles } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const articles = [
-  {
-    id: 1,
-    icon: BookOpen,
-    category: "Buyer's Guide",
-    title: 'How to Verify a Property Before Buying',
-    excerpt: 'A step-by-step guide to checking title deeds, encumbrance certificates, and legal clearances before any purchase.',
-    readTime: '5 min read',
-  },
-  {
-    id: 2,
-    icon: FileSearch,
-    category: 'Legal Docs',
-    title: 'Understanding Sale Deed, EC & Patta in Tamil Nadu',
-    excerpt: 'Plain-language explanations of the key property documents you need for a safe and legal transaction.',
-    readTime: '7 min read',
-  },
-  {
-    id: 3,
-    icon: TrendingUp,
-    category: 'Investment Tips',
-    title: 'Top Emerging Property Investment Zones in Tamil Nadu 2025',
-    excerpt: 'Discover high-growth corridors and undervalued areas with strong appreciation potential for investors.',
-    readTime: '6 min read',
-  },
-  {
-    id: 4,
-    icon: Scale,
-    category: 'Legal Updates',
-    title: 'Property Registration Rules & Stamp Duty in Tamil Nadu',
-    excerpt: 'Stay updated on the latest regulations, applicable stamp duty rates, and registration procedures.',
-    readTime: '4 min read',
-  },
+const topics = [
+  { label: 'Title Verification Guides', icon: BookOpen, bg: '#EFF3FA', color: '#1A335E', border: '#C5D3E8', iconColor: '#1A335E' },
+  { label: 'Sale Deed, EC & Patta Laws', icon: FileText, bg: '#FEF9E7', color: '#7D5A0E', border: '#F0D88A', iconColor: '#B8860B' },
+  { label: 'Market Investment Trends', icon: TrendingUp, bg: '#FEF9E7', color: '#7D5A0E', border: '#F0D88A', iconColor: '#C5A059' },
+  { label: 'Stamp Duty & Registration', icon: Scale, bg: '#EFF3FA', color: '#1A335E', border: '#C5D3E8', iconColor: '#1A335E' },
 ];
 
 const KnowledgeCentre = () => {
@@ -46,8 +18,9 @@ const KnowledgeCentre = () => {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.article-card',
-        { y: 30, opacity: 0 },
+      gsap.fromTo(
+        '.knowledge-fade-in',
+        { y: 20, opacity: 0 },
         {
           scrollTrigger: {
             trigger: sectionRef.current,
@@ -55,7 +28,7 @@ const KnowledgeCentre = () => {
           },
           y: 0,
           opacity: 1,
-          duration: 0.6,
+          duration: 0.5,
           stagger: 0.08,
           ease: 'power2.out',
         }
@@ -65,79 +38,66 @@ const KnowledgeCentre = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="knowledge-centre" className="py-10 md:py-14 bg-white relative overflow-hidden">
+    <section ref={sectionRef} id="knowledge-centre" className="pt-6 pb-8 md:pt-8 md:pb-10 relative overflow-hidden bg-gradient-to-b from-[#FAF8F2] via-white to-slate-50/80 border-t border-slate-200/80">
+      {/* Decorative background glow */}
+      <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(197,160,89,0.08) 0%,transparent 70%)', transform: 'translate(20%,-20%)' }} />
+      <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full pointer-events-none" style={{ background: 'radial-gradient(circle,rgba(26,51,94,0.06) 0%,transparent 70%)', transform: 'translate(-20%,20%)' }} />
+
       <div className="container mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-end gap-4 mb-8 md:mb-10">
-          <div className="space-y-2">
-            <span className="inline-block px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">
-              Expert Insights
-            </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
-              Property Knowledge <span className="gold-gradient">Centre</span>
-            </h2>
-          </div>
-          <p className="text-gray-500 max-w-md md:text-right hidden md:block text-sm leading-relaxed">
-            Make better property decisions with practical guides, legal document explanations, investment tips, and real estate updates prepared by our experts.
-          </p>
-        </div>
+        <div className="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-200/90 relative overflow-hidden">
 
-        {/* Articles Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {articles.map((article) => {
-            const Icon = article.icon;
-            return (
-              <div
-                key={article.id}
-                className="article-card group relative bg-white rounded-xl border border-gray-200/80 p-5 hover:border-[#D6B97B] hover:shadow-lg transition-all duration-300 hover:-translate-y-1 overflow-hidden cursor-pointer flex flex-col justify-between"
-              >
-                <div>
-                  {/* Top accent */}
-                  <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D6B97B] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-t-xl" />
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
 
-                  {/* Icon */}
-                  <div className="w-10 h-10 rounded-lg bg-[#1A335E]/5 flex items-center justify-center mb-3 group-hover:bg-[#1A335E] transition-colors duration-300">
-                    <Icon size={18} className="text-[#1A335E] group-hover:text-[#D6B97B] transition-colors duration-300" />
-                  </div>
-
-                  {/* Category badge */}
-                  <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#D6B97B]/15 text-[#B8922E] text-[10px] font-bold uppercase tracking-wider mb-2">
-                    {article.category}
-                  </span>
-
-                  {/* Title */}
-                  <h3 className="text-[#1A335E] font-serif font-bold text-sm md:text-base leading-snug mb-2 group-hover:text-[#D6B97B] transition-colors duration-300">
-                    {article.title}
-                  </h3>
-
-                  {/* Excerpt */}
-                  <p className="text-gray-500 text-xs leading-relaxed mb-4">
-                    {article.excerpt}
-                  </p>
-                </div>
-
-                {/* Footer */}
-                <div className="flex items-center justify-between pt-3 border-t border-gray-100">
-                  <span className="text-gray-400 text-[10px] uppercase tracking-wider font-semibold">
-                    {article.readTime}
-                  </span>
-                  <ArrowUpRight size={14} className="text-gray-400 group-hover:text-[#D6B97B] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
-                </div>
+            {/* Left Column */}
+            <div className="space-y-4 text-center lg:text-left max-w-2xl knowledge-fade-in">
+              <div>
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
+                  Knowledge Centre & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Insights</span>
+                </h2>
+                <p className="text-xl sm:text-2xl font-bold text-[#1A335E] mt-2.5 leading-snug">
+                  Property Intelligence & <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Regulatory Guides</span>
+                </p>
               </div>
-            );
-          })}
-        </div>
 
-        {/* CTA */}
-        <div className="mt-8 text-center">
-          <Link
-            to="/blogs"
-            id="knowledge-centre-explore-btn"
-            className="inline-flex items-center gap-2 px-8 py-3 border-2 border-[#1A335E] text-[#1A335E] hover:bg-[#1A335E] hover:text-white rounded-full font-bold uppercase tracking-widest text-xs transition-all duration-300 hover:scale-[1.02] no-underline"
-          >
-            Explore All Articles
-            <ArrowUpRight size={15} />
-          </Link>
+              <p className="text-slate-600 text-base sm:text-lg leading-relaxed">
+                Make confident property decisions with practical guides, legal document breakdowns, emerging zone updates, and advisory insights prepared by our legal and real estate specialists.
+              </p>
+
+              {/* Topic Chips */}
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+                {topics.map((t, idx) => {
+                  const Icon = t.icon;
+                  return (
+                    <span
+                      key={idx}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold shadow-2xs border transition-all hover:scale-105"
+                      style={{
+                        background: t.bg,
+                        color: t.color,
+                        borderColor: t.border,
+                      }}
+                    >
+                      <Icon size={16} style={{ color: t.iconColor }} />
+                      {t.label}
+                    </span>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Right Column: CTA */}
+            <div className="shrink-0 knowledge-fade-in">
+              <Link
+                to="/blogs"
+                id="knowledge-centre-explore-btn"
+                className="inline-flex items-center gap-2.5 px-8 py-4 rounded-full font-bold uppercase tracking-wider text-xs sm:text-sm transition-all duration-300 hover:scale-105 no-underline group shadow-xl shadow-[#1A335E]/25 bg-gradient-to-r from-[#1A335E] via-[#0D1B2A] to-[#1A335E] hover:from-[#0D1B2A] hover:to-[#1A335E] text-white"
+              >
+                <span>Explore All Articles</span>
+                <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1.5" />
+              </Link>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>

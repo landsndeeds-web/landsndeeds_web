@@ -25,7 +25,7 @@ const ServicesHero = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-serif font-bold gold-gradient pb-2"
+            className="text-4xl md:text-6xl font-['Plus_Jakarta_Sans',sans-serif] font-black gold-gradient pb-2"
           >
             Our Core Services
           </motion.h1>

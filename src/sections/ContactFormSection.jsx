@@ -45,7 +45,7 @@ const ContactFormSection = () => {
                 <MessageSquare size={14} />
                 Send a Message
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1A335E] leading-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] leading-tight">
                 For More Details, <span className="gold-gradient">Contact Us!</span>
               </h2>
               <p className="text-gray-500 text-sm md:text-base leading-relaxed">
@@ -97,7 +97,7 @@ const ContactFormSection = () => {
           >
             <div className="bg-white rounded-2xl border border-gray-200/80 shadow-lg p-6 sm:p-8 md:p-10">
               <div className="mb-6 space-y-1">
-                <h3 className="text-xl sm:text-2xl font-serif font-bold text-[#1A335E]">Send Us a Message</h3>
+                <h3 className="text-xl sm:text-2xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E]">Send Us a Message</h3>
                 <p className="text-gray-500 text-sm">Fill in the form below and our team will respond within 24 hours.</p>
               </div>
 
@@ -110,7 +110,7 @@ const ContactFormSection = () => {
                   <div className="w-14 h-14 rounded-full bg-[#D6B97B]/20 flex items-center justify-center">
                     <CheckCircle2 size={32} className="text-[#D6B97B]" />
                   </div>
-                  <h4 className="text-xl font-serif font-bold text-[#1A335E]">Message Received!</h4>
+                  <h4 className="text-xl font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E]">Message Received!</h4>
                   <p className="text-gray-500 text-sm max-w-xs">Thank you for reaching out. Our team will contact you within 24 hours.</p>
                   <button
                     onClick={() => { setSubmitted(false); setForm({ name: '', email: '', phone: '', service: '', message: '' }); }}

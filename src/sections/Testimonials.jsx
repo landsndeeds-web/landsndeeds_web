@@ -11,7 +11,7 @@ const Testimonials = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-8 md:mb-10 space-y-2">
           <span className="inline-block px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">Client Testimonials</span>
-          <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E]">
+          <h2 className="text-3xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E]">
             Trusted by Property Buyers <span className="gold-gradient italic">& Owners</span>
           </h2>
           <p className="text-gray-500 max-w-xl mx-auto text-sm md:text-base leading-relaxed">
@@ -38,7 +38,7 @@ const Testimonials = () => {
                 </div>
                 
                 <div className="space-y-4 relative z-10">
-                  <p className="text-base md:text-lg font-serif italic text-gray-800 leading-relaxed">
+                  <p className="text-base md:text-lg font-['Plus_Jakarta_Sans',sans-serif] italic text-gray-800 leading-relaxed">
                     "{t.text}"
                   </p>
                   

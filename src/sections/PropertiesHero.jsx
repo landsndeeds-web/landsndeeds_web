@@ -16,7 +16,7 @@ const PropertiesHero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl font-serif font-bold gold-gradient pb-2 leading-tight"
+            className="text-4xl md:text-7xl font-['Plus_Jakarta_Sans',sans-serif] font-black gold-gradient pb-2 leading-tight"
           >
             Our Masterpieces
           </motion.h1>

@@ -49,7 +49,7 @@ const ServicesDigitalSurvey = () => {
                   <Ruler size={20} className="text-[#D6B97B]" />
                 </div>
                 <div>
-                  <h4 className="font-serif font-bold text-[#1A335E] text-xs uppercase tracking-wider">Precision Boundary Mapping</h4>
+                  <h4 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] text-xs uppercase tracking-wider">Precision Boundary Mapping</h4>
                   <p className="text-gray-600 text-xs mt-0.5">
                     Eliminate boundary disputes with millimeter DGPS accuracy.
                   </p>
@@ -64,7 +64,7 @@ const ServicesDigitalSurvey = () => {
               <Map size={14} />
               Precision Measurement &amp; Mapping
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E] leading-tight">
+            <h2 className="text-3xl md:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E] leading-tight">
               Digital <span className="gold-gradient">Survey</span>
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base font-normal">
@@ -87,7 +87,7 @@ const ServicesDigitalSurvey = () => {
                     <div className="w-8 h-8 rounded-lg bg-[#1A335E]/10 flex items-center justify-center text-[#1A335E]">
                       <Icon size={17} />
                     </div>
-                    <h3 className="font-serif font-bold text-[#1A335E] text-sm md:text-base">{item.title}</h3>
+                    <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] text-sm md:text-base">{item.title}</h3>
                     <p className="text-gray-500 text-xs md:text-sm leading-relaxed">{item.desc}</p>
                   </motion.div>
                 );

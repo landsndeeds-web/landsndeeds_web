@@ -24,7 +24,7 @@ const FAQ = () => {
         {/* Centered Premium Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
           <span className="text-[#D6B97B] font-bold tracking-[0.3em] uppercase text-xs">Help Center</span>
-          <h2 className="text-4xl md:text-6xl font-serif font-bold text-gray-900 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-gray-900 leading-tight">
             Frequently Asked <br />
             <span className="gold-gradient">Questions</span>
           </h2>
@@ -80,7 +80,7 @@ const FAQ = () => {
                       }`}>
                         <HelpCircle size={16} />
                       </div>
-                      <span className="text-lg font-serif font-bold text-gray-900 leading-snug">
+                      <span className="text-lg font-['Plus_Jakarta_Sans',sans-serif] font-bold text-gray-900 leading-snug">
                         {faq.question}
                       </span>
                     </div>
@@ -123,7 +123,7 @@ const FAQ = () => {
                 <Search size={24} />
               </div>
               <div className="space-y-1">
-                <h4 className="!text-gray-900 font-serif font-bold text-xl">No FAQ Matches Found</h4>
+                <h4 className="!text-gray-900 font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xl">No FAQ Matches Found</h4>
                 <p className="text-gray-400 text-sm max-w-sm mx-auto">
                   We couldn't find any questions matching "{searchQuery}". Try using other real estate or legal keywords.
                 </p>

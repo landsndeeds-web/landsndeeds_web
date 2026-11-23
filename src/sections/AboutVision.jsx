@@ -27,59 +27,59 @@ const AboutVision = () => {
   ];
 
   return (
-    <section id="our-vision" className="py-10 md:py-14 bg-white relative overflow-hidden">
+    <section id="our-vision" className="pt-8 pb-10 md:pt-10 md:pb-12 bg-white relative overflow-hidden border-b border-slate-200/80">
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Column: Image with Floating Card */}
           <div className="lg:col-span-5 relative">
-            <div className="aspect-[16/11] rounded-2xl overflow-hidden shadow-xl border border-gray-100 group">
+            <div className="aspect-[16/11] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 group">
               <img
                 src={visionImage}
                 alt="Our Vision - Lands N Deeds"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A335E]/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0D1B2A]/70 via-transparent to-transparent" />
             </div>
 
             {/* Floating vision badge */}
-            <div className="absolute -bottom-4 right-4 bg-[#1A335E] text-white p-3.5 rounded-xl shadow-xl border border-[#D6B97B]/40 max-w-xs">
-              <div className="flex items-center gap-2 mb-1">
-                <Eye size={16} className="text-[#D6B97B]" />
-                <span className="text-[#D6B97B] font-serif font-bold text-xs uppercase tracking-wider">Vision Statement</span>
+            <div className="absolute -bottom-4 right-4 bg-[#0D1B2A] text-white p-4 rounded-2xl shadow-2xl border border-[#C5A059]/50 max-w-xs backdrop-blur-md">
+              <div className="flex items-center gap-2 mb-1.5">
+                <Eye size={17} className="text-[#E5C378]" />
+                <span className="text-[#E5C378] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-xs uppercase tracking-wider">Vision Statement</span>
               </div>
-              <p className="text-white/90 text-xs leading-relaxed font-medium">
+              <p className="text-slate-100 text-xs sm:text-[13px] leading-relaxed font-medium">
                 "To be Tamil Nadu's most trusted, transparent, and legally sound property platform."
               </p>
             </div>
           </div>
 
           {/* Right Column: Vision Content */}
-          <div className="lg:col-span-7 space-y-3">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#1A335E]/5 text-[#D6B97B] font-bold tracking-widest uppercase text-xs">
-              <Eye size={14} />
+          <div className="lg:col-span-7 space-y-4">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 text-amber-900 border border-amber-200/80 font-extrabold tracking-wider uppercase text-xs shadow-xs">
+              <Eye size={14} className="text-[#C5A059]" />
               Our Vision
             </span>
-            <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#1A335E] leading-tight">
-              Pioneering Transparency &amp; Trust in <span className="gold-gradient">Real Estate</span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#0D1B2A] leading-tight tracking-tight">
+              Pioneering Transparency &amp; Trust in <span className="bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#C5A059] bg-clip-text text-transparent">Real Estate</span>
             </h2>
-            <p className="text-gray-600 leading-relaxed text-sm md:text-base font-normal">
+            <p className="text-slate-600 leading-relaxed text-base sm:text-lg font-normal">
               Our vision is to revolutionize the property market across Tamil Nadu by creating a seamless, transparent, and completely verified platform where every buyer, seller, and investor can make real estate decisions with total peace of mind.
             </p>
 
             {/* Vision Pillars Grid */}
-            <div className="grid sm:grid-cols-2 gap-3.5 pt-2">
+            <div className="grid sm:grid-cols-2 gap-4 pt-2">
               {visionPillars.map((pillar, index) => {
                 const Icon = pillar.icon;
                 return (
                   <div
                     key={index}
-                    className="p-3.5 rounded-xl bg-slate-50 border border-gray-200/70 hover:border-[#D6B97B] hover:shadow-md transition-all duration-300 space-y-1"
+                    className="p-4 rounded-2xl bg-[#FAF8F2] border border-amber-200/60 hover:border-amber-400 hover:shadow-lg transition-all duration-300 space-y-2 group"
                   >
-                    <div className="w-7 h-7 rounded-lg bg-[#1A335E]/10 flex items-center justify-center text-[#1A335E]">
-                      <Icon size={15} />
+                    <div className="w-9 h-9 rounded-xl bg-[#1A335E] flex items-center justify-center text-[#E5C378] shadow-xs group-hover:scale-105 transition-transform">
+                      <Icon size={18} />
                     </div>
-                    <h3 className="font-serif font-bold text-[#1A335E] text-sm">{pillar.title}</h3>
-                    <p className="text-gray-500 text-xs leading-relaxed">{pillar.description}</p>
+                    <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#0D1B2A] text-sm sm:text-base">{pillar.title}</h3>
+                    <p className="text-slate-600 text-xs sm:text-[13px] leading-relaxed">{pillar.description}</p>
                   </div>
                 );
               })}

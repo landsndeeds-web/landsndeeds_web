@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import SmoothScroll from '../components/SmoothScroll';
 import CursorGlow from '../components/CursorGlow';
+import FloatingCTA from '../components/FloatingCTA';
 
 const MainLayout = () => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = () => {
         <Navbar />
         <Outlet />
         <Footer />
+        <FloatingCTA />
       </div>
     </SmoothScroll>
   );

@@ -45,7 +45,7 @@ const ContactInfoCards = () => {
             <MapPin size={14} />
             Our Contact Details
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#1A335E]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-['Plus_Jakarta_Sans',sans-serif] font-black text-[#1A335E]">
             Reach Us <span className="gold-gradient">Anywhere</span>
           </h2>
           <p className="text-gray-500 text-sm md:text-base leading-relaxed">
@@ -73,7 +73,7 @@ const ContactInfoCards = () => {
                   >
                     <Icon size={20} style={{ color: card.color }} />
                   </div>
-                  <h3 className="font-serif font-bold text-[#1A335E] text-base">{card.title}</h3>
+                  <h3 className="font-['Plus_Jakarta_Sans',sans-serif] font-bold text-[#1A335E] text-base">{card.title}</h3>
                   <div className="space-y-0.5">
                     {card.lines.map((line, i) => (
                       <p key={i} className="text-gray-500 text-xs sm:text-sm leading-relaxed">{line}</p>
